@@ -25,9 +25,53 @@ function TabPanel(props: TabPanelProps) {
     >
       {value === index && (
         <Box sx={{p: 3}} style={{padding: 0}}>
-          <Grid container>
-            <Typography>{children}</Typography>
-            <Typography>{children}</Typography>
+          <Grid container rowSpacing={1} columnSpacing={{xs: 5, sm: 5, md: 7}}>
+            <Grid item>
+              <Typography>{children}</Typography>
+            </Grid>
+            <Grid item>
+              <Typography>{children}</Typography>
+            </Grid>
+            <Grid item>
+              <Typography>{children}</Typography>
+            </Grid>
+            <Grid item>
+              <Typography>{children}</Typography>
+            </Grid>
+            <Grid item>
+              <Typography>{children}</Typography>
+            </Grid>
+            <Grid item>
+              <Typography>{children}</Typography>
+            </Grid>
+            <Grid item>
+              <Typography>{children}</Typography>
+            </Grid>
+            <Grid item>
+              <Typography>{children}</Typography>
+            </Grid>
+            <Grid item>
+              <Typography>{children}</Typography>
+            </Grid>
+            <Grid item>
+              <Typography>{children}</Typography>
+            </Grid>
+            <Grid item>
+              <Typography>{children}</Typography>
+            </Grid>
+            <Grid item>
+              <Typography>{children}</Typography>
+            </Grid>
+            <Grid item>
+              <Typography>{children}</Typography>
+            </Grid>
+            <Grid item>
+              <Typography>{children}</Typography>
+            </Grid>
+            <Grid item>
+              <Typography>{children}</Typography>
+            </Grid>
+            {/* <Typography>{children}</Typography>
             <Typography>{children}</Typography>
             <Typography>{children}</Typography>
 
@@ -39,7 +83,7 @@ function TabPanel(props: TabPanelProps) {
             <Typography>{children}</Typography>
             <Typography>{children}</Typography>
             <Typography>{children}</Typography>
-            <Typography>{children}</Typography>
+            <Typography>{children}</Typography> */}
           </Grid>
         </Box>
       )}

@@ -11,10 +11,10 @@ import './card.css'
 export default function MultiActionAreaCard(props = {}) {
   return (
     <>
-      <Grid style={{position: 'relative', width: '425px'}}>
+      <Grid style={{position: 'relative', width: '315px'}}>
         {/* <Loading /> */}
         <CircularProgress
-          style={{position: 'absolute', top: '45%', left: '36%'}}
+          style={{position: 'absolute', top: '45%', left: '41%'}}
         />
         <Grid>
           <Grid
@@ -45,7 +45,7 @@ export default function MultiActionAreaCard(props = {}) {
             }}
           ></Grid>
         </Grid>
-        <Card sx={{maxWidth: 345}} style={{marginTop: '2rem'}}>
+        <Card sx={{maxWidth: 300}} style={{marginTop: '2rem'}}>
           <CardActionArea>
             <CardMedia
               component='img'
@@ -112,7 +112,7 @@ export default function MultiActionAreaCard(props = {}) {
                     style={{
                       background: 'rgba(0, 101, 242, 0.16)',
                       justifyContent: 'space-between',
-                      padding: '5px 15px',
+                      padding: '5px 9px',
                       borderRadius: '22px',
                     }}
                   >
