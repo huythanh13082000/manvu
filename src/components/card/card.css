@@ -1,0 +1,13 @@
+.block-ellipsis {
+  display: -webkit-box;
+  max-width: 100%;
+  height: 45px;
+  margin: 8px auto;
+  font-size: 15px;
+  line-height: 1.5;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-weight: bold;
+}

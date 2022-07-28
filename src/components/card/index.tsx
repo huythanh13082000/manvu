@@ -2,85 +2,136 @@ import * as React from 'react'
 import Card from '@mui/material/Card'
 import CardContent from '@mui/material/CardContent'
 import CardMedia from '@mui/material/CardMedia'
-import Typography from '@mui/material/Typography'
-import FavoriteIcon from '@mui/icons-material/Favorite'
+// import Typography from '@mui/material/Typography'
+// import FavoriteIcon from '@mui/icons-material/Favorite'
 import {Button, CardActionArea, CardActions, Grid} from '@mui/material'
 import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder'
-
-export default function MultiActionAreaCard() {
+import FavoriteIcon from '@mui/icons-material/Favorite'
+import './card.css'
+export default function MultiActionAreaCard(props = {}) {
   return (
-    <Card sx={{maxWidth: 345}}>
-      <CardActionArea>
-        <CardMedia
-          component='img'
-          height='140'
-          image='https://mui.com/static/images/cards/contemplative-reptile.jpg'
-          alt='green iguana'
-          style={{position: 'relative'}}
-        />
-        <FavoriteBorderIcon
+    <Grid style={{position: 'relative', width: '425px'}}>
+      <Grid>
+        <Grid
           style={{
             position: 'absolute',
-            top: '1rem',
-            right: '1rem',
+            top: '7px',
+            left: '38px',
+            backgroundColor: '#45B500',
             color: 'white',
+            width: '70px',
+            textAlign: 'center',
+            zIndex: 100,
           }}
-        />
-        <CardContent>
-          <Typography
-            style={{color: 'green'}}
-            gutterBottom
-            variant='h6'
-            component='div'
-          >
-            Lizard
-          </Typography>
-          <Typography gutterBottom variant='h6' component='div'>
-            Lizard
-          </Typography>
-          <Typography variant='body2' color='text.secondary'>
-            text abc
-          </Typography>
-          <Grid container style={{margin: '10px 0'}}>
+        >
+          3일남음
+        </Grid>
+        <Grid
+          style={{
+            position: 'absolute',
+            width: 0,
+            height: 0,
+            borderLeft: '10px solid transparent',
+            borderBottom: '10px solid transparent',
+            borderRight: '10px solid green',
+            top: '28px',
+            left: '28px',
+            zIndex: 100,
+          }}
+        ></Grid>
+      </Grid>
+      <Card sx={{maxWidth: 345}} style={{margin: '3rem'}}>
+        <CardActionArea>
+          <CardMedia
+            component='img'
+            height='140'
+            image='https://mui.com/static/images/cards/contemplative-reptile.jpg'
+            alt='green iguana'
+            style={{position: 'relative'}}
+          />
+          <FavoriteBorderIcon
+            style={{
+              position: 'absolute',
+              top: '1rem',
+              right: '1rem',
+              color: 'white',
+            }}
+          />
+          <CardContent>
             <Grid
-              item
-              xs={6}
-              style={{
-                display: 'flex',
-                alignItems: 'center',
-                backgroundColor: '#1695e773',
-                color: 'blue',
-                borderRadius: '18px',
-                height: '40px',
-                textAlign: 'center',
-              }}
+              container
+              style={{padding: '5px', fontFamily: 'Noto Sans KR'}}
             >
-              <FavoriteIcon />
-              abc 1/8
+              <Grid item xs={6} container style={{fontWeight: 'bold'}}>
+                <Grid
+                  item
+                  xs={4}
+                  style={{
+                    color: '#5B8811',
+                  }}
+                >
+                  블로그
+                </Grid>
+                <Grid
+                  item
+                  xs={1}
+                  style={{borderLeft: '1px solid black'}}
+                ></Grid>
+                <Grid
+                  item
+                  xs={6}
+                  style={{
+                    color: '#CF3BF4',
+                  }}
+                >
+                  배송형
+                </Grid>
+              </Grid>
+              <Grid item xs={12}>
+                <div className='block-ellipsis'>
+                  [루치펠로] 맛집치약&가글 6종 세트 입니다 입니다...
+                </div>
+              </Grid>
+              <Grid
+                container
+                xs={12}
+                style={{fontSize: '11px', marginBottom: '0.5rem'}}
+              >
+                <span>치약&가글 6종 세트입니다.</span>
+              </Grid>
+              <Grid container xs={12}>
+                <Grid
+                  item
+                  xs={6}
+                  container
+                  style={{
+                    background: 'rgba(0, 101, 242, 0.16)',
+                    justifyContent: 'space-between',
+                    padding: '5px 15px',
+                    borderRadius: '22px',
+                  }}
+                >
+                  <FavoriteIcon style={{color: '#0078FF'}} />
+                  <div style={{color: '#0078FF'}}>신청 225 / 4 명</div>
+                </Grid>
+                <Grid
+                  item
+                  xs={6}
+                  style={{
+                    textAlign: 'right',
+                    fontWeight: '700',
+                    alignItems: 'center',
+                    margin: 'auto',
+                    fontSize: '18px',
+                  }}
+                >
+                  50,000P
+                </Grid>
+              </Grid>
             </Grid>
-            <Grid
-              item
-              xs={6}
-              style={{
-                display: 'flex',
-                justifyContent: 'end',
-                alignItems: 'center',
-                height: '40px',
-              }}
-            >
-              <h2>100,000P</h2>
-            </Grid>
-          </Grid>
-          <Typography variant='body2' color='text.secondary'>
-            abcabc
-          </Typography>
-        </CardContent>
-      </CardActionArea>
-      {/* <CardActions>
-        <Button size="small" color="primary">
-          Share
-        </Button>
-      </CardActions> */}
-    </Card>
+          </CardContent>
+        </CardActionArea>
+      </Card>
+    </Grid>
   )
 }

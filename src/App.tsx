@@ -3,6 +3,9 @@ import logo from './logo.svg'
 import {Counter} from './features/counter/Counter'
 import './App.css'
 import MultiActionAreaCard from './components/card'
+import Header from './components/header'
+import Footer from './components/footer'
+import {Grid} from '@mui/material'
 
 function App() {
   // const handClick = () => {
@@ -30,7 +33,12 @@ function App() {
 
   return (
     <div className='App'>
-      <MultiActionAreaCard />
+      <Header />
+      <Grid style={{marginTop: '5rem'}}>
+        <MultiActionAreaCard />
+      </Grid>
+
+      <Footer />
       {/* <header className='App-header'>
         <img src={logo} className='App-logo' alt='logo' />
         <Counter />
