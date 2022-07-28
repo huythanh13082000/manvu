@@ -1,11 +1,12 @@
 import React from 'react'
-import logo from './logo.svg'
-import {Counter} from './features/counter/Counter'
+// import logo from './logo.svg'
+// import {Counter} from './features/counter/Counter'
 import './App.css'
-import MultiActionAreaCard from './components/card'
+// import MultiActionAreaCard from './components/card'
 import Header from './components/header'
 import Footer from './components/footer'
 import {Grid} from '@mui/material'
+import BasicTabs from './components/tabs'
 
 function App() {
   // const handClick = () => {
@@ -34,10 +35,9 @@ function App() {
   return (
     <div className='App'>
       <Header />
-      <Grid style={{marginTop: '5rem'}}>
-        <MultiActionAreaCard />
+      <Grid style={{marginTop: '5rem', padding: '20px 42px'}}>
+        <BasicTabs />
       </Grid>
-
       <Footer />
       {/* <header className='App-header'>
         <img src={logo} className='App-logo' alt='logo' />

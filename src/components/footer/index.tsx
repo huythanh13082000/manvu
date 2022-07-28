@@ -24,7 +24,7 @@ export function Footer(props = {}) {
         </p>
         <Grid container>
           <Grid item xs={6}>
-            <p>연락해주세요</p>
+            <p style={{fontWeight: 'bold'}}>연락해주세요</p>
             <Grid item xs={12} container>
               <p style={{marginRight: '0.5rem'}}>망고리뷰 코퍼레이션</p>
               <p
@@ -72,14 +72,14 @@ export function Footer(props = {}) {
 
           <Grid item xs={6} container>
             <Grid item xs={6}>
-              <p>서비스 정책</p>
+              <p style={{fontWeight: 'bold'}}>서비스 정책</p>
               <p>이용약관</p>
               <p>운영정책</p>
               <p>개인정보처리방침</p>
               <p>위치기반서비스이용약관</p>
             </Grid>
             <Grid item xs={6}>
-              <p>팔로우</p>
+              <p style={{fontWeight: 'bold'}}>팔로우</p>
               <Grid container style={{marginBottom: '3rem'}}>
                 <img
                   src='/img/talk.png'
