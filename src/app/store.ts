@@ -4,12 +4,12 @@ import {
   configureStore,
   ThunkAction,
 } from '@reduxjs/toolkit'
-import counterReducer from '../features/counter/counterSlice'
+import cardReducer from '../features/renderCard/renderCardSlice'
 import createSagaMiddleware from 'redux-saga'
 import rootSaga from './rootSaga'
 const rootReducer = combineReducers({
   // router: connectRouter(history),
-  counter: counterReducer,
+  card: cardReducer,
   // auth: authReducer,
   // dashboard: dashboardReducer,
   // student: studentReducer,
@@ -19,7 +19,7 @@ const sagaMiddleware = createSagaMiddleware()
 export const store = configureStore({
   reducer: rootReducer,
   middleware: (getDefaultMiddleware) =>
-    getDefaultMiddleware().concat(sagaMiddleware),
+    getDefaultMiddleware({thunk: false}).concat(sagaMiddleware),
 })
 
 sagaMiddleware.run(rootSaga)

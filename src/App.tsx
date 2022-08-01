@@ -5,10 +5,25 @@ import './App.css'
 // import MultiActionAreaCard from './components/card'
 import Header from './components/header'
 import Footer from './components/footer'
-import {Grid} from '@mui/material'
+import {Button, Grid, TextField} from '@mui/material'
 import BasicTabs from './components/tabs'
-
-function App() {
+import {useState} from 'react'
+import {useRef} from 'react'
+import {useAppDispatch} from './app/hooks'
+import {cardAction} from './features/renderCard/renderCardSlice'
+import {BrowserRouter as Router, Outlet, Route} from 'react-router-dom'
+export default function App() {
+  const [count, setCount] = useState(0)
+  const dispatch = useAppDispatch()
+  const buttonRef = useRef<HTMLInputElement>(null)
+  const couter = (e: React.ChangeEvent<HTMLInputElement>) => {
+    let newValue = Number(e.target.value)
+    setCount(newValue)
+  }
+  // useEffect(() => {}, [])
+  // let hanldClick=()=>{
+  //   buttonRef.current?.onclick()
+  // }
   // const handClick = () => {
   //   console.log(123)
   // }
@@ -38,54 +53,8 @@ function App() {
       <Grid style={{marginTop: '5rem', padding: '20px 42px'}}>
         <BasicTabs />
       </Grid>
+      {/* <Outlet /> */}
       <Footer />
-      {/* <header className='App-header'>
-        <img src={logo} className='App-logo' alt='logo' />
-        <Counter />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <span>
-          <span onClick={handClick}>Learn </span>
-          <a
-            className='App-link'
-            href='https://reactjs.org/'
-            target='_blank'
-            rel='noopener noreferrer'
-          >
-            React
-          </a>
-          <span>, </span>
-          <a
-            className='App-link'
-            href='https://redux.js.org/'
-            target='_blank'
-            rel='noopener noreferrer'
-          >
-            Redux
-          </a>
-          <span>, </span>
-          <a
-            className='App-link'
-            href='https://redux-toolkit.js.org/'
-            target='_blank'
-            rel='noopener noreferrer'
-          >
-            Redux Toolkit
-          </a>
-          ,<span> and </span>
-          <a
-            className='App-link'
-            href='https://react-redux.js.org/'
-            target='_blank'
-            rel='noopener noreferrer'
-          >
-            React Redux
-          </a>
-        </span>
-      </header> */}
     </div>
   )
 }
-
-export default App
