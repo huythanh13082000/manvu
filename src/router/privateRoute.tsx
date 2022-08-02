@@ -9,7 +9,11 @@ interface Props {
 function PrivateRoute(props: Props) {
   const auth: boolean = true
   if (auth) {
-    return <RoleRoute item={props.item} />
+    if (props.item.roles && props.item.roles.length > 0) {
+      return <RoleRoute item={props.item} />
+    } else {
+      return <>{props.item.element}</>
+    }
   } else {
     return <Navigate to={{pathname: '/login'}} />
   }

@@ -5,21 +5,21 @@ import './App.css'
 // import MultiActionAreaCard from './components/card'
 import Header from './components/header'
 import Footer from './components/footer'
-import {Button, Grid, TextField} from '@mui/material'
+import {Grid} from '@mui/material'
 import BasicTabs from './components/tabs'
-import {useState} from 'react'
-import {useRef} from 'react'
-import {useAppDispatch} from './app/hooks'
-import {cardAction} from './features/renderCard/renderCardSlice'
-import {BrowserRouter as Router, Outlet, Route} from 'react-router-dom'
+// import {useState} from 'react'
+// import {useRef} from 'react'
+// import {useAppDispatch} from './app/hooks'
+// import {cardAction} from './features/renderCard/renderCardSlice'
+
 export default function App() {
-  const [count, setCount] = useState(0)
-  const dispatch = useAppDispatch()
-  const buttonRef = useRef<HTMLInputElement>(null)
-  const couter = (e: React.ChangeEvent<HTMLInputElement>) => {
-    let newValue = Number(e.target.value)
-    setCount(newValue)
-  }
+  // const [count, setCount] = useState(0)
+  // const dispatch = useAppDispatch()
+  // const buttonRef = useRef<HTMLInputElement>(null)
+  // const couter = (e: React.ChangeEvent<HTMLInputElement>) => {
+  //   let newValue = Number(e.target.value)
+  //   setCount(newValue)
+  // }
   // useEffect(() => {}, [])
   // let hanldClick=()=>{
   //   buttonRef.current?.onclick()
@@ -53,7 +53,6 @@ export default function App() {
       <Grid style={{marginTop: '5rem', padding: '20px 42px'}}>
         <BasicTabs />
       </Grid>
-      {/* <Outlet /> */}
       <Footer />
     </div>
   )

@@ -16,7 +16,7 @@ function Login() {
         <img
           src='/img/logo.png'
           alt='logo'
-          style={{marginTop: '4rem', marginBottom: '3rem'}}
+          style={{marginTop: '4rem', marginBottom: '2rem'}}
         />
       </Grid>
       <Grid item xs={12} container justifyContent={'center'}>
@@ -26,6 +26,7 @@ function Login() {
             id='outlined-basic'
             style={{width: '500px'}}
             variant='outlined'
+            size='small'
           />
         </Grid>
       </Grid>
@@ -37,6 +38,7 @@ function Login() {
             id='outlined-basic'
             style={{width: '500px'}}
             variant='outlined'
+            size='small'
           />
         </Grid>
       </Grid>
@@ -56,14 +58,21 @@ function Login() {
             />
             <span>저장하기</span>
           </Grid>
-          <Link to='/abc'>비밀번호를 잊나요?</Link>
+
+          <Link to='/abc' style={{color: '#0065F2'}}>
+            비밀번호를 잊나요?
+          </Link>
         </Grid>
       </Grid>
 
       <Grid item xs={12} container justifyContent={'center'}>
         <Button
           onClick={handleSubmit}
-          style={{width: '500px', height: '3rem'}}
+          style={{
+            width: '500px',
+            height: '2.8rem',
+            boxShadow: ' 0px 4px 12px -4px #4C98ED',
+          }}
           variant='contained'
         >
           로그인
@@ -118,7 +127,7 @@ function Login() {
       <Grid item xs={12} container justifyContent={'center'}>
         <Button
           onClick={handleSubmit}
-          style={{width: '500px', height: '3rem'}}
+          style={{width: '500px', height: '2.8rem'}}
           variant='outlined'
         >
           가입하기
