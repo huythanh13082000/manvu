@@ -131,10 +131,10 @@ export default function BasicTabs() {
         <MultiActionAreaCard />
       </TabPanel>
       <TabPanel value={value} index={1}>
-        Item Two
+        item xs={2} Two
       </TabPanel>
       <TabPanel value={value} index={2}>
-        Item Three
+        item xs={2} Three
       </TabPanel>
     </Box>
   )

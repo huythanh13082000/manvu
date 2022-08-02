@@ -2,15 +2,16 @@
 import React from 'react'
 import {Navigate} from 'react-router-dom'
 import MyRouteProp from './MyRouteProp'
+import RoleRoute from './roleRoute'
 interface Props {
   item: MyRouteProp
 }
 function PrivateRoute(props: Props) {
   const auth: boolean = true
   if (auth) {
-    return <>{props.item.element}</>
+    return <RoleRoute item={props.item} />
   } else {
-    return <Navigate to='/login' />
+    return <Navigate to={{pathname: '/login'}} />
   }
 }
 

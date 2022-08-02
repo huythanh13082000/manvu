@@ -1,6 +1,4 @@
-import {ListParams} from '../models/common'
 import axiosClient from './axiosClient'
-import {Card} from '../models/card'
 
 const cardApi = {
   getAll() {
