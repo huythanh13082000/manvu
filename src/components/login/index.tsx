@@ -7,8 +7,8 @@ import './login.css'
 function Login() {
   const label = {inputProps: {'aria-label': 'Checkbox demo'}}
   const navigate = useNavigate()
-  const handleSubmit = () => {
-    navigate('/')
+  const handleSubmit = (params: string) => {
+    navigate(params)
   }
   return (
     <Grid>
@@ -29,9 +29,10 @@ function Login() {
           <p className='label-input'>Email</p>
           <TextField
             id='outlined-basic'
-            style={{width: '500px'}}
+            style={{width: '422px'}}
             variant='outlined'
             size='small'
+            placeholder='Greenapp@gmail.com'
           />
         </Grid>
       </Grid>
@@ -41,16 +42,18 @@ function Login() {
           <p className='label-input'>비밀번호</p>
           <TextField
             id='outlined-basic'
-            style={{width: '500px'}}
+            style={{width: '422px'}}
             variant='outlined'
             size='small'
+            placeholder='Ví dụ: Greenapp123'
           />
         </Grid>
       </Grid>
 
       <Grid item xs={12} container justifyContent={'center'}>
         <Grid
-          width='500px'
+          width='
+          422px'
           container
           justifyContent='space-between'
           margin='1rem 0'
@@ -64,7 +67,10 @@ function Login() {
             <span style={{fontSize: '14px', fontWeight: 500}}>저장하기</span>
           </Grid>
 
-          <Link to='/abc' style={{color: '#0065F2', fontSize: '14px'}}>
+          <Link
+            to='/login/forgotpassword'
+            style={{color: '#0065F2', fontSize: '14px'}}
+          >
             비밀번호를 잊나요?
           </Link>
         </Grid>
@@ -72,9 +78,9 @@ function Login() {
 
       <Grid item xs={12} container justifyContent={'center'} margin='1.5rem 0'>
         <Button
-          onClick={handleSubmit}
+          onClick={() => handleSubmit('/')}
           style={{
-            width: '500px',
+            width: '422px',
             height: '2.8rem',
             boxShadow: ' 0px 4px 12px -4px #4C98ED',
             fontSize: '15px',
@@ -86,7 +92,7 @@ function Login() {
       </Grid>
 
       <Grid item xs={12} container justifyContent={'center'}>
-        <Grid width='500px' container>
+        <Grid width='422px' container>
           <Grid item xs={5} borderBottom='1px solid #E1E1E1' height='1.5rem' />
           <Grid item xs={2}>
             <p style={{textAlign: 'center', fontSize: '13px'}}>Or</p>
@@ -103,7 +109,7 @@ function Login() {
         <Grid
           container
           borderBottom='1px solid #E1E1E1'
-          width='500px'
+          width='422px'
           justifyContent='space-around'
           padding='1rem'
         >
@@ -125,7 +131,7 @@ function Login() {
         </Grid>
       </Grid>
       <Grid item xs={12} container justifyContent={'center'}>
-        <Grid width='500px'>
+        <Grid width='422px'>
           <p style={{textAlign: 'center', fontSize: '15px'}}>
             체험단계정이 없나요?
           </p>
@@ -134,8 +140,8 @@ function Login() {
 
       <Grid item xs={12} container justifyContent={'center'}>
         <Button
-          onClick={handleSubmit}
-          style={{width: '500px', height: '2.8rem', fontSize: '15px'}}
+          onClick={() => handleSubmit('/register/termsofuse')}
+          style={{width: '422px', height: '2.8rem', fontSize: '15px'}}
           variant='outlined'
         >
           가입하기

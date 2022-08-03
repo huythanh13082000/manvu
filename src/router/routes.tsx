@@ -1,7 +1,9 @@
 import App from '../App'
 import Login from '../components/login'
+import ForgotPW from '../components/ForgotPassword'
 import NotFound from '../components/notfound'
 import MyRouteProp from './MyRouteProp'
+import TermsOfUse from '../components/TermsOfUse'
 const routes: Array<MyRouteProp> = [
   {
     path: '/',
@@ -14,6 +16,16 @@ const routes: Array<MyRouteProp> = [
     element: <Login />,
     private: false,
     roles: ['user', 'admin', 'super'],
+  },
+  {
+    path: '/login/forgotpassword',
+    element: <ForgotPW />,
+    private: false,
+  },
+  {
+    path: '/register/termsofuse',
+    element: <TermsOfUse />,
+    private: false,
   },
   {
     path: '/home',
