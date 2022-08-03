@@ -16,7 +16,12 @@ function Login() {
         <img
           src='/img/logo.png'
           alt='logo'
-          style={{marginTop: '4rem', marginBottom: '2rem'}}
+          style={{
+            marginTop: '4rem',
+            marginBottom: '2rem',
+            width: '68px',
+            height: '68px',
+          }}
         />
       </Grid>
       <Grid item xs={12} container justifyContent={'center'}>
@@ -56,22 +61,23 @@ function Login() {
               defaultChecked
               style={{margin: 0, padding: 0}}
             />
-            <span>저장하기</span>
+            <span style={{fontSize: '14px', fontWeight: 500}}>저장하기</span>
           </Grid>
 
-          <Link to='/abc' style={{color: '#0065F2'}}>
+          <Link to='/abc' style={{color: '#0065F2', fontSize: '14px'}}>
             비밀번호를 잊나요?
           </Link>
         </Grid>
       </Grid>
 
-      <Grid item xs={12} container justifyContent={'center'}>
+      <Grid item xs={12} container justifyContent={'center'} margin='1.5rem 0'>
         <Button
           onClick={handleSubmit}
           style={{
             width: '500px',
             height: '2.8rem',
             boxShadow: ' 0px 4px 12px -4px #4C98ED',
+            fontSize: '15px',
           }}
           variant='contained'
         >
@@ -81,15 +87,15 @@ function Login() {
 
       <Grid item xs={12} container justifyContent={'center'}>
         <Grid width='500px' container>
-          <Grid item xs={5} borderBottom='1px solid #E1E1E1' height='1.9rem' />
+          <Grid item xs={5} borderBottom='1px solid #E1E1E1' height='1.5rem' />
           <Grid item xs={2}>
-            <p style={{textAlign: 'center'}}>Or</p>
+            <p style={{textAlign: 'center', fontSize: '13px'}}>Or</p>
           </Grid>
-          <Grid item xs={5} borderBottom='1px solid #E1E1E1' height='1.9rem' />
+          <Grid item xs={5} borderBottom='1px solid #E1E1E1' height='1.5rem' />
         </Grid>
       </Grid>
 
-      <Grid item xs={12} container justifyContent={'center'}>
+      <Grid item xs={12} container justifyContent={'center'} fontSize='15px'>
         다른 계정으로 로그인하기
       </Grid>
 
@@ -97,8 +103,8 @@ function Login() {
         <Grid
           container
           borderBottom='1px solid #E1E1E1'
-          width='400px'
-          justifyContent='space-between'
+          width='500px'
+          justifyContent='space-around'
           padding='1rem'
         >
           <img src='/img/chrome.png' alt='facebook' />
@@ -120,14 +126,16 @@ function Login() {
       </Grid>
       <Grid item xs={12} container justifyContent={'center'}>
         <Grid width='500px'>
-          <p style={{textAlign: 'center'}}>체험단계정이 없나요?</p>
+          <p style={{textAlign: 'center', fontSize: '15px'}}>
+            체험단계정이 없나요?
+          </p>
         </Grid>
       </Grid>
 
       <Grid item xs={12} container justifyContent={'center'}>
         <Button
           onClick={handleSubmit}
-          style={{width: '500px', height: '2.8rem'}}
+          style={{width: '500px', height: '2.8rem', fontSize: '15px'}}
           variant='outlined'
         >
           가입하기
