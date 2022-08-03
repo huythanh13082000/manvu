@@ -140,12 +140,13 @@ function Login() {
 
       <Grid item xs={12} container justifyContent={'center'}>
         <Button
-          onClick={() => handleSubmit('/register/termsofuse')}
+          onClick={() => handleSubmit('/termsofuse')}
           style={{width: '422px', height: '2.8rem', fontSize: '15px'}}
           variant='outlined'
         >
           가입하기
         </Button>
+        
       </Grid>
     </Grid>
   )

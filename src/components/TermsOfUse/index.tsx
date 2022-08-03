@@ -1,8 +1,13 @@
 import {Button, Checkbox, Grid} from '@mui/material'
 import React from 'react'
+import {useNavigate} from 'react-router-dom'
 
 const TermsOfUse = () => {
+  const navigate = useNavigate()
   const label = {inputProps: {'aria-label': 'Checkbox demo'}}
+  const handleSubmit = () => {
+    navigate('/registeraccount')
+  }
   return (
     <Grid container justifyContent='center'>
       <Grid container justifyContent='center' item xs={12}>
@@ -154,7 +159,7 @@ const TermsOfUse = () => {
             </span>
           </p>
           <Button
-            // onClick={handleSubmit}
+            onClick={handleSubmit}
             style={{
               width: '143px',
               height: '56px',

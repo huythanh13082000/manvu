@@ -1,0 +1,19 @@
+.Ul-img {
+  width: 98px;
+  height: 98px;
+  border: 1.5px dashed #e1e1e1;
+  border-radius: 50%;
+  position: relative;
+}
+.Ul-grid-icon{
+  background-color: #D9D9D9;
+  background-image: url('/public/img/Ellipse\ 434.png');
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+}
+.Ul-iconButton{
+  position: absolute;
+  bottom: -0.5rem;
+  right: -0.5rem;
+}

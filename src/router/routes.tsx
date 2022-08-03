@@ -4,6 +4,8 @@ import ForgotPW from '../components/ForgotPassword'
 import NotFound from '../components/notfound'
 import MyRouteProp from './MyRouteProp'
 import TermsOfUse from '../components/TermsOfUse'
+import RegisterAccount from '../components/RegisterAccount'
+import Register from '../components/register'
 const routes: Array<MyRouteProp> = [
   {
     path: '/',
@@ -23,10 +25,25 @@ const routes: Array<MyRouteProp> = [
     private: false,
   },
   {
-    path: '/register/termsofuse',
+    path: '/termsofuse',
     element: <TermsOfUse />,
     private: false,
   },
+  {
+    path: '/registeraccount',
+    element: <RegisterAccount />,
+    private: false,
+  },
+  {
+    path: '/register',
+    element: <Register />,
+    private: false,
+  },
+  // {
+  //   path: '/register',
+  //   element: <Register />,
+  //   private: false,
+  // },
   {
     path: '/home',
     element: <p>HomePage</p>,
