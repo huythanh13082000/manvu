@@ -32,6 +32,11 @@ function Login() {
             style={{width: '422px'}}
             variant='outlined'
             size='small'
+            inputProps={{
+              style: {
+                height: '31px',
+              },
+            }}
             placeholder='Greenapp@gmail.com'
           />
         </Grid>
@@ -46,6 +51,11 @@ function Login() {
             variant='outlined'
             size='small'
             placeholder='Ví dụ: Greenapp123'
+            inputProps={{
+              style: {
+                height: '31px',
+              },
+            }}
           />
         </Grid>
       </Grid>
@@ -117,14 +127,14 @@ function Login() {
           <img src='/img/kakao_talk.png' alt='talk' />
           <div style={{position: 'relative'}}>
             <img
-              src='/img/Logo Container.png'
+              src='/img/bg-facebook.png'
               alt='background'
               style={{width: '55px', height: '55px', marginTop: '6px'}}
             />
             <img
-              src='/img/Vector.png'
+              src='/img/facebook.png'
               alt='facebook'
-              style={{position: 'absolute', top: '25%', left: '35%'}}
+              style={{position: 'absolute', top: '26%', left: '36%'}}
             />
           </div>
           <img src='/img/image 128.png' alt='N-icon' />
@@ -146,7 +156,6 @@ function Login() {
         >
           가입하기
         </Button>
-        
       </Grid>
     </Grid>
   )

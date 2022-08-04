@@ -57,6 +57,11 @@ const ForgotPW = () => {
             variant='outlined'
             size='small'
             placeholder='이메일을 입력해주세요.'
+            inputProps={{
+              style: {
+                height: '31px',
+              },
+            }}
           />
         </Grid>
       </Grid>
