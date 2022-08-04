@@ -3,7 +3,6 @@ import {Grid} from '@mui/material'
 import LocationOnIcon from '@mui/icons-material/LocationOn'
 import PhoneInTalkIcon from '@mui/icons-material/PhoneInTalk'
 import MailOutlineIcon from '@mui/icons-material/MailOutline'
-import FacebookOutlinedIcon from '@mui/icons-material/FacebookOutlined'
 import Button from '@mui/material/Button'
 import NavigateNextIcon from '@mui/icons-material/NavigateNext'
 export function Footer(props = {}) {
@@ -86,17 +85,15 @@ export function Footer(props = {}) {
                   style={{width: '38px', borderRadius: '50%'}}
                   alt='talk.img'
                 />
-                <FacebookOutlinedIcon
-                  style={{
-                    fontSize: '40px',
-                    color: '#3B5998',
-                    padding: '0 1rem',
-                  }}
+                <img
+                  src='/img/facebook-footer.png'
+                  style={{width: '45px', margin: '0 0.5rem 0 1rem'}}
+                  alt='facebook.png'
                 />
                 <img
-                  src='/img/Instagram.png'
+                  src='/img/instagram-footer.png'
                   alt='instagram'
-                  style={{width: '38px', borderRadius: '50%'}}
+                  style={{width: '45px'}}
                 />
               </Grid>
               <p>다운로드</p>
@@ -123,7 +120,11 @@ export function Footer(props = {}) {
         <p>© 망고리뷰 Corporation. All Rights Reserved.</p>
         <Button
           variant='contained'
-          style={{backgroundColor: 'rgba(39, 39, 39, 0.12)', height: '40px'}}
+          style={{
+            backgroundColor: 'rgba(39, 39, 39, 0.12)',
+            color: '#4D4D4D',
+            height: '40px',
+          }}
         >
           광고문의 <NavigateNextIcon />
         </Button>

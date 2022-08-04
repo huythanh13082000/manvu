@@ -1,0 +1,58 @@
+.cc-grid {
+  width: 317px;
+  height: 317px;
+  display: flex;
+  align-items: flex-end;
+}
+.cc-p1 {
+  font-style: normal;
+  font-weight: 700;
+  font-size: 13px;
+  line-height: 20px;
+  /* identical to box height, or 154% */
+
+  letter-spacing: -0.3px;
+  font-family: 'Noto Sans KR';
+
+  color: #ffffff;
+}
+.cc-p2 {
+  width: 273px;
+  height: 48px;
+  font-family: 'Noto Sans KR';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 24px;
+  /* or 150% */
+  margin: 0;
+  padding: 0;
+
+  letter-spacing: 0.1px;
+
+  color: #ffffff;
+}
+.cc-p3 {
+  font-family: 'Noto Sans KR';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 20px;
+  /* identical to box height, or 167% */
+
+  letter-spacing: 0.1px;
+
+  color: #ffffff;
+}
+.cc-p4 {
+  font-family: 'Noto Sans KR';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 20px;
+  /* identical to box height, or 167% */
+
+  letter-spacing: 0.1px;
+
+  color: #ffffff;
+}

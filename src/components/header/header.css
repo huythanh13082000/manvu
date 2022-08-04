@@ -1,0 +1,31 @@
+.h-li {
+  font-family: 'Noto Sans KR';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 24px;
+  /* identical to box height, or 150% */
+  display: flex;
+  align-items: center;
+  color: #292929;
+}
+.h-button-login {
+  border: 1px solid #e1e1e1 !important;
+  font-family: 'Noto Sans KR';
+  height: 48px;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 15px;
+  line-height: 24px;
+  /* identical to box height, or 160% */
+  /* Primary 1 – #0065F2 */
+  color: #0078ff !important;
+}
+.h-button-register {
+  height: 48px;
+  margin: 0 1rem 0 2rem !important;
+  /* Primary 1 – #0065F2 */
+
+  background-color: #0078ff !important;
+  color: white;
+}

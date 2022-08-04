@@ -4,6 +4,7 @@ import Header from './components/header'
 import Footer from './components/footer'
 import {Grid} from '@mui/material'
 import BasicTabs from './components/tabs'
+import CardCampaign from './components/CardCampaign'
 // import {useState} from 'react'
 // import {useRef} from 'react'
 // import {useAppDispatch} from './app/hooks'
@@ -16,6 +17,7 @@ export default function App() {
       <Grid style={{marginTop: '5rem', padding: '20px 42px'}}>
         <BasicTabs />
       </Grid>
+      <CardCampaign />
       <Footer />
     </div>
   )

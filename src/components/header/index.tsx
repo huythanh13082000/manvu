@@ -1,59 +1,23 @@
 import * as React from 'react'
-import {styled, alpha} from '@mui/material/styles'
 import AppBar from '@mui/material/AppBar'
 import Box from '@mui/material/Box'
 import Toolbar from '@mui/material/Toolbar'
 import IconButton from '@mui/material/IconButton'
 import Typography from '@mui/material/Typography'
-import InputBase from '@mui/material/InputBase'
 import MenuIcon from '@mui/icons-material/Menu'
-import SearchIcon from '@mui/icons-material/Search'
 import {Button, Grid} from '@mui/material'
 import KeyboardArrowDownSharpIcon from '@mui/icons-material/KeyboardArrowDownSharp'
-
-const Search = styled('div')(({theme}) => ({
-  position: 'relative',
-  borderRadius: theme.shape.borderRadius,
-  backgroundColor: alpha(theme.palette.common.white, 0.15),
-  '&:hover': {
-    backgroundColor: alpha(theme.palette.common.white, 0.25),
-  },
-  marginLeft: 0,
-  width: '100%',
-  [theme.breakpoints.up('sm')]: {
-    marginLeft: theme.spacing(1),
-    width: 'auto',
-  },
-}))
-
-const SearchIconWrapper = styled('div')(({theme}) => ({
-  padding: theme.spacing(0, 2),
-  height: '100%',
-  position: 'absolute',
-  pointerEvents: 'none',
-  display: 'flex',
-  alignItems: 'center',
-  justifyContent: 'center',
-}))
-
-const StyledInputBase = styled(InputBase)(({theme}) => ({
-  color: 'inherit',
-  '& .MuiInputBase-input': {
-    padding: theme.spacing(1, 1, 1, 0),
-    // vertical padding + font size from searchIcon
-    paddingLeft: `calc(1em + ${theme.spacing(4)})`,
-    transition: theme.transitions.create('width'),
-    width: '100%',
-    [theme.breakpoints.up('sm')]: {
-      width: '12ch',
-      '&:focus': {
-        width: '20ch',
-      },
-    },
-  },
-}))
+import './header.css'
+import {useNavigate} from 'react-router-dom'
 
 export default function Header() {
+  const navigate = useNavigate()
+  const handleLogin = () => {
+    navigate('/login')
+  }
+  const handleRegister = () => {
+    navigate('/termsofuse')
+  }
   return (
     <Grid
       style={{
@@ -83,8 +47,8 @@ export default function Header() {
               component='div'
               sx={{flexGrow: 1, display: {xs: 'none', sm: 'block'}}}
             >
-              <Grid style={{display: 'flex', alignItems: 'center'}}>
-                <span
+              <Grid container alignItems='center'>
+                {/* <span
                   style={{
                     color: '#0078FF',
                     fontSize: '22px',
@@ -92,32 +56,37 @@ export default function Header() {
                   }}
                 >
                   망고리뷰
-                </span>
+                </span> */}
+                <Grid item xs={1} container alignItems='center'>
+                  <img style={{width: '48px'}} src='/img/logo.png' alt='logo' />
+                </Grid>
+
                 <ul
                   style={{
+                    alignItems: 'center',
                     display: 'flex',
                     color: 'black',
                     listStyle: 'none',
-                    justifyContent: 'space-between',
+                    justifyContent: 'space-around',
                     width: '30%',
+                    fontFamily: 'Noto Sans KR',
                   }}
                 >
-                  <li>
+                  <li className='h-li'>
                     지역 <KeyboardArrowDownSharpIcon />
                   </li>
-                  <li>
-                    제품 <KeyboardArrowDownSharpIcon />
-                  </li>
-                  <li>
+                  <li className='h-li'>
                     서비스 <KeyboardArrowDownSharpIcon />
                   </li>
-                  <li>
-                    기자단 <KeyboardArrowDownSharpIcon />
+                  <li className='h-li'>
+                    제품 <KeyboardArrowDownSharpIcon />
                   </li>
+                  <li className='h-li'>|</li>
+                  <li className='h-li'>REVIEWER</li>
                 </ul>
               </Grid>
             </Typography>
-            <Search>
+            {/* <Search>
               <SearchIconWrapper>
                 <SearchIcon style={{color: 'black'}} />
               </SearchIconWrapper>
@@ -126,9 +95,26 @@ export default function Header() {
                 placeholder='Search…'
                 inputProps={{'aria-label': 'search'}}
               />
-            </Search>
-            <p style={{margin: 'auto 2rem', color: 'black'}}>로그인</p>
-            <Button variant='contained'>회원가입</Button>
+            </Search> */}
+            {/* <p style={{margin: 'auto 2rem', color: 'black'}}>로그인</p> */}
+            <Button
+              className='h-button-login'
+              variant='outlined'
+              onClick={handleLogin}
+            >
+              로그인
+            </Button>
+
+            <Button
+              className='h-button-register'
+              variant='contained'
+              onClick={handleRegister}
+            >
+              회원가입
+            </Button>
+            <Button>
+              <img src='/img/search.png' alt='search' />
+            </Button>
           </Toolbar>
         </AppBar>
       </Box>
