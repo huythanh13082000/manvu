@@ -29,3 +29,15 @@
   background-color: #0078ff !important;
   color: white;
 }
+.h-grid-search{
+  position: relative;
+  animation: moveLeft 0.5s;
+  animation-fill-mode: forwards;
+  /* transform: translateX(-100%); */
+}
+@keyframes moveLeft {
+  from {left: 100%;}
+  to {left: 0%;}
+}
+
+
