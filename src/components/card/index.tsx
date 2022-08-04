@@ -2,135 +2,96 @@ import * as React from 'react'
 import Card from '@mui/material/Card'
 import CardContent from '@mui/material/CardContent'
 import CardMedia from '@mui/material/CardMedia'
-// import Typography from '@mui/material/Typography'
-// import FavoriteIcon from '@mui/icons-material/Favorite'
-import {CardActionArea, CircularProgress, Grid} from '@mui/material'
-import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder'
-import FavoriteIcon from '@mui/icons-material/Favorite'
+import {Button, CardActionArea, Grid} from '@mui/material'
 import './card.css'
+
 export default function MultiActionAreaCard(props = {}) {
   return (
     <>
       <Grid style={{position: 'relative', width: '315px'}}>
         {/* <Loading /> */}
-        <CircularProgress
+        {/* <CircularProgress
           style={{position: 'absolute', top: '45%', left: '41%'}}
-        />
-        <Grid>
-          <Grid
-            style={{
-              position: 'absolute',
-              top: '7px',
-              left: '-10px',
-              backgroundColor: '#45B500',
-              color: 'white',
-              width: '70px',
-              textAlign: 'center',
-              zIndex: 100,
-            }}
-          >
-            3일남음
-          </Grid>
-          <Grid
-            style={{
-              position: 'absolute',
-              width: 0,
-              height: 0,
-              borderLeft: '10px solid transparent',
-              borderBottom: '10px solid transparent',
-              borderRight: '10px solid green',
-              top: '31px',
-              left: '-20px',
-              zIndex: 100,
-            }}
-          ></Grid>
-        </Grid>
-        <Card sx={{maxWidth: 300}} style={{marginTop: '2rem'}}>
-          <CardActionArea>
+        /> */}
+        <Card
+          sx={{maxWidth: 317, height: '466px'}}
+          style={{marginTop: '2rem', paddingBottom: '1rem'}}
+        >
+          <CardActionArea style={{fontFamily: 'Noto Sans KR'}}>
             <CardMedia
               component='img'
-              height='140'
-              image='https://mui.com/static/images/cards/contemplative-reptile.jpg'
+              height='317'
+              image='/img/img3.png'
               alt='green iguana'
-              style={{position: 'relative'}}
             />
-            <FavoriteBorderIcon
+            <Grid
+              className='c-grid-heart'
+              container
+              justifyContent='center'
               style={{
                 position: 'absolute',
                 top: '1rem',
                 right: '1rem',
                 color: 'white',
               }}
-            />
+            >
+              <img
+                src='/img/heart.png'
+                style={{width: '16.67px', height: '14.83px', marginTop: '13px'}}
+                alt='heart'
+              />
+            </Grid>
+
+            <Grid
+              style={{
+                position: 'absolute',
+                top: '0rem',
+                left: '1rem',
+              }}
+            >
+              <Grid position='relative'>
+                <img src='/img/flag.png' alt='flag' />
+                <span className='c-span1'>1</span>
+              </Grid>
+            </Grid>
             <CardContent>
-              <Grid
-                container
-                style={{padding: '5px', fontFamily: 'Noto Sans KR'}}
-              >
-                <Grid item xs={6} container style={{fontWeight: 'bold'}}>
-                  <Grid
-                    item
-                    xs={4}
-                    style={{
-                      color: '#5B8811',
-                    }}
-                  >
-                    블로그
+              <Grid container style={{padding: '5px'}}>
+                <Grid item xs={12} container style={{fontWeight: 'bold'}}>
+                  <Grid item xs={5} className='c-p1'>
+                    <Grid container>
+                      <Grid marginRight='5px'>
+                        <img src='/img/N.png' style={{width: '20px'}} alt='N' />
+                      </Grid>
+                      <Grid>Blog Naver</Grid>
+                    </Grid>
                   </Grid>
                   <Grid
-                    item
-                    xs={1}
-                    style={{borderLeft: '1px solid black'}}
-                  ></Grid>
-                  <Grid
-                    item
-                    xs={6}
                     style={{
-                      color: '#CF3BF4',
+                      border: '1px solid #E1E1E1',
+                      height: '20px',
+                      marginRight: '15px',
                     }}
-                  >
-                    배송형
+                  ></Grid>
+                  <Grid item xs={6} className='c-p2'>
+                    2일후에 시작합니다
                   </Grid>
                 </Grid>
                 <Grid item xs={12}>
                   <div className='block-ellipsis'>
-                    [루치펠로] 맛집치약&가글 6종 세트 입니다 입니다...
+                    이것은 제목이며 1줄 텍스트로 표시됩.
                   </div>
                 </Grid>
-                <Grid
-                  container
-                  xs={12}
-                  style={{fontSize: '11px', marginBottom: '0.5rem'}}
-                >
-                  <span>치약&가글 6종 세트입니다.</span>
+                <Grid item xs={12}>
+                  <span>주소</span>
                 </Grid>
-                <Grid container xs={12}>
-                  <Grid
-                    item
-                    xs={6}
-                    container
-                    style={{
-                      background: 'rgba(0, 101, 242, 0.16)',
-                      justifyContent: 'space-between',
-                      padding: '5px 9px',
-                      borderRadius: '22px',
-                    }}
-                  >
-                    <FavoriteIcon style={{color: '#0078FF'}} />
-                    <div style={{color: '#0078FF'}}>신청 225 / 4 명</div>
+                <Grid container xs={12} style={{alignItems: 'center'}}>
+                  <Grid className='c-p5 ' marginRight='10px'>
+                    신청100/12
                   </Grid>
-                  <Grid
-                    item
-                    xs={6}
-                    style={{
-                      textAlign: 'right',
-                      fontWeight: '700',
-                      alignItems: 'center',
-                      margin: 'auto',
-                      fontSize: '18px',
-                    }}
-                  >
-                    50,000P
+                  <Grid>
+                    <Button variant='outlined' className='c-button'>
+                      500P
+                    </Button>
                   </Grid>
                 </Grid>
               </Grid>

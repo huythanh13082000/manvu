@@ -1,13 +1,107 @@
 .block-ellipsis {
   display: -webkit-box;
   max-width: 100%;
-  height: 45px;
-  margin: 8px auto;
-  font-size: 15px;
-  line-height: 1.5;
+  margin-top: 15px;
+  margin-bottom: 10px;
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
   overflow: hidden;
   text-overflow: ellipsis;
-  font-weight: bold;
+  font-weight: 500;
+  font-style: normal;
+  font-size: 16px;
+  line-height: 24px;
+  /* identical to box height, or 150% */
+
+  letter-spacing: 0.1px;
+
+  /* text dark */
+
+  color: #222222;
+}
+.c-p1 {
+  font-style: normal;
+  font-weight: 400 !important;
+  font-size: 13px;
+  line-height: 20px;
+  /* identical to box height, or 154% */
+  letter-spacing: -0.3px;
+  /* dark gray text */
+  color: #4d4d4d;
+}
+.c-p2 {
+  font-style: normal;
+  font-weight: 700 !important;
+  font-size: 13px;
+  line-height: 20px;
+  /* identical to box height, or 154% */
+  letter-spacing: -0.3px;
+  /* text dark */
+  color: #222222;
+}
+.c-p3 {
+  font-style: normal;
+  font-weight: 500 !important;
+  font-size: 16px;
+  line-height: 24px;
+  /* identical to box height, or 150% */
+
+  letter-spacing: 0.1px;
+
+  /* text dark */
+
+  color: #222222;
+}
+.c-p4 {
+  font-style: normal;
+  font-weight: 400 !important;
+  font-size: 12px;
+  line-height: 20px;
+  /* identical to box height, or 167% */
+
+  letter-spacing: 0.1px;
+
+  color: #585858;
+}
+.c-p5 {
+  font-style: normal;
+  font-weight: 700 !important;
+  font-size: 12px;
+  line-height: 20px;
+  /* identical to box height, or 167% */
+
+  letter-spacing: 0.1px;
+
+  /* text dark */
+
+  color: #222222;
+}
+.c-button {
+  font-style: normal;
+  font-weight: 700 !important;
+  font-size: 12px !important;
+  line-height: 20px !important;
+  /* identical to box height, or 167% */
+
+  letter-spacing: 0.1px;
+
+  /* Primary 1 – #0065F2 */
+
+  color: #0078ff !important;
+}
+.c-grid-heart {
+  height: 38px !important;
+  width: 36px !important;
+  background-image: url('/public/img/Ellipse 430.png') !important;
+}
+.c-span1 {
+  position: absolute;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 26px;
+  /* identical to box height */
+  color: #ffffff;
+  top: 13%;
+  left: 37%;
 }
