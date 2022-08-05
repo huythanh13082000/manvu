@@ -1,0 +1,36 @@
+.h-grid-img {
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.h-p1 {
+  font-style: normal;
+  font-weight: 500;
+  font-size: 28px;
+  line-height: 44px;
+  /* identical to box height, or 157% */
+
+  /* text dark */
+
+  color: #222222;
+}
+.h-p2 {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  /* identical to box height, or 150% */
+
+  /* dark gray text */
+
+  color: #4d4d4d;
+}
+.h-p3 {
+  font-style: normal;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 24px;
+  /* identical to box height, or 150% */
+  display: flex;
+  color: #292929;
+  align-items: center;
+}
