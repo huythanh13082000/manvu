@@ -33,7 +33,6 @@ const Register = () => {
         </Grid>
         <Grid item xs={12} className='r-grid-img' container>
           <UploadFile />
-
           <Grid item xs={12}>
             <p className='r-p3'>계정이름...</p>
           </Grid>

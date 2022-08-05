@@ -1,4 +1,3 @@
-import App from '../App'
 import Login from '../components/login'
 import ForgotPW from '../components/ForgotPassword'
 import NotFound from '../components/notfound'
@@ -10,12 +9,6 @@ import Home from '../pages/home'
 import Service from '../pages/Service'
 import Store from '../pages/store'
 const routes: Array<MyRouteProp> = [
-  {
-    path: '/',
-    element: <App />,
-    private: true,
-    roles: ['admin', 'user'],
-  },
   {
     path: '/login',
     element: <Login />,

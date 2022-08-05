@@ -32,7 +32,7 @@ export default function CardBase(props: Props = {}) {
           <CardActionArea style={{fontFamily: 'Noto Sans KR'}}>
             <CardMedia
               component='img'
-              height={props.width}
+              height={props.width ? '180px' : ''}
               width={props.width}
               image='/img/img3.png'
               alt='green iguana'
@@ -101,7 +101,7 @@ export default function CardBase(props: Props = {}) {
                   container
                   xs={12}
                   style={{alignItems: 'center'}}
-                  marginBottom='1rem'
+                  // marginBottom='1rem'
                 >
                   <Grid className='c-p5 ' marginRight='10px'>
                     신청100/12
