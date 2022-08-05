@@ -34,3 +34,57 @@
   color: #292929;
   align-items: center;
 }
+.h-p4 {
+  font-style: normal;
+  font-weight: 500;
+  font-size: 48px;
+  line-height: 44px;
+  /* identical to box height, or 92% */
+
+  /* Primary 2 – #015BD7 */
+
+  color: #015bd7;
+}
+.h-p5 {
+  font-style: normal;
+  font-weight: 500;
+  font-size: 28px;
+  line-height: 44px;
+  /* identical to box height, or 157% */
+
+  /* text dark */
+
+  color: #222222;
+}
+.h-p6 {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  /* identical to box height, or 150% */
+
+  /* dark gray text */
+  padding: 0;
+  color: #4d4d4d;
+}
+.h-load-more {
+  font-style: normal;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 24px;
+  /* identical to box height, or 150% */
+
+  /* dark gray text */
+
+  color: #4d4d4d !important;
+  width: 100%;
+  height: 56px;
+  background-color: #eaeaea;
+  border: #eaeaea !important;
+}
+.h-button {
+  background: #0078ff;
+  border-radius: 5px;
+  width: 196px;
+  height: 48px;
+}
