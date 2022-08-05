@@ -18,7 +18,7 @@ export default function CardBase(props: Props = {}) {
         style={{
           position: 'relative',
           width: props.width || '315px',
-          margin: '0 1rem',
+          margin: '0 0.5rem',
         }}
       >
         {/* <Loading /> */}
