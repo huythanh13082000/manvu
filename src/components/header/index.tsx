@@ -25,6 +25,9 @@ export default function Header() {
   const handleClose = () => {
     setIsSearch(false)
   }
+  const handleClickItemMenu = (params: string) => {
+    navigate(params)
+  }
   return (
     <Grid
       style={{
@@ -121,10 +124,16 @@ export default function Header() {
                       fontFamily: 'Noto Sans KR',
                     }}
                   >
-                    <li className='h-li'>
+                    <li
+                      className='h-li'
+                      onClick={() => handleClickItemMenu('/home')}
+                    >
                       지역 <KeyboardArrowDownSharpIcon />
                     </li>
-                    <li className='h-li'>
+                    <li
+                      className='h-li'
+                      onClick={() => handleClickItemMenu('/service')}
+                    >
                       서비스 <KeyboardArrowDownSharpIcon />
                     </li>
                     <li className='h-li'>

@@ -7,6 +7,8 @@ import TermsOfUse from '../components/TermsOfUse'
 import RegisterAccount from '../components/RegisterAccount'
 import Register from '../components/register'
 import Home from '../pages/home'
+import Service from '../pages/Service'
+import Store from '../pages/store'
 const routes: Array<MyRouteProp> = [
   {
     path: '/',
@@ -48,6 +50,18 @@ const routes: Array<MyRouteProp> = [
   {
     path: '/home',
     element: <Home />,
+    private: true,
+    roles: ['admin', 'user'],
+  },
+  {
+    path: '/service',
+    element: <Service />,
+    private: true,
+    roles: ['admin', 'user'],
+  },
+  {
+    path: '/store',
+    element: <Store />,
     private: true,
     roles: ['admin', 'user'],
   },
