@@ -24,6 +24,7 @@ function UploadFile() {
                 color='primary'
                 aria-label='upload picture'
                 component='label'
+                style={{position: 'relative'}}
               >
                 <input
                   hidden
