@@ -1,41 +1,28 @@
 import {Box, Grid, IconButton} from '@mui/material'
 import React, {useState} from 'react'
-import './UploadFile.css'
+import './UploadImg.css'
 
 function UploadFile() {
-  const [file, setFile] = useState('')
+  const [file, setFile] = useState<string[]>([])
   // const [text, setText] = useState('')
 
   function handleChange(e: any) {
     let url = URL.createObjectURL(e.target.files[0])
-    setFile(url)
-    console.log(url)
+    let ArrayImg: string[]
+    ArrayImg = [...file]
+    ArrayImg.push(url)
+    setFile(ArrayImg)
   }
+  console.log(file)
   return (
     <Box component='main' width='auto' height='auto'>
       <Box>
-        <Grid>
-          <Grid className='Ul-img' style={{backgroundImage: `url(${file})`}}>
-            {file.length > 0 && (
-              <>
-                {/* <CardActionArea> */}
-                {/* <CardMedia
-                  component='img'
-                  alt='Contemplative Reptile'
-                  height='140'
-                  image={file}
-                  title='Contemplative Reptile'
-                  style={{borderRadius: '50%'}}
-                /> */}
-                {/* </CardActionArea> */}
-              </>
-            )}
+        <Grid container item xs={12} spacing={1}>
+          <Grid className='ULI-img' item xs={3}>
             <Grid
-              className='Ul-iconButton'
+              className='ULI-iconButton'
               style={{
-                backgroundImage: `url(${
-                  file && '/public/img/Ellipse 434.png'
-                })`,
+                backgroundImage: `url(${'/public/img/Ellipse 434.png'})`,
               }}
             >
               <IconButton
@@ -50,7 +37,7 @@ function UploadFile() {
                   name='upload-photo'
                   onChange={handleChange}
                 />
-                <Grid className='Ul-grid-icon' margin='auto'>
+                <Grid className='ULI-grid-icon' margin='auto'>
                   {/* <PhotoCameraOutlinedIcon className='Ul-icon-upload' /> */}
                   <img
                     src='/img/Upload.png'
@@ -61,6 +48,28 @@ function UploadFile() {
               </IconButton>
             </Grid>
           </Grid>
+          {file.length > 0 && (
+            <>
+              {file.map((item) => {
+                return (
+                  <Grid item xs={3}>
+                    <img src={item} alt={item} style={{width: '100%'}} />
+                  </Grid>
+                )
+              })}
+
+              {/* <CardActionArea> */}
+              {/* <CardMedia
+                  component='img'
+                  alt='Contemplative Reptile'
+                  height='140'
+                  image={file}
+                  title='Contemplative Reptile'
+                  style={{borderRadius: '50%'}}
+                /> */}
+              {/* </CardActionArea> */}
+            </>
+          )}
         </Grid>
       </Box>
     </Box>

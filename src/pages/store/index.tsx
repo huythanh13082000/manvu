@@ -10,6 +10,8 @@ import Campaign from '../campaign'
 import LayOut from '../layout'
 import PointManagement from '../PointManagement'
 import Notice from '../Notice'
+import FAQ from '../FAQ'
+import Request from '../Request'
 
 interface TabPanelProps {
   children?: React.ReactNode
@@ -152,7 +154,13 @@ export default function VerticalTabs() {
                   <Notice />
                 </TabPanelCustom>
                 <TabPanelCustom value={value} index={4}>
-                  Item Five
+                  <Request />
+                </TabPanelCustom>
+                <TabPanelCustom value={value} index={5}>
+                  <FAQ />
+                </TabPanelCustom>
+                <TabPanelCustom value={value} index={6}>
+                  Item Five223
                 </TabPanelCustom>
               </Grid>
             </Grid>

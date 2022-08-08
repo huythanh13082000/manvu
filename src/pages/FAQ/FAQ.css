@@ -1,0 +1,36 @@
+.FAQ-title {
+  font-family: 'Noto Sans KR';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 32px;
+  /* identical to box height, or 133% */
+
+  /* text dark */
+
+  color: #222222;
+}
+.FAQ-p1 {
+  font-family: 'Noto Sans KR';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  margin: 0;
+  /* identical to box height, or 150% */
+
+  /* text dark */
+
+  color: #222222;
+}
+.FAQ-p2 {
+  font-family: 'Noto Sans KR';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 13px;
+  line-height: 19px;
+  /* identical to box height */
+  /* dark gray text */
+  margin: 0;
+  color: #4d4d4d;
+}

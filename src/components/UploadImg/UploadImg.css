@@ -1,0 +1,19 @@
+.ULI-img {
+  border: 1.5px dashed #e1e1e1;
+  position: relative;
+  background-size: cover !important;
+  background-repeat: no-repeat !important;
+  height: 113px;
+}
+.ULI-grid-icon{
+  background-color: #D9D9D9;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+
+}
+.ULI-iconButton{
+  position: absolute;
+  bottom: 30%;
+  right:30%;
+}
