@@ -1,0 +1,94 @@
+.pd-title {
+  font-style: normal;
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 40px;
+  /* identical to box height, or 167% */
+
+  /* text dark */
+
+  color: #222222;
+}
+.pd-p1 {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  /* identical to box height, or 150% */
+
+  color: #585858;
+}
+.pd-p2 {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 20px;
+  /* identical to box height, or 167% */
+
+  letter-spacing: 0.1px;
+
+  color: #585858;
+}
+.pd-p-load-more {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 700;
+  font-size: 15px;
+  line-height: 24px;
+  /* identical to box height, or 160% */
+  color: #292929;
+}
+.pd-p3 {
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 24px;
+  /* identical to box height, or 150% */
+
+  /* text dark */
+  margin: 0;
+  color: #222222;
+}
+.pd-p4 {
+  margin: 0;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 18px;
+  /* identical to box height, or 150% */
+
+  color: #585858;
+}
+.pd-p5 {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  /* identical to box height, or 150% */
+
+  color: #585858;
+}
+.pd-p6 {
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 24px;
+  /* identical to box height, or 150% */
+
+  /* text dark */
+
+  color: #222222;
+}
+.pd-button {
+  font-style: normal;
+  font-weight: 700 !important;
+  font-size: 15px;
+  line-height: 22px;
+  height: 48px;
+  /* identical to box height, or 147% */
+
+  /* Light – #FFFFFF */
+  color: #ffffff !important;
+  background-color: #0078ff !important;
+}

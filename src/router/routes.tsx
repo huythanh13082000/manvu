@@ -8,6 +8,8 @@ import Register from '../components/register'
 import Home from '../pages/home'
 import Service from '../pages/Service'
 import Store from '../pages/store'
+import ProductDatail from '../pages/ProductDetail'
+import CreateCampaign from '../pages/CreateCampaign'
 const routes: Array<MyRouteProp> = [
   {
     path: '/login',
@@ -35,6 +37,11 @@ const routes: Array<MyRouteProp> = [
     element: <Register />,
     private: false,
   },
+  {
+    path: '/productdetail',
+    element: <ProductDatail />,
+    private: false,
+  },
   // {
   //   path: '/register',
   //   element: <Register />,
@@ -55,6 +62,12 @@ const routes: Array<MyRouteProp> = [
   {
     path: '/store',
     element: <Store />,
+    private: true,
+    roles: ['admin', 'user'],
+  },
+  {
+    path: '/createcampaign',
+    element: <CreateCampaign />,
     private: true,
     roles: ['admin', 'user'],
   },

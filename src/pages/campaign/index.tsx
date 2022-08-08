@@ -1,4 +1,6 @@
+import {Add} from '@mui/icons-material'
 import {
+  Button,
   Checkbox,
   FormControl,
   Grid,
@@ -11,14 +13,19 @@ import {
   Tabs,
 } from '@mui/material'
 import React, {useState} from 'react'
+import {useNavigate} from 'react-router-dom'
 import CardBase from '../../components/card'
 import './campaign.css'
 
 const Campaign = () => {
   const [value, setValue] = React.useState(0)
+  const navigate = useNavigate()
   const [selected, setSelected] = useState<any>([])
   const handleChange = (event: React.SyntheticEvent, newValue: number) => {
     setValue(newValue)
+  }
+  const handleCreateCP = () => {
+    navigate('/createcampaign')
   }
   const options: string[] = [
     'Blog',
@@ -41,7 +48,17 @@ const Campaign = () => {
 
   return (
     <Grid>
-      <p className='cp-title'>나의 캠페인</p>
+      <Grid container justifyContent='space-between'>
+        <p className='cp-title'>나의 캠페인</p>
+        <Button
+          variant='outlined'
+          className='cp-button'
+          onClick={handleCreateCP}
+        >
+          <Add /> 캠페인을 생성
+        </Button>
+      </Grid>
+
       <Tabs
         onChange={handleChange}
         value={value}

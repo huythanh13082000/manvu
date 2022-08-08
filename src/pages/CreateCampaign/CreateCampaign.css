@@ -1,0 +1,49 @@
+.ccp-title {
+  font-style: normal;
+  font-weight: 700 !important;
+  font-size: 20px;
+  line-height: 32px;
+  /* identical to box height, or 160% */
+
+  display: flex;
+  align-items: center;
+  letter-spacing: -0.1px;
+
+  /* text dark */
+
+  color: #222222;
+}
+.ccp-input {
+  font-style: normal;
+  font-weight: 500;
+  font-size: 13px;
+  line-height: 19px;
+  /* identical to box height */
+
+  /* dark gray text */
+
+  color: #4d4d4d;
+}
+.ccp-textarea {
+  width: 95%;
+  padding: 1.2rem 1rem;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 20px;
+  /* identical to box height, or 143% */
+
+  /* color: #b5b5b5 !important; */
+  border: 1px solid #cfcfcf;
+}
+.ccp-p1 {
+  font-style: normal;
+  font-weight: 500;
+  font-size: 13px;
+  line-height: 19px;
+  /* identical to box height */
+
+  /* text dark */
+
+  color: #222222;
+}
