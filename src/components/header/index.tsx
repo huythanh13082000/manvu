@@ -36,7 +36,7 @@ export default function Header() {
         left: 0,
         right: 0,
         backgroundColor: 'white',
-        zIndex: '9999',
+        zIndex: '99',
       }}
     >
       <Box sx={{flexGrow: 1}}>

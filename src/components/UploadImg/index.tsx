@@ -17,14 +17,9 @@ function UploadFile() {
   return (
     <Box component='main' width='auto' height='auto'>
       <Box>
-        <Grid container item xs={12} spacing={1}>
-          <Grid className='ULI-img' item xs={3}>
-            <Grid
-              className='ULI-iconButton'
-              style={{
-                backgroundImage: `url(${'/public/img/Ellipse 434.png'})`,
-              }}
-            >
+        <Grid container item xs={12}>
+          <Grid className='ULI-img' item xs={3} paddingRight='0.5rem'>
+            <Grid item xs={12} className='ULI-iconButton'>
               <IconButton
                 color='primary'
                 aria-label='upload picture'
@@ -40,9 +35,10 @@ function UploadFile() {
                 <Grid className='ULI-grid-icon' margin='auto'>
                   {/* <PhotoCameraOutlinedIcon className='Ul-icon-upload' /> */}
                   <img
-                    src='/img/Upload.png'
+                    src='/img/addImg.png'
                     alt='upload'
-                    style={{marginBottom: '4px'}}
+                    style={{width: '50px'}}
+                    // style={{marginBottom: '4px'}}
                   />
                 </Grid>
               </IconButton>
@@ -52,8 +48,15 @@ function UploadFile() {
             <>
               {file.map((item) => {
                 return (
-                  <Grid item xs={3}>
-                    <img src={item} alt={item} style={{width: '100%'}} />
+                  <Grid item xs={3} padding='0 0.25rem'>
+                    <img
+                      src={item}
+                      alt={item}
+                      style={{
+                        width: '100%',
+                        height: '113px',
+                      }}
+                    />
                   </Grid>
                 )
               })}

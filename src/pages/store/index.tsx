@@ -76,7 +76,7 @@ export default function VerticalTabs() {
             <Grid item xs={12} container>
               <Grid item xs={4} style={{borderRight: '1px solid #E1E1E1'}}>
                 <Grid item xs={12} container>
-                  <Grid item xs={2}></Grid>
+                  <Grid item xs={1}></Grid>
                   <Grid item xs={3}>
                     <UploadFile />
                   </Grid>
