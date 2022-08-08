@@ -1,0 +1,85 @@
+.wm-title {
+  font-family: 'Noto Sans KR';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 32px;
+  /* identical to box height, or 133% */
+  letter-spacing: -0.1px;
+
+  color: #111111;
+}
+.wm-p1 {
+  font-family: 'Noto Sans KR';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  /* identical to box height, or 150% */
+
+  /* dark gray text */
+
+  color: #4d4d4d;
+}
+.wm-p2 {
+  font-family: 'Noto Sans KR';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 13px;
+  line-height: 18px;
+  /* identical to box height, or 138% */
+
+  /* text dark */
+
+  color: #222222;
+}
+.wm-p3 {
+  font-family: 'Noto Sans KR';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 13px;
+  line-height: 18px;
+  /* identical to box height, or 138% */
+
+  /* text dark */
+
+  color: #222222;
+  margin: 0;
+}
+.wm-p4 {
+  font-family: 'Noto Sans KR';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 24px;
+  /* identical to box height, or 150% */
+
+  letter-spacing: 0.1px;
+
+  /* dark gray text */
+
+  color: #4d4d4d;
+  margin: 0;
+}
+.wm-grid1 {
+  background-image: url('/public/img/wm-img.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.wm-button {
+  height: 56px;
+
+  /* Primary 1 – #0065F2 */
+
+  background: #0078ff !important;
+  width: 100%;
+  font-family: 'Noto Sans KR';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 15px;
+  line-height: 22px;
+  /* identical to box height, or 147% */
+  /* Light – #FFFFFF */
+
+  color: #ffffff;
+}

@@ -10,6 +10,7 @@ import Service from '../pages/Service'
 import Store from '../pages/store'
 import ProductDatail from '../pages/ProductDetail'
 import CreateCampaign from '../pages/CreateCampaign'
+import WithdrawMoney from '../pages/WithdrawMoney'
 const routes: Array<MyRouteProp> = [
   {
     path: '/login',
@@ -75,6 +76,11 @@ const routes: Array<MyRouteProp> = [
   {
     path: '/notfound',
     element: <NotFound />,
+    private: false,
+  },
+  {
+    path: '/WithdrawMoney',
+    element: <WithdrawMoney />,
     private: false,
   },
 ]

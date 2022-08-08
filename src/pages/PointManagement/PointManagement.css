@@ -1,0 +1,65 @@
+.pm-grid-border {
+  border: 1px solid #e1e1e1;
+}
+.pm-grid-point-current {
+  text-align: center;
+  border: 1px solid #e1e1e1;
+  border-radius: 5px;
+  padding-bottom: 1rem;
+}
+.pm-grid-button-point-current {
+  width: 112px;
+  height: 36px;
+
+  /* Primary 1 – #0065F2 */
+
+  background: #0078ff;
+}
+.pm-grid-p1-point-current {
+  font-style: normal;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 32px;
+  /* identical to box height, or 133% */
+  color: #6d00c3;
+}
+.pm-grid-p2-point-current {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 17px;
+
+  color: #585858;
+}
+.pm-grid1-point-current {
+  padding: 1.5rem;
+  border: 1px solid #e1e1e1;
+  font-family: 'Noto Sans KR';
+}
+.pm-p3-point-current {
+  /* font-family: 'Noto Sans KR'; */
+  font-style: normal;
+  font-weight: 700;
+  font-size: 15px;
+  line-height: 22px;
+  /* identical to box height, or 147% */
+
+  /* text dark */
+
+  color: #222222;
+}
+.pm-p4-point-current {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 13px;
+  line-height: 15px;
+  /* or 115% */
+
+  display: flex;
+  align-items: center;
+  letter-spacing: 0.1px;
+
+  /* dark gray text */
+
+  color: #4d4d4d;
+}

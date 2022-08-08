@@ -8,6 +8,8 @@ import UploadFile from '../../components/UploadFile'
 import './Store.css'
 import Campaign from '../campaign'
 import LayOut from '../layout'
+import PointManagement from '../PointManagement'
+import Notice from '../Notice'
 
 interface TabPanelProps {
   children?: React.ReactNode
@@ -44,7 +46,15 @@ function a11yProps(index: number) {
 
 export default function VerticalTabs() {
   const [value, setValue] = React.useState(0)
-
+  const styleTab = {
+    fontFamily: 'Noto Sans KR',
+    fontStyle: 'normal',
+    fontWeight: 400,
+    fontSize: '16px',
+    lineHeight: '24px',
+    color: '#585858',
+    padding: '1.2rem 0',
+  }
   const handleChange = (event: React.SyntheticEvent, newValue: number) => {
     setValue(newValue)
   }
@@ -90,35 +100,56 @@ export default function VerticalTabs() {
                     label='나의 캠페인'
                     {...a11yProps(0)}
                     className='s-tab'
+                    sx={{...styleTab}}
                   />
                   <Tab
                     label='개인정보수정'
                     {...a11yProps(1)}
                     className='s-tab'
+                    sx={{...styleTab}}
                   />
                   <Tab
                     label='포인트 관리'
                     {...a11yProps(2)}
                     className='s-tab'
+                    sx={{...styleTab}}
                   />
-                  <Tab label='공지사항' {...a11yProps(3)} className='s-tab' />
-                  <Tab label='1:1문의' {...a11yProps(4)} className='s-tab' />
-                  <Tab label='완료' {...a11yProps(5)} className='s-tab' />
-                  <Tab label='설정' {...a11yProps(6)} className='s-tab' />
+                  <Tab
+                    label='공지사항'
+                    {...a11yProps(3)}
+                    className='s-tab'
+                    sx={{...styleTab}}
+                  />
+                  <Tab
+                    label='1:1문의'
+                    {...a11yProps(4)}
+                    className='s-tab'
+                    sx={{...styleTab}}
+                  />
+                  <Tab
+                    label='완료'
+                    {...a11yProps(5)}
+                    className='s-tab'
+                    sx={{...styleTab}}
+                  />
+                  <Tab
+                    label='설정'
+                    {...a11yProps(6)}
+                    className='s-tab'
+                    sx={{...styleTab}}
+                  />
                 </Tabs>
               </Grid>
               <Grid item xs={8}>
                 <TabPanelCustom value={value} index={0}>
                   <Campaign />
                 </TabPanelCustom>
-                <TabPanelCustom value={value} index={1}>
-                  Item Two
-                </TabPanelCustom>
+                <TabPanelCustom value={value} index={1}></TabPanelCustom>
                 <TabPanelCustom value={value} index={2}>
-                  Item Three
+                  <PointManagement />
                 </TabPanelCustom>
                 <TabPanelCustom value={value} index={3}>
-                  Item Four
+                  <Notice />
                 </TabPanelCustom>
                 <TabPanelCustom value={value} index={4}>
                   Item Five

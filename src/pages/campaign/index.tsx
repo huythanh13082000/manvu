@@ -24,6 +24,15 @@ const Campaign = () => {
   const handleChange = (event: React.SyntheticEvent, newValue: number) => {
     setValue(newValue)
   }
+  const styleTab = {
+    fontFamily: 'Noto Sans KR',
+    fontStyle: 'normal',
+    fontWeight: 400,
+    fontSize: '16px',
+    lineHeight: '24px',
+    color: '#585858',
+    padding: '0.5rem 3rem',
+  }
   const handleCreateCP = () => {
     navigate('/createcampaign')
   }
@@ -65,11 +74,11 @@ const Campaign = () => {
         aria-label='Tabs where each tab needs to be selected manually'
         style={{borderBottom: '1px solid #C4C4C4'}}
       >
-        <Tab label='신청' style={{margin: '0 2rem'}} />
-        <Tab label='선정' style={{margin: '0 2rem'}} />
-        <Tab label='등록' style={{margin: '0 2rem'}} />
-        <Tab label='수정요청' style={{margin: '0 2rem'}} />
-        <Tab label='종료' style={{margin: '0 2rem'}} />
+        <Tab label='신청' style={{...styleTab}} />
+        <Tab label='선정' style={{...styleTab}} />
+        <Tab label='등록' style={{...styleTab}} />
+        <Tab label='수정요청' style={{...styleTab}} />
+        <Tab label='종료' style={{...styleTab}} />
       </Tabs>
       {value === 0 ? (
         <>
