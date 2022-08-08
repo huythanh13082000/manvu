@@ -3,12 +3,12 @@
   position: relative;
   background-size: cover !important;
   background-repeat: no-repeat !important;
-  width: 100%;
-  height: 113px;
+  width: 110px;
+  height: 110px;
   
 }
 .ULI-iconButton{
   position: absolute;
-  bottom: 15%;
-  right:25%;
+  bottom: 12%;
+  right:20%;
 }

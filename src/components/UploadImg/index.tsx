@@ -18,7 +18,7 @@ function UploadFile() {
     <Box component='main' width='auto' height='auto'>
       <Box>
         <Grid container item xs={12}>
-          <Grid className='ULI-img' item xs={3} paddingRight='0.5rem'>
+          <Grid className='ULI-img' borderRadius='8px' marginRight='0.8rem'>
             <Grid item xs={12} className='ULI-iconButton'>
               <IconButton
                 color='primary'
@@ -49,13 +49,15 @@ function UploadFile() {
             <>
               {file.map((item) => {
                 return (
-                  <Grid item xs={3} padding='0 0.25rem'>
+                  <Grid>
                     <img
                       src={item}
                       alt={item}
                       style={{
-                        width: '100%',
-                        height: '113px',
+                        width: '110px',
+                        height: '110px',
+                        borderRadius: '8px',
+                        marginRight: '0.8rem',
                       }}
                     />
                   </Grid>

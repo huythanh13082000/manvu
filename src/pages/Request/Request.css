@@ -68,9 +68,37 @@
   line-height: 24px;
   /* identical to box height, or 150% */
 
-
   /* Neutral / 2 */
-  border-bottom: 1px solid #E1E1E1;
+  border-bottom: 1px solid #e1e1e1;
   color: #2d2f31;
   padding-bottom: 1rem;
+}
+.rq-p4 {
+  font-family: 'Noto Sans KR';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 20px;
+  /* identical to box height, or 143% */
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  /* Neutral / 2 */
+  width: 100px;
+  color: #2d2f31;
+}
+.rq-p5 {
+  font-family: 'Noto Sans KR';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 20px;
+  /* identical to box height, or 143% */
+  margin: 0;
+  color: #ff0000;
+  display: flex;
+  width: 100px;
+  align-items: center;
+  justify-content: space-between;
 }

@@ -45,28 +45,37 @@ const BootstrapDialogTitle = (props: DialogTitleProps) => {
             color: (theme) => theme.palette.grey[500],
           }}
         >
-          <CloseIcon />
+          <CloseIcon
+            style={{
+              border: '2px solid #4D4D4D',
+              padding: '2px',
+              borderRadius: '50%',
+            }}
+          />
         </IconButton>
       ) : null}
     </DialogTitle>
   )
 }
 
-export default function DialogRequest() {
-  const [open, setOpen] = React.useState(false)
+export default function DialogRequest(Props: {
+  open: boolean
+  setOpenDialog: Function
+}) {
+  const [open, setOpen] = React.useState(Props.open)
+  React.useEffect(() => {
+    setOpen(Props.open)
+  }, [Props.open])
 
-  const handleClickOpen = () => {
-    setOpen(true)
-  }
   const handleClose = () => {
-    setOpen(false)
+    Props.setOpenDialog()
   }
-
+  console.log(666, Props.open)
   return (
     <div>
-      <Button variant='outlined' onClick={handleClickOpen}>
+      {/* <Button variant='outlined' onClick={handleClickOpen}>
         Open dialog
-      </Button>
+      </Button> */}
       <BootstrapDialog
         onClose={handleClose}
         aria-labelledby='customized-dialog-title'

@@ -1,12 +1,28 @@
 import {Add} from '@mui/icons-material'
-import {Button, Grid} from '@mui/material'
-import React from 'react'
+import {Button, Grid, Menu, MenuItem} from '@mui/material'
+import React, {useState} from 'react'
 import CardRequest from '../../components/CardRequest'
 import MoreVertOutlinedIcon from '@mui/icons-material/MoreVertOutlined'
 import './Request.css'
 import DialogRequest from './Dialog'
+import DeleteSweepOutlinedIcon from '@mui/icons-material/DeleteSweepOutlined'
+import ModeEditOutlineOutlinedIcon from '@mui/icons-material/ModeEditOutlineOutlined'
 
 const Request = () => {
+  const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null)
+  const open = Boolean(anchorEl)
+  const [openDialog, setOpenDialog] = useState(false)
+  const handleClick = (event: React.MouseEvent<HTMLElement>) => {
+    setAnchorEl(event.currentTarget)
+  }
+  const handleClose = () => {
+    setAnchorEl(null)
+    setOpenDialog(true)
+  }
+  const setStateOpenDialog = () => {
+    setOpenDialog(false)
+  }
+  console.log(3333, openDialog)
   return (
     <Grid container>
       <Grid item xs={5} container borderRight='1px solid #E1E1E1'>
@@ -98,16 +114,52 @@ const Request = () => {
               <p className='rq-p2'>2021-06-05</p>
             </Grid>
           </Grid>
-          <Grid item xs={1}>
-            <p>
+          <Grid item xs={2}>
+            <Button
+              id='demo-positioned-button'
+              aria-controls={open ? 'demo-positioned-menu' : undefined}
+              aria-haspopup='true'
+              aria-expanded={open ? 'true' : undefined}
+              onClick={handleClick}
+            >
               <MoreVertOutlinedIcon style={{color: '#677294', width: '20px'}} />
-            </p>
+            </Button>
+
+            <Menu
+              id='demo-positioned-menu'
+              aria-labelledby='demo-positioned-button'
+              anchorEl={anchorEl}
+              open={open}
+              onClose={handleClose}
+              anchorOrigin={{
+                vertical: 'top',
+                horizontal: 'left',
+              }}
+              transformOrigin={{
+                vertical: 'top',
+                horizontal: 'left',
+              }}
+            >
+              <MenuItem
+                onClick={handleClose}
+                style={{borderBottom: '1px solid #D5D5DE'}}
+              >
+                <p className='rq-p4'>
+                  수정 <ModeEditOutlineOutlinedIcon />
+                </p>
+              </MenuItem>
+              <MenuItem onClick={handleClose}>
+                <p className='rq-p5'>
+                  지우기 <DeleteSweepOutlinedIcon />
+                </p>
+              </MenuItem>
+            </Menu>
           </Grid>
         </Grid>
         <p className='rq-p3'>
           아까 입금했는데 이기명이름으로 30만원했어요 확인해주 세요.
         </p>
-        <DialogRequest />
+        <DialogRequest open={openDialog} setOpenDialog={setStateOpenDialog} />
       </Grid>
     </Grid>
   )
