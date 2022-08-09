@@ -5,7 +5,6 @@ import TermsOfUse from '../components/TermsOfUse'
 import Home from '../pages/home'
 import Service from '../pages/Service'
 import MyCampaign from '../pages/MyCampaign'
-import ProductDatail from '../pages/ProductDetail'
 import CreateCampaign from '../pages/CreateCampaign'
 import WithdrawMoney from '../pages/WithdrawMoney'
 import RegisterCompany from '../pages/RegisterCompany'
@@ -13,41 +12,43 @@ import Login from '../pages/login'
 import Register from '../pages/Register'
 import RegisterAccount from '../pages/RegisterAccount'
 import CompanyCampaigns from '../pages/CompanyCampaigns'
+import ProductDetail from '../pages/ProductDetail'
+import {Url} from '../contains'
 const routes: Array<MyRouteProp> = [
   {
-    path: '/login',
+    path: Url.login,
     element: <Login />,
     private: false,
     roles: ['user', 'admin', 'super'],
   },
   {
-    path: '/login/forgotpassword',
+    path: Url.forgotpassword,
     element: <ForgotPW />,
     private: false,
   },
   {
-    path: '/termsofuse',
+    path: Url.termsofuse,
     element: <TermsOfUse />,
     private: false,
   },
   {
-    path: '/register',
+    path: Url.register,
     element: <Register />,
     private: false,
   },
   {
-    path: '/registercompany',
+    path: Url.registerCompany,
     element: <RegisterCompany />,
     private: false,
   },
   {
-    path: '/registeraccount',
+    path: Url.registerAccount,
     element: <RegisterAccount />,
     private: false,
   },
   {
-    path: '/productdetail',
-    element: <ProductDatail />,
+    path: Url.productDetail,
+    element: <ProductDetail />,
     private: false,
   },
   {
@@ -57,43 +58,43 @@ const routes: Array<MyRouteProp> = [
     roles: ['admin', 'user'],
   },
   {
-    path: '/home',
+    path: Url.home,
     element: <Home />,
     private: true,
     roles: ['admin', 'user'],
   },
   {
-    path: '/service',
+    path: Url.service,
     element: <Service />,
     private: true,
     roles: ['admin', 'user'],
   },
   {
-    path: '/CompanyCampaigns',
+    path: Url.companyCampaigns,
     element: <CompanyCampaigns />,
     private: true,
     roles: ['admin', 'user'],
   },
   {
-    path: '/MyCampaign',
+    path: Url.MyCampaign,
     element: <MyCampaign />,
     private: true,
     roles: ['admin', 'user'],
   },
   {
-    path: '/createcampaign',
+    path: Url.createCampaign,
     element: <CreateCampaign />,
     private: true,
     roles: ['admin', 'user'],
   },
   {path: '/admin', element: <p>admin</p>, private: true},
   {
-    path: '/notfound',
+    path: Url.notfound,
     element: <NotFound />,
     private: false,
   },
   {
-    path: '/WithdrawMoney',
+    path: Url.WithdrawMoney,
     element: <WithdrawMoney />,
     private: false,
   },

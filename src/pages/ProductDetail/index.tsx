@@ -6,7 +6,7 @@ import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown'
 import CardReview from '../../components/CardReview'
 import CardChannel from '../../components/CardChannel'
 
-const ProductDatail = () => {
+const ProductDetail = () => {
   const [value, setValue] = React.useState(0)
   const handleChange = (event: React.SyntheticEvent, newValue: number) => {
     setValue(newValue)
@@ -14,10 +14,10 @@ const ProductDatail = () => {
   const styleTab = {
     fontFamily: 'Noto Sans KR',
     fontStyle: 'normal',
-    fontWeight: 400,
-    fontSize: '16px',
-    lineHeight: '24px',
-    color: '#585858',
+    fontWeight: 600,
+    fontSize: '15px',
+    lineHeight: '22px',
+    color: '#4D4D4D',
   }
 
   return (
@@ -31,13 +31,13 @@ const ProductDatail = () => {
               <Grid
                 className='r-grid-youtube'
                 textAlign='center'
-                style={{marginRight: '7px'}}
+                style={{marginRight: '7px', width: '30px', height: '30px'}}
                 borderRadius='50%'
               >
                 <img
                   src='/img/youtube.png'
                   alt='facebook'
-                  style={{marginTop: '13px'}}
+                  style={{marginTop: '9px', width: '15px'}}
                 />
               </Grid>
               <Grid>
@@ -51,9 +51,9 @@ const ProductDatail = () => {
                 aria-label='Tabs where each tab needs to be selected manually'
                 style={{borderBottom: '1px solid #C4C4C4'}}
               >
-                <Tab label='캠페인정보' {...styleTab} />
-                <Tab label='신청500/12' {...styleTab} />
-                <Tab label='Review' {...styleTab} />
+                <Tab label='캠페인정보' sx={{...styleTab}} />
+                <Tab label='신청500/12' sx={{...styleTab}} />
+                <Tab label='Review' sx={{...styleTab}} />
               </Tabs>
               {value === 0 ? (
                 <>
@@ -150,4 +150,4 @@ const ProductDatail = () => {
   )
 }
 
-export default ProductDatail
+export default ProductDetail
