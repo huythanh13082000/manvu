@@ -12,6 +12,7 @@ import RegisterCompany from '../pages/RegisterCompany'
 import Login from '../pages/login'
 import Register from '../pages/Register'
 import RegisterAccount from '../pages/RegisterAccount'
+import CompanyCampaigns from '../pages/CompanyCampaigns'
 const routes: Array<MyRouteProp> = [
   {
     path: '/login',
@@ -64,6 +65,12 @@ const routes: Array<MyRouteProp> = [
   {
     path: '/service',
     element: <Service />,
+    private: true,
+    roles: ['admin', 'user'],
+  },
+  {
+    path: '/CompanyCampaigns',
+    element: <CompanyCampaigns />,
     private: true,
     roles: ['admin', 'user'],
   },

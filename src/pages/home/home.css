@@ -33,6 +33,7 @@
   display: flex;
   color: #292929;
   align-items: center;
+  cursor: pointer;
 }
 .h-p4 {
   font-style: normal;
@@ -72,6 +73,7 @@
   font-weight: 700;
   font-size: 16px;
   line-height: 24px;
+  font-family: 'Noto Sans KR !important';
   /* identical to box height, or 150% */
 
   /* dark gray text */

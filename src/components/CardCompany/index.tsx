@@ -2,25 +2,18 @@ import * as React from 'react'
 import Card from '@mui/material/Card'
 import CardContent from '@mui/material/CardContent'
 import CardMedia from '@mui/material/CardMedia'
-import {Button, CardActionArea, Grid} from '@mui/material'
-import './card.css'
-import {useNavigate} from 'react-router-dom'
+import {CardActionArea, Grid} from '@mui/material'
+import './CardCompany.css'
 
 interface Props {
   width?: string
   height?: string
   flag?: boolean
-  heart?: boolean
   index?: number
 }
 
-export default function CardBase(props: Props) {
-  const heart = false
+export default function CardCompany(props: Props) {
   const index = 2
-  const navigate = useNavigate()
-  const handleClickCard = (params: string) => {
-    navigate(params)
-  }
   return (
     <>
       <Grid
@@ -37,7 +30,6 @@ export default function CardBase(props: Props) {
         <Card
           sx={{maxWidth: 317, height: props.height || '466px'}}
           style={{marginTop: '2rem', paddingBottom: '1rem'}}
-          onClick={() => handleClickCard('/productdetail')}
         >
           <CardActionArea style={{fontFamily: 'Noto Sans KR'}}>
             <CardMedia
@@ -54,15 +46,13 @@ export default function CardBase(props: Props) {
               style={{
                 position: 'absolute',
                 top: '1rem',
-                right: '1rem',
-                backgroundColor: heart ? 'white' : 'rgba(17, 17, 17, 0.3)',
+                left: '1rem',
+                backgroundColor: '#FF0000',
+                color: 'white',
               }}
+              alignItems='center'
             >
-              <img
-                src={!heart ? '/img/heart.png' : '/img/heart1.png'}
-                style={{width: '16.67px', height: '14.83px', marginTop: '13px'}}
-                alt='heart'
-              />
+              {index}
             </Grid>
             {props.flag ? (
               <Grid
@@ -107,20 +97,8 @@ export default function CardBase(props: Props) {
                 <Grid item xs={12}>
                   <span>주소</span>
                 </Grid>
-                <Grid
-                  container
-                  xs={12}
-                  style={{alignItems: 'center'}}
-                  // marginBottom='1rem'
-                >
-                  <Grid className='c-p5 ' marginRight='10px'>
-                    신청100/12
-                  </Grid>
-                  <Grid>
-                    <Button variant='outlined' className='c-button'>
-                      500P
-                    </Button>
-                  </Grid>
+                <Grid item xs={12} color='red'>
+                  <p className='c-p6'>[ 완료 ]</p>
                 </Grid>
               </Grid>
             </CardContent>

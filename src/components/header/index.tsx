@@ -136,7 +136,10 @@ export default function Header() {
                     >
                       서비스 <KeyboardArrowDownSharpIcon />
                     </li>
-                    <li className='h-li'>
+                    <li
+                      className='h-li'
+                      onClick={() => handleClickItemMenu('/mycampaign')}
+                    >
                       제품 <KeyboardArrowDownSharpIcon />
                     </li>
                     <li className='h-li'>|</li>

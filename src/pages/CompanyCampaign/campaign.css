@@ -1,0 +1,28 @@
+.cp-title {
+  font-style: normal;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 32px;
+  /* identical to box height, or 133% */
+
+  display: flex;
+  align-items: center;
+  letter-spacing: -0.1px;
+
+  /* text dark */
+
+  color: #222222;
+}
+.cp-button {
+  height: 44px !important;
+  /* Primary 1 – #0065F2 */
+  font-style: normal;
+  font-weight: 500 !important;
+  font-size: 13px;
+  line-height: 19px;
+  /* identical to box height */
+
+  /* Primary 1 – #0065F2 */
+
+  color: #0078ff !important;
+}

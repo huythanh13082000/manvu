@@ -1,0 +1,38 @@
+.ccp-grid-img {
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.ccp-p1 {
+  font-style: normal;
+  font-weight: 700;
+  font-size: 15px;
+  line-height: 22px;
+  /* identical to box height, or 147% */
+
+  /* text dark */
+
+  color: #222222;
+}
+.ccp-p2 {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 17px;
+
+  /* dark gray text */
+
+  color: #4d4d4d;
+}
+.ccp-tab {
+  display: flex !important;
+  align-items: flex-start !important;
+  border-top: 1px solid #e1e1e1 !important;
+  /* border-bottom: 1px solid #e1e1e1 !important; */
+
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  color: #585858 ;
+ 
+}

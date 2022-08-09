@@ -4,13 +4,13 @@ import Tab from '@mui/material/Tab'
 import Typography from '@mui/material/Typography'
 import Box from '@mui/material/Box'
 import {Grid} from '@mui/material'
-import './MyCampaign.css'
-import Campaign from '../campaign'
 import LayOut from '../layout'
 import PointManagement from '../PointManagement'
 import Notice from '../Notice'
 import FAQ from '../FAQ'
 import Request from '../Request'
+import CompanyCampaign from '../CompanyCampaign'
+import './CompanyCampaign.css'
 
 interface TabPanelProps {
   children?: React.ReactNode
@@ -45,7 +45,7 @@ function a11yProps(index: number) {
   }
 }
 
-export default function MyCampaign() {
+export default function CompanyCampaigns() {
   const [value, setValue] = React.useState(0)
   const styleTab = {
     fontFamily: 'Noto Sans KR',
@@ -88,8 +88,8 @@ export default function MyCampaign() {
                   </Grid>
                   <Grid width='1rem'></Grid>
                   <Grid item xs={7}>
-                    <p className='mc-p1'>Duzng Nguyen</p>
-                    <p className='mc-p2'>Duzngnguyen@gmail.com</p>
+                    <p className='ccp-p1'>Fanta VietNam</p>
+                    <p className='ccp-p2'>Duzngnguyen@gmail.com</p>
                   </Grid>
                 </Grid>
                 <Tabs
@@ -108,63 +108,57 @@ export default function MyCampaign() {
                   <Tab
                     label='나의 캠페인'
                     {...a11yProps(0)}
-                    className='mc-tab'
+                    className='ccp-tab'
+                    sx={{...styleTab}}
+                  />
+                  <Tab
+                    label='캠페인 신청접수'
+                    {...a11yProps(1)}
+                    className='ccp-tab'
                     sx={{...styleTab}}
                   />
                   <Tab
                     label='개인정보수정'
-                    {...a11yProps(1)}
-                    className='mc-tab'
-                    sx={{...styleTab}}
-                  />
-                  <Tab
-                    label='포인트 관리'
                     {...a11yProps(2)}
-                    className='mc-tab'
-                    sx={{...styleTab}}
-                  />
-                  <Tab
-                    label='공지사항'
-                    {...a11yProps(3)}
-                    className='mc-tab'
+                    className='ccp-tab'
                     sx={{...styleTab}}
                   />
                   <Tab
                     label='1:1문의'
-                    {...a11yProps(4)}
-                    className='mc-tab'
+                    {...a11yProps(3)}
+                    className='ccp-tab'
                     sx={{...styleTab}}
                   />
                   <Tab
-                    label='완료'
-                    {...a11yProps(5)}
-                    className='mc-tab'
+                    label='FAQ'
+                    {...a11yProps(4)}
+                    className='ccp-tab'
                     sx={{...styleTab}}
                   />
                   <Tab
                     label='설정'
-                    {...a11yProps(6)}
-                    className='mc-tab'
+                    {...a11yProps(5)}
+                    className='ccp-tab'
                     sx={{...styleTab}}
                   />
                 </Tabs>
               </Grid>
               <Grid item xs={8}>
                 <TabPanelCustom value={value} index={0}>
-                  <Campaign />
+                  <CompanyCampaign />
                 </TabPanelCustom>
                 <TabPanelCustom value={value} index={1}></TabPanelCustom>
                 <TabPanelCustom value={value} index={2}>
-                  <PointManagement />
+                  {/* <PointManagement /> */}
                 </TabPanelCustom>
                 <TabPanelCustom value={value} index={3}>
-                  <Notice />
+                  {/* <Notice /> */}
                 </TabPanelCustom>
                 <TabPanelCustom value={value} index={4}>
-                  <Request />
+                  {/* <Request /> */}
                 </TabPanelCustom>
                 <TabPanelCustom value={value} index={5}>
-                  <FAQ />
+                  {/* <FAQ /> */}
                 </TabPanelCustom>
                 <TabPanelCustom value={value} index={6}></TabPanelCustom>
               </Grid>

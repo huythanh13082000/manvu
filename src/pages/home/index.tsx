@@ -69,18 +69,18 @@ const Home = () => {
           justifyContent='space-between'
           padding='0 3rem 2rem 3rem'
         >
-          <CardBase width='255px' height='423px' />
-          <CardBase width='255px' height='423px' />
-          <CardBase width='255px' height='423px' />
-          <CardBase width='255px' height='423px' />
-          <CardBase width='255px' height='423px' />
-          <CardBase width='255px' height='423px' />
-          <CardBase width='255px' height='423px' />
-          <CardBase width='255px' height='423px' />
-          <CardBase width='255px' height='423px' />
-          <CardBase width='255px' height='423px' />
-          <CardBase width='255px' height='423px' />
-          <CardBase width='255px' height='423px' />
+          <CardBase width='255px' height='360px' />
+          <CardBase width='255px' height='360px' />
+          <CardBase width='255px' height='360px' />
+          <CardBase width='255px' height='360px' />
+          <CardBase width='255px' height='360px' />
+          <CardBase width='255px' height='360px' />
+          <CardBase width='255px' height='360px' />
+          <CardBase width='255px' height='360px' />
+          <CardBase width='255px' height='360px' />
+          <CardBase width='255px' height='360px' />
+          <CardBase width='255px' height='360px' />
+          <CardBase width='255px' height='360px' />
           {/* <CardBase width='249px' height='423px' /> */}
         </Grid>
         <Grid item xs={12} padding='0 3rem 2rem 3rem'>
@@ -161,18 +161,18 @@ const Home = () => {
           justifyContent='space-between'
           padding='0 3rem 2rem 3rem'
         >
-          <CardBase width='255px' height='423px' />
-          <CardBase width='255px' height='423px' />
-          <CardBase width='255px' height='423px' />
-          <CardBase width='255px' height='423px' />
-          <CardBase width='255px' height='423px' />
-          <CardBase width='255px' height='423px' />
-          <CardBase width='255px' height='423px' />
-          <CardBase width='255px' height='423px' />
-          <CardBase width='255px' height='423px' />
-          <CardBase width='255px' height='423px' />
-          <CardBase width='255px' height='423px' />
-          <CardBase width='255px' height='423px' />
+          <CardBase width='255px' height='360px' />
+          <CardBase width='255px' height='360px' />
+          <CardBase width='255px' height='360px' />
+          <CardBase width='255px' height='360px' />
+          <CardBase width='255px' height='360px' />
+          <CardBase width='255px' height='360px' />
+          <CardBase width='255px' height='360px' />
+          <CardBase width='255px' height='360px' />
+          <CardBase width='255px' height='360px' />
+          <CardBase width='255px' height='360px' />
+          <CardBase width='255px' height='360px' />
+          <CardBase width='255px' height='360px' />
           {/* <CardBase width='249px' height='423px' /> */}
         </Grid>
         <Grid item xs={12} padding='0 3rem 2rem 3rem'>

@@ -1,8 +1,8 @@
-.s-grid-img {
+.mc-grid-img {
   background-repeat: no-repeat;
   background-size: cover;
 }
-.s-p1 {
+.mc-p1 {
   font-style: normal;
   font-weight: 700;
   font-size: 15px;
@@ -13,7 +13,7 @@
 
   color: #222222;
 }
-.s-p2 {
+.mc-p2 {
   font-style: normal;
   font-weight: 400;
   font-size: 12px;
@@ -23,7 +23,7 @@
 
   color: #4d4d4d;
 }
-.s-tab {
+.mc-tab {
   display: flex !important;
   align-items: flex-start !important;
   border-top: 1px solid #e1e1e1 !important;
