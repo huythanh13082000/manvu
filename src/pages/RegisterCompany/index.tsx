@@ -14,9 +14,7 @@ import React from 'react'
 
 import ForwardToInboxOutlinedIcon from '@mui/icons-material/ForwardToInboxOutlined'
 import './register-company.css'
-import AddIcon from '@mui/icons-material/Add'
 import UploadFile from '../../components/UploadFile'
-import InputPassWord from '../../components/CustomInputBase'
 
 const RegisterCompany = () => {
   const [age, setAge] = React.useState('')

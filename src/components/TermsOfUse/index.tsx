@@ -6,7 +6,7 @@ const TermsOfUse = () => {
   const navigate = useNavigate()
   const label = {inputProps: {'aria-label': 'Checkbox demo'}}
   const handleSubmit = () => {
-    navigate('/registeraccount')
+    navigate('/register')
   }
   return (
     <Grid container justifyContent='center'>

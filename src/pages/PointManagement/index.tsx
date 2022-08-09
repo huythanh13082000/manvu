@@ -1,7 +1,7 @@
 import {Button, Grid, Tab, Tabs} from '@mui/material'
 import React from 'react'
 import ComponentWH from '../../components/ComponentWithdrawalHistory'
-import Point from '../../components/Point'
+import Point from '../../components/CardPoint'
 import './PointManagement.css'
 
 const PointManagement = () => {

@@ -13,7 +13,7 @@ const CustomSelect = () => {
   const [selected, setSelected] = useState<any>([])
   const options: string[] = ['최근순', '추전순']
 
-  const isAllSelected = options.length > 0 && selected.length === options.length
+  // const isAllSelected = options.length > 0 && selected.length === options.length
 
   const handleChangeSelect = (event: any) => {
     const value = event.target.value

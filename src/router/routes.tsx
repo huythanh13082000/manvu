@@ -1,10 +1,7 @@
-import Login from '../components/login'
 import ForgotPW from '../components/ForgotPassword'
 import NotFound from '../components/notfound'
 import MyRouteProp from './MyRouteProp'
 import TermsOfUse from '../components/TermsOfUse'
-import RegisterAccount from '../components/RegisterAccount'
-import Register from '../components/register'
 import Home from '../pages/home'
 import Service from '../pages/Service'
 import Store from '../pages/store'
@@ -12,6 +9,9 @@ import ProductDatail from '../pages/ProductDetail'
 import CreateCampaign from '../pages/CreateCampaign'
 import WithdrawMoney from '../pages/WithdrawMoney'
 import RegisterCompany from '../pages/RegisterCompany'
+import Login from '../pages/login'
+import Register from '../pages/Register'
+import RegisterAccount from '../pages/RegisterAccount'
 const routes: Array<MyRouteProp> = [
   {
     path: '/login',
@@ -30,8 +30,8 @@ const routes: Array<MyRouteProp> = [
     private: false,
   },
   {
-    path: '/registeraccount',
-    element: <RegisterAccount />,
+    path: '/register',
+    element: <Register />,
     private: false,
   },
   {
@@ -40,8 +40,8 @@ const routes: Array<MyRouteProp> = [
     private: false,
   },
   {
-    path: '/register',
-    element: <Register />,
+    path: '/registeraccount',
+    element: <RegisterAccount />,
     private: false,
   },
   {

@@ -1,0 +1,106 @@
+.r-title {
+  font-style: normal;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 32px;
+  /* identical to box height, or 133% */
+
+  letter-spacing: -0.1px;
+
+  color: #111111;
+}
+.r-p1 {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  /* identical to box height, or 150% */
+
+  letter-spacing: 0.1px;
+  margin-top: 0;
+  color: #414141;
+}
+.r-p2 {
+  font-style: normal;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 18px;
+  /* identical to box height, or 112% */
+
+  color: #292929;
+}
+.r-grid-img {
+  border: 1px solid #e1e1e1;
+  border-radius: 5px;
+  height: 234px;
+  width: 422px;
+  justify-content: center;
+  padding: 2.5rem 0;
+}
+.r-p3 {
+  font-style: normal;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 24px;
+  /* identical to box height, or 150% */
+  letter-spacing: 0.1px;
+  text-align: center;
+  color: #b5b5b5;
+}
+.r-p4 {
+  font-style: normal;
+  font-weight: 500;
+  font-size: 13px;
+  line-height: 18px;
+  /* identical to box height, or 138% */
+  color: #414141;
+}
+.r-input {
+  border: #cfcfcf;
+  width: 100%;
+  height: 48px;
+}
+.r-grid-facebook {
+  height: 48px;
+  background-size: cover;
+  width: 48px;
+  background-image: url('/public/img/bg-facebook.png');
+}
+.r-grid-instagram {
+  height: 48px;
+  background-size: cover;
+  width: 48px;
+  background-image: url('/public/img/bg-instagram.png');
+}
+.r-grid-N {
+  height: 48px;
+  background-size: cover;
+  width: 48px;
+  background-image: url('/public/img/N.png');
+}
+.r-grid-tiktok {
+  height: 48px;
+  background-size: cover;
+  width: 48px;
+  background-image: url('/public/img/bg-tiktok.png');
+}
+.r-grid-twitter {
+  height: 48px;
+  background-size: cover;
+  width: 48px;
+  background-image: url('/public/img/bg-twitter.png');
+}
+.r-grid-youtube {
+  height: 48px;
+  background-size: cover;
+  width: 48px;
+  background-image: url('/public/img/bg-youtube.png');
+}
+.r-p5 {
+  font-style: normal;
+  font-weight: 500;
+  font-size: 13px;
+  line-height: 18px;
+  /* identical to box height, or 138% */
+  color: #414141;
+}

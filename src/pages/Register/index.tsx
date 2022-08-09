@@ -1,13 +1,13 @@
 import {Button, Grid} from '@mui/material'
 import React from 'react'
 import ChevronRightIcon from '@mui/icons-material/ChevronRight'
-import './register-account.css'
+import './register.css'
 import {useNavigate} from 'react-router-dom'
 
-const RegisterAccount = () => {
+const Register = () => {
   const navigate = useNavigate()
   const handleSubmit = () => {
-    navigate('/register')
+    navigate('/registeraccount')
   }
   const handleSubmitCompany = () => {
     navigate('/registercompany')
@@ -82,4 +82,4 @@ const RegisterAccount = () => {
   )
 }
 
-export default RegisterAccount
+export default Register
