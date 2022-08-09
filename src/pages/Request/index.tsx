@@ -17,7 +17,6 @@ const Request = () => {
   }
   const handleClose = () => {
     setAnchorEl(null)
-    setOpenDialog(true)
   }
   const setStateOpenDialog = () => {
     setOpenDialog(false)
@@ -141,7 +140,10 @@ const Request = () => {
               }}
             >
               <MenuItem
-                onClick={handleClose}
+                onClick={() => {
+                  handleClose()
+                  setOpenDialog(true)
+                }}
                 style={{borderBottom: '1px solid #D5D5DE'}}
               >
                 <p className='rq-p4'>

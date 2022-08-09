@@ -3,12 +3,23 @@ import React from 'react'
 import LayOut from '../layout'
 import './ProductDetail.css'
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown'
+import CardReview from '../../components/CardReview'
+import CardChannel from '../../components/CardChannel'
 
 const ProductDatail = () => {
   const [value, setValue] = React.useState(0)
   const handleChange = (event: React.SyntheticEvent, newValue: number) => {
     setValue(newValue)
   }
+  const styleTab = {
+    fontFamily: 'Noto Sans KR',
+    fontStyle: 'normal',
+    fontWeight: 400,
+    fontSize: '16px',
+    lineHeight: '24px',
+    color: '#585858',
+  }
+
   return (
     <LayOut>
       <Grid container justifyContent='center' marginTop='4rem'>
@@ -40,14 +51,15 @@ const ProductDatail = () => {
                 aria-label='Tabs where each tab needs to be selected manually'
                 style={{borderBottom: '1px solid #C4C4C4'}}
               >
-                <Tab label='캠페인정보' />
-                <Tab label='신청500/12' />
-                <Tab label='Review' />
+                <Tab label='캠페인정보' {...styleTab} />
+                <Tab label='신청500/12' {...styleTab} />
+                <Tab label='Review' {...styleTab} />
               </Tabs>
               {value === 0 ? (
                 <>
                   <Grid paddingTop='2rem' item xs={12}>
                     <img src='/img/img-product.png' alt='' />
+                    {/* <ControlledAccordions /> */}
                   </Grid>
                   <Grid item xs={12} borderBottom=' 1px solid #E1E1E1'>
                     <p className='pd-p-load-more'>
@@ -56,6 +68,13 @@ const ProductDatail = () => {
                   </Grid>
                 </>
               ) : null}
+              {value === 2 ? (
+                <>
+                  <p>Tất cả bài review</p>
+                  <CardReview />
+                </>
+              ) : null}
+              {value === 1 ? <CardChannel /> : null}
             </Grid>
           </Grid>
           <Grid item xs={4} padding='2rem'>
@@ -121,7 +140,7 @@ const ProductDatail = () => {
                 style={{width: '100%'}}
                 className='pd-button'
               >
-                Contained
+                캠페인 신청하기
               </Button>
             </Grid>
           </Grid>

@@ -49,6 +49,12 @@ const routes: Array<MyRouteProp> = [
   //   private: false,
   // },
   {
+    path: '/',
+    element: <Home />,
+    private: true,
+    roles: ['admin', 'user'],
+  },
+  {
     path: '/home',
     element: <Home />,
     private: true,

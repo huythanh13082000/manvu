@@ -1,0 +1,33 @@
+.cr-p1 {
+  font-family: 'Noto Sans KR';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 15px;
+  line-height: 22px;
+  /* identical to box height, or 147% */
+
+  /* text dark */
+
+  color: #222222;
+}
+.cr-p2 {
+  font-family: 'Noto Sans KR';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+  /* or 143% */
+
+  /* dark gray text */
+
+  color: #4d4d4d;
+}
+.cr-sp1 {
+  font-family: 'Noto Sans KR';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 17px;
+
+  color: #585858;
+}
