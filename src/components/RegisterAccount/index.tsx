@@ -9,6 +9,9 @@ const RegisterAccount = () => {
   const handleSubmit = () => {
     navigate('/register')
   }
+  const handleSubmitCompany = () => {
+    navigate('/registercompany')
+  }
   return (
     <Grid container justifyContent='center' height='100vh'>
       <Grid width='1440px' height='900px' alignSelf='center' container>
@@ -53,6 +56,7 @@ const RegisterAccount = () => {
                 color: 'white',
               },
             }}
+            onClick={handleSubmitCompany}
           >
             <Grid
               className='ra-bgrid'

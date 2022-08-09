@@ -1,6 +1,7 @@
 import {Grid, Tab, Tabs} from '@mui/material'
 import React from 'react'
 import CardBase from '../../components/card'
+import CustomSelect from '../../components/select'
 import LayOut from '../layout'
 import './Service.css'
 
@@ -30,16 +31,19 @@ const Service = () => {
           justifyContent='space-between'
         >
           <Grid>
-            <p className='s-p1'>서비스</p>
+            <p className='service-p1'>서비스</p>
           </Grid>
-          <Grid item xs={12}>
+          <Grid
+            item
+            xs={12}
+            container
+            justifyContent='space-between'
+            borderBottom='1px solid  #E1E1E1'
+          >
             <Tabs
               onChange={handleChange}
               value={value}
               aria-label='Tabs where each tab needs to be selected manually'
-              style={{
-                borderBottom: '1px solid #C4C4C4',
-              }}
             >
               <Tab label='전체' style={{...styleTab}} />
               <Tab label='식당,카페' style={{...styleTab}} />
@@ -50,6 +54,7 @@ const Service = () => {
               <Tab label='뷰티' style={{...styleTab}} />
               <Tab label='건강' style={{...styleTab}} />
             </Tabs>
+            <CustomSelect />
           </Grid>
 
           {value === 0 ? (

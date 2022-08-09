@@ -11,6 +11,7 @@ import Store from '../pages/store'
 import ProductDatail from '../pages/ProductDetail'
 import CreateCampaign from '../pages/CreateCampaign'
 import WithdrawMoney from '../pages/WithdrawMoney'
+import RegisterCompany from '../pages/RegisterCompany'
 const routes: Array<MyRouteProp> = [
   {
     path: '/login',
@@ -31,6 +32,11 @@ const routes: Array<MyRouteProp> = [
   {
     path: '/registeraccount',
     element: <RegisterAccount />,
+    private: false,
+  },
+  {
+    path: '/registercompany',
+    element: <RegisterCompany />,
     private: false,
   },
   {
