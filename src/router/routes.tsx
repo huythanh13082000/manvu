@@ -4,7 +4,7 @@ import MyRouteProp from './MyRouteProp'
 import TermsOfUse from '../components/TermsOfUse'
 import Home from '../pages/home'
 import Service from '../pages/Service'
-import Store from '../pages/store'
+import MyCampaign from '../pages/MyCampaign'
 import ProductDatail from '../pages/ProductDetail'
 import CreateCampaign from '../pages/CreateCampaign'
 import WithdrawMoney from '../pages/WithdrawMoney'
@@ -49,11 +49,6 @@ const routes: Array<MyRouteProp> = [
     element: <ProductDatail />,
     private: false,
   },
-  // {
-  //   path: '/register',
-  //   element: <Register />,
-  //   private: false,
-  // },
   {
     path: '/',
     element: <Home />,
@@ -73,8 +68,8 @@ const routes: Array<MyRouteProp> = [
     roles: ['admin', 'user'],
   },
   {
-    path: '/store',
-    element: <Store />,
+    path: '/MyCampaign',
+    element: <MyCampaign />,
     private: true,
     roles: ['admin', 'user'],
   },

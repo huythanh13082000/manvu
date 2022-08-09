@@ -1,3 +1,4 @@
+import {Close} from '@mui/icons-material'
 import {Box, Grid, IconButton} from '@mui/material'
 import React, {useState} from 'react'
 import './UploadImg.css'
@@ -11,6 +12,12 @@ function UploadFile() {
     let ArrayImg: string[]
     ArrayImg = [...file]
     ArrayImg.push(url)
+    setFile(ArrayImg)
+  }
+  const deletImg = (index: number) => {
+    let ArrayImg: string[]
+    ArrayImg = [...file]
+    ArrayImg.splice(index, 1)
     setFile(ArrayImg)
   }
   console.log(file)
@@ -47,9 +54,9 @@ function UploadFile() {
           </Grid>
           {file.length > 0 && (
             <>
-              {file.map((item) => {
+              {file.map((item, index: number = 0) => {
                 return (
-                  <Grid>
+                  <Grid position='relative'>
                     <img
                       src={item}
                       alt={item}
@@ -60,6 +67,22 @@ function UploadFile() {
                         marginRight: '0.8rem',
                       }}
                     />
+                    <IconButton
+                      aria-label='close'
+                      size='small'
+                      style={{
+                        position: 'absolute',
+                        top: '-10%',
+                        right: '3%',
+                        color: '#6D829A',
+                        background: '#D5D5DE',
+                        width: '30px',
+                        height: '30px',
+                      }}
+                      onClick={() => deletImg(index)}
+                    >
+                      <Close />
+                    </IconButton>
                   </Grid>
                 )
               })}

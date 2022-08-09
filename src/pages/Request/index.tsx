@@ -21,7 +21,7 @@ const Request = () => {
   const setStateOpenDialog = () => {
     setOpenDialog(false)
   }
-  console.log(3333, openDialog)
+
   return (
     <Grid container>
       <Grid item xs={5} container borderRight='1px solid #E1E1E1'>

@@ -170,6 +170,11 @@ const Campaign = () => {
               onChange={handleChangeSelect}
               renderValue={(selected) => selected.join(', ')}
               label='모두 메이어'
+              style={{
+                height: '3rem',
+                borderRadius: '50px',
+                width: '130px',
+              }}
             >
               <MenuItem value='all'>
                 <ListItemIcon>
@@ -232,6 +237,11 @@ const Campaign = () => {
               onChange={handleChangeSelect}
               renderValue={(selected) => selected.join(', ')}
               label='모두 메이어'
+              style={{
+                height: '3rem',
+                borderRadius: '50px',
+                width: '130px',
+              }}
             >
               <MenuItem value='all'>
                 <ListItemIcon>
@@ -294,6 +304,11 @@ const Campaign = () => {
               onChange={handleChangeSelect}
               renderValue={(selected) => selected.join(', ')}
               label='모두 메이어'
+              style={{
+                height: '3rem',
+                borderRadius: '50px',
+                width: '130px',
+              }}
             >
               <MenuItem value='all'>
                 <ListItemIcon>
@@ -356,6 +371,11 @@ const Campaign = () => {
               onChange={handleChangeSelect}
               renderValue={(selected) => selected.join(', ')}
               label='모두 메이어'
+              style={{
+                height: '3rem',
+                borderRadius: '50px',
+                width: '130px',
+              }}
             >
               <MenuItem value='all'>
                 <ListItemIcon>
@@ -418,6 +438,11 @@ const Campaign = () => {
               onChange={handleChangeSelect}
               renderValue={(selected) => selected.join(', ')}
               label='모두 메이어'
+              style={{
+                height: '3rem',
+                borderRadius: '50px',
+                width: '130px',
+              }}
             >
               <MenuItem value='all'>
                 <ListItemIcon>

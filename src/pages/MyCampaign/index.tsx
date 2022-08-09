@@ -46,7 +46,7 @@ function a11yProps(index: number) {
   }
 }
 
-export default function VerticalTabs() {
+export default function MyCampaign() {
   const [value, setValue] = React.useState(0)
   const styleTab = {
     fontFamily: 'Noto Sans KR',
@@ -142,7 +142,7 @@ export default function VerticalTabs() {
                   />
                 </Tabs>
               </Grid>
-              <Grid item xs={8}>
+              <Grid item xs={8} style={{borderRight: '1px solid #E1E1E1'}}>
                 <TabPanelCustom value={value} index={0}>
                   <Campaign />
                 </TabPanelCustom>
@@ -159,9 +159,7 @@ export default function VerticalTabs() {
                 <TabPanelCustom value={value} index={5}>
                   <FAQ />
                 </TabPanelCustom>
-                <TabPanelCustom value={value} index={6}>
-                  Item Five223
-                </TabPanelCustom>
+                <TabPanelCustom value={value} index={6}></TabPanelCustom>
               </Grid>
             </Grid>
           </Box>
