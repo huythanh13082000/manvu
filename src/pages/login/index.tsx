@@ -3,12 +3,7 @@ import React, {useEffect, useState} from 'react'
 import {Link} from 'react-router-dom'
 import {useNavigate} from 'react-router-dom'
 import {useAppDispatch, useAppSelector} from '../../app/hooks'
-import {
-  authActions,
-  selectIsLoggedIn,
-  selectIsLogging,
-  selectloginFail,
-} from './authSlice'
+import {authActions, selectIsLoggedIn, selectloginFail} from './authSlice'
 import './login.css'
 import ErrorIcon from '@mui/icons-material/Error'
 

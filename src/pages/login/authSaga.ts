@@ -1,7 +1,6 @@
 import {PayloadAction} from '@reduxjs/toolkit'
-import {call, fork, put, take, takeEvery, takeLatest} from 'redux-saga/effects'
+import {call, put, takeLatest} from 'redux-saga/effects'
 import {authApi} from '../../apis/authApi'
-import {ListResponse} from '../../models/common'
 import {User} from '../../models/user'
 import {authActions, LoginPayload} from './authSlice'
 
