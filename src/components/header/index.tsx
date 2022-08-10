@@ -20,6 +20,9 @@ export default function Header() {
     // navigate('/login')
     // console.log(user)
   }
+  React.useEffect(()=>{
+    
+  },[])
   const handleRegister = () => {
     navigate('/termsofuse')
   }
