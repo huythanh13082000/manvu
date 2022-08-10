@@ -5,9 +5,13 @@ import {
   ThunkAction,
 } from '@reduxjs/toolkit'
 import createSagaMiddleware from 'redux-saga'
+import userReducer from '../components/header/userSlice'
+import authReducer from '../pages/login/authSlice'
 import rootSaga from './rootSaga'
 
 const rootReducer = combineReducers({
+  auth: authReducer,
+  user: userReducer,
   // router: connectRouter(history),
   // auth: authReducer,
   // dashboard: dashboardReducer,

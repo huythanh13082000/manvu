@@ -9,12 +9,16 @@ import {Button, Grid, TextField} from '@mui/material'
 import KeyboardArrowDownSharpIcon from '@mui/icons-material/KeyboardArrowDownSharp'
 import './header.css'
 import {useNavigate} from 'react-router-dom'
+import {useAppSelector} from '../../app/hooks'
+// import {selectCurrentUser} from '../../pages/login/authSlice'
 
 export default function Header() {
   const [isSearch, setIsSearch] = React.useState(false)
   const navigate = useNavigate()
+  // const user = useAppSelector(selectCurrentUser)
   const handleLogin = () => {
-    navigate('/login')
+    // navigate('/login')
+    // console.log(user)
   }
   const handleRegister = () => {
     navigate('/termsofuse')
@@ -28,6 +32,7 @@ export default function Header() {
   const handleClickItemMenu = (params: string) => {
     navigate(params)
   }
+
   return (
     <Grid
       style={{

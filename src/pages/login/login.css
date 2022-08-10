@@ -2,3 +2,16 @@
   font-weight: 500;
   font-size: 13px;
 }
+.login-p-error {
+  font-family: 'Noto Sans KR';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+  /* identical to box height, or 143% */
+
+  color: #e93a3a;
+  display: flex;
+  align-items: center;
+  width: 422px;
+}

@@ -1,14 +1,47 @@
 import {Button, Checkbox, Grid, TextField} from '@mui/material'
-import React from 'react'
+import React, {useEffect, useState} from 'react'
 import {Link} from 'react-router-dom'
 import {useNavigate} from 'react-router-dom'
+import {useAppDispatch, useAppSelector} from '../../app/hooks'
+import {
+  authActions,
+  selectIsLoggedIn,
+  selectIsLogging,
+  selectloginFail,
+} from './authSlice'
 import './login.css'
+import ErrorIcon from '@mui/icons-material/Error'
 
 function Login() {
   const label = {inputProps: {'aria-label': 'Checkbox demo'}}
+  const dispatch = useAppDispatch()
   const navigate = useNavigate()
-  const handleSubmit = (params: string) => {
-    navigate(params)
+  const [username, setUsername] = useState('')
+  const [password, setPassword] = useState('')
+  const isLogin = useAppSelector(selectIsLoggedIn)
+  // const isLogging = useAppSelector(selectIsLogging)
+  const loginFail = useAppSelector(selectloginFail)
+  const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    if (event.target.name === 'username') {
+      setUsername(event.target.value)
+    } else {
+      setPassword(event.target.value)
+    }
+  }
+
+  useEffect(() => {
+    if (isLogin) {
+      navigate('/')
+    }
+  }, [isLogin])
+
+  const handleSubmit = async () => {
+    dispatch(
+      authActions.login({
+        username: username,
+        password: password,
+      })
+    )
   }
   return (
     <Grid>
@@ -28,7 +61,10 @@ function Login() {
         <Grid>
           <p className='label-input'>Email</p>
           <TextField
+            name='username'
             id='outlined-basic'
+            value={username}
+            onChange={handleChange}
             style={{width: '422px'}}
             variant='outlined'
             size='small'
@@ -46,10 +82,14 @@ function Login() {
         <Grid>
           <p className='label-input'>비밀번호</p>
           <TextField
+            value={password}
+            name='password'
             id='outlined-basic'
             style={{width: '422px'}}
             variant='outlined'
             size='small'
+            type='password'
+            onChange={handleChange}
             placeholder='Ví dụ: Greenapp123'
             inputProps={{
               style: {
@@ -59,7 +99,14 @@ function Login() {
           />
         </Grid>
       </Grid>
-
+      <Grid item xs={12} container justifyContent='center'>
+        {loginFail ? (
+          <p className='login-p-error'>
+            <ErrorIcon /> Hãy kiểm tra lại có thể sai tên đăng nhập hoặc mật
+            khẩu
+          </p>
+        ) : null}
+      </Grid>
       <Grid item xs={12} container justifyContent={'center'}>
         <Grid
           width='
@@ -88,7 +135,7 @@ function Login() {
 
       <Grid item xs={12} container justifyContent={'center'} margin='1.5rem 0'>
         <Button
-          onClick={() => handleSubmit('/')}
+          onClick={handleSubmit}
           style={{
             width: '422px',
             height: '2.8rem',
@@ -150,7 +197,7 @@ function Login() {
 
       <Grid item xs={12} container justifyContent={'center'}>
         <Button
-          onClick={() => handleSubmit('/termsofuse')}
+          // onClick={() => handleSubmit}
           style={{width: '422px', height: '2.8rem', fontSize: '15px'}}
           variant='outlined'
         >
