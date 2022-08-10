@@ -4,12 +4,11 @@ import {
   configureStore,
   ThunkAction,
 } from '@reduxjs/toolkit'
-import cardReducer from '../features/renderCard/renderCardSlice'
 import createSagaMiddleware from 'redux-saga'
 import rootSaga from './rootSaga'
+
 const rootReducer = combineReducers({
   // router: connectRouter(history),
-  card: cardReducer,
   // auth: authReducer,
   // dashboard: dashboardReducer,
   // student: studentReducer,
