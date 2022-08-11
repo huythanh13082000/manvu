@@ -5,6 +5,7 @@ import {User} from '../../models/user'
 export interface userState {
   loading?: boolean
   profile?: User | undefined
+  initing?: boolean
 }
 
 const initialState: userState = {
@@ -44,6 +45,7 @@ const initialState: userState = {
     username: '',
   },
   loading: false,
+  initing:false
 }
 
 const userSlice = createSlice({
@@ -54,15 +56,14 @@ const userSlice = createSlice({
       state.loading = true
     },
     getProfileSuccess(state, action: PayloadAction<{profile: User}>) {
-      console.log(777777, action.payload)
       state.profile = action.payload.profile
       state.loading = false
-      console.log(77999, state)
+      state.initing = true
     },
     getProfileFail(state) {
-      console.log(22112321)
       state.loading = false
       state.profile = undefined
+      state.initing = false
     },
   },
 })

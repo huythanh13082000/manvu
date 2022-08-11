@@ -109,6 +109,7 @@ export default function CardBase(props: Props) {
                 </Grid>
                 <Grid
                   container
+                  item
                   xs={12}
                   style={{alignItems: 'center'}}
                   // marginBottom='1rem'

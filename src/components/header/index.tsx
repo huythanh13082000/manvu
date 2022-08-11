@@ -12,6 +12,7 @@ import {useNavigate} from 'react-router-dom'
 import {useAppDispatch, useAppSelector} from '../../app/hooks'
 import {selectUser, userActions} from './userSlice'
 import {FILE_API} from '../../apis/urlConfig'
+import NotificationImportantOutlinedIcon from '@mui/icons-material/NotificationImportantOutlined'
 // import {selectCurrentUser} from '../../pages/login/authSlice'
 
 export default function Header() {
@@ -114,6 +115,9 @@ export default function Header() {
                       src='/img/logo.png'
                       alt='logo'
                     />
+                    <IconButton aria-label='delete' size='large'>
+                      <NotificationImportantOutlinedIcon />
+                    </IconButton>
                   </Grid>
 
                   <ul

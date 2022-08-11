@@ -1,7 +1,11 @@
 import axios, {AxiosRequestConfig, AxiosResponse} from 'axios'
+
 const axiosClient = axios.create({
   baseURL: 'http://13.209.156.241:3000/api/',
 })
+export const setTokenAxios = (token: string) => {
+  axiosClient.defaults.headers.common['Authorization'] = token
+}
 
 axiosClient.interceptors.request.use(
   function (config: AxiosRequestConfig) {
