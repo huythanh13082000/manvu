@@ -29,7 +29,6 @@ export default function CardBase(props: Props) {
     '/img/green.png',
     '/img/orange.png',
   ]
-  console.log(666666, props.data)
   return (
     <>
       <Grid
@@ -109,7 +108,9 @@ export default function CardBase(props: Props) {
                   </Grid>
                 </Grid>
                 <Grid item xs={12} width='24px'>
-                  <div className='block-ellipsis'>{props.data?.content}</div>
+                  <div className='block-ellipsis'>
+                    {props.data?.shortDescription}
+                  </div>
                 </Grid>
                 <Grid item xs={12} height='38px'>
                   <span>{props.data?.adddress}</span>
