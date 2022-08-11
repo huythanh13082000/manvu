@@ -1,12 +1,6 @@
 import axios, {AxiosRequestConfig, AxiosResponse} from 'axios'
-
-const token = localStorage.getItem('token') || ''
 const axiosClient = axios.create({
   baseURL: 'http://13.209.156.241:3000/api/',
-  headers: {
-    'Content-Type': 'application/json',
-    Authorization: `Bearer ${token}`,
-  },
 })
 
 axiosClient.interceptors.request.use(

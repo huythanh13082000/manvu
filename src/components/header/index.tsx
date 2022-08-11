@@ -9,20 +9,24 @@ import {Button, Grid, TextField} from '@mui/material'
 import KeyboardArrowDownSharpIcon from '@mui/icons-material/KeyboardArrowDownSharp'
 import './header.css'
 import {useNavigate} from 'react-router-dom'
-import {useAppSelector} from '../../app/hooks'
+import {useAppDispatch, useAppSelector} from '../../app/hooks'
+import {selectUser, userActions} from './userSlice'
+import {FILE_API} from '../../apis/urlConfig'
 // import {selectCurrentUser} from '../../pages/login/authSlice'
 
 export default function Header() {
   const [isSearch, setIsSearch] = React.useState(false)
   const navigate = useNavigate()
-  // const user = useAppSelector(selectCurrentUser)
+  const dispatch = useAppDispatch()
+  const user = useAppSelector(selectUser)
+
   const handleLogin = () => {
     // navigate('/login')
     // console.log(user)
   }
-  React.useEffect(()=>{
-    
-  },[])
+  React.useEffect(() => {
+    dispatch(userActions.getProfile())
+  }, [dispatch])
   const handleRegister = () => {
     navigate('/termsofuse')
   }
@@ -104,15 +108,6 @@ export default function Header() {
                 sx={{flexGrow: 1, display: {xs: 'none', sm: 'block'}}}
               >
                 <Grid container alignItems='center'>
-                  {/* <span
-                  style={{
-                    color: '#0078FF',
-                    fontSize: '22px',
-                    fontWeight: '700',
-                  }}
-                >
-                  망고리뷰
-                </span> */}
                   <Grid item xs={1} container alignItems='center'>
                     <img
                       style={{width: '48px'}}
@@ -155,32 +150,32 @@ export default function Header() {
                   </ul>
                 </Grid>
               </Typography>
-              {/* <Search>
-              <SearchIconWrapper>
-                <SearchIcon style={{color: 'black'}} />
-              </SearchIconWrapper>
-              <StyledInputBase
-                style={{color: 'black', borderBottom: '1px solid black'}}
-                placeholder='Search…'
-                inputProps={{'aria-label': 'search'}}
-              />
-            </Search> */}
-              {/* <p style={{margin: 'auto 2rem', color: 'black'}}>로그인</p> */}
-              <Button
-                className='h-button-login'
-                variant='outlined'
-                onClick={handleLogin}
-              >
-                로그인
-              </Button>
+              {!user.profile ? (
+                <>
+                  <Button
+                    className='h-button-login'
+                    variant='outlined'
+                    onClick={handleLogin}
+                  >
+                    로그인
+                  </Button>
+                  <Button
+                    className='h-button-register'
+                    variant='contained'
+                    onClick={handleRegister}
+                  >
+                    회원가입
+                  </Button>
+                </>
+              ) : null}
 
-              <Button
-                className='h-button-register'
-                variant='contained'
-                onClick={handleRegister}
-              >
-                회원가입
-              </Button>
+              {user.profile ? (
+                <img
+                  style={{width: '48px', height: '48px', borderRadius: '8px'}}
+                  src={`${FILE_API}${user.profile?.avatar}`}
+                  alt='avatar'
+                />
+              ) : null}
               <Button>
                 <img
                   src='/img/search.png'

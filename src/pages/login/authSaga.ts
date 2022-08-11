@@ -5,10 +5,9 @@ import {User} from '../../models/user'
 import {authActions, LoginPayload} from './authSlice'
 
 function* handleLogin(action: PayloadAction<LoginPayload>) {
-  console.log(7777, action.payload.password)
   try {
     const User: User = yield call(authApi.post, {...action.payload})
-    localStorage.setItem('token', User.token)
+    yield localStorage.setItem('token', User.token)
     yield put(authActions.loginSuccess(User))
     // yield put(push('/admin/dashboard'));
   } catch (error) {
