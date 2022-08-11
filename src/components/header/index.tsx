@@ -13,6 +13,7 @@ import {useAppDispatch, useAppSelector} from '../../app/hooks'
 import {selectUser, userActions} from './userSlice'
 import {FILE_API} from '../../apis/urlConfig'
 import NotificationImportantOutlinedIcon from '@mui/icons-material/NotificationImportantOutlined'
+import {setTokenAxios} from '../../apis/axiosClient'
 // import {selectCurrentUser} from '../../pages/login/authSlice'
 
 export default function Header() {
@@ -22,9 +23,11 @@ export default function Header() {
   const user = useAppSelector(selectUser)
 
   const handleLogin = () => {
-    // navigate('/login')
-    // console.log(user)
+    navigate('/login')
   }
+  React.useEffect(() => {
+    setTokenAxios()
+  }, [])
   React.useEffect(() => {
     dispatch(userActions.getProfile())
   }, [dispatch])
@@ -115,9 +118,6 @@ export default function Header() {
                       src='/img/logo.png'
                       alt='logo'
                     />
-                    <IconButton aria-label='delete' size='large'>
-                      <NotificationImportantOutlinedIcon />
-                    </IconButton>
                   </Grid>
 
                   <ul
@@ -174,11 +174,42 @@ export default function Header() {
               ) : null}
 
               {user.profile ? (
-                <img
-                  style={{width: '48px', height: '48px', borderRadius: '8px'}}
-                  src={`${FILE_API}${user.profile?.avatar}`}
-                  alt='avatar'
-                />
+                <>
+                  <img
+                    style={{width: '48px', height: '48px', borderRadius: '8px'}}
+                    src={`${FILE_API}${user.profile?.avatar}`}
+                    alt='avatar'
+                  />
+                  <Grid
+                    border='1px solid #E1E1E1'
+                    marginLeft='1rem'
+                    padding='0.45rem 0.55rem'
+                    borderRadius='8px'
+                    position='relative'
+                  >
+                    <NotificationImportantOutlinedIcon
+                      style={{color: '#292929'}}
+                    />
+                    <p
+                      style={{
+                        width: '16px',
+                        backgroundColor: '#DE1F1F',
+                        textAlign: 'center',
+                        borderRadius: '50%',
+                        // padding: '0 1px',
+                        fontSize: '10px',
+                        position: 'absolute',
+                        top: '-6px',
+                        right: '6px',
+                      }}
+                    >
+                      5
+                    </p>
+                  </Grid>
+                  {/* <IconButton aria-label='delete' size='large'> */}
+
+                  {/* </IconButton> */}
+                </>
               ) : null}
               <Button>
                 <img

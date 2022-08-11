@@ -5,6 +5,8 @@ import CardMedia from '@mui/material/CardMedia'
 import {Button, CardActionArea, Grid} from '@mui/material'
 import './card.css'
 import {useNavigate} from 'react-router-dom'
+import {Campaign} from '../../models/campaign'
+import {FILE_API} from '../../apis/urlConfig'
 
 interface Props {
   width?: string
@@ -12,15 +14,22 @@ interface Props {
   flag?: boolean
   heart?: boolean
   index?: number
+  data?: Campaign
 }
 
 export default function CardBase(props: Props) {
   const heart = false
-  const index = 2
   const navigate = useNavigate()
   const handleClickCard = (params: string) => {
     navigate(params)
   }
+  const listImgFlag = [
+    '/img/blue.png',
+    '/img/violet.png',
+    '/img/green.png',
+    '/img/orange.png',
+  ]
+  console.log(666666, props.data)
   return (
     <>
       <Grid
@@ -42,9 +51,9 @@ export default function CardBase(props: Props) {
           <CardActionArea style={{fontFamily: 'Noto Sans KR'}}>
             <CardMedia
               component='img'
-              height={props.width ? '180px' : ''}
+              height={props.width ? '180px' : '300px'}
               width={props.width}
-              image='/img/img3.png'
+              image={`${FILE_API}${props.data?.images}`}
               alt='green iguana'
             />
             <Grid
@@ -73,8 +82,8 @@ export default function CardBase(props: Props) {
                 }}
               >
                 <Grid position='relative'>
-                  <img src='/img/flag.png' alt='flag' />
-                  <span className='c-span1'>{index}</span>
+                  <img src={listImgFlag[props.index || 0]} alt='flag' />
+                  <span className='c-span1'>{props.index}</span>
                 </Grid>
               </Grid>
             ) : null}
@@ -91,7 +100,7 @@ export default function CardBase(props: Props) {
                           alt='N'
                         />
                       </Grid>
-                      <Grid>Blog Naver</Grid>
+                      <Grid>{props.data?.media}</Grid>
                     </Grid>
                   </Grid>
                   <Grid style={{padding: '0 5px'}}>|</Grid>
@@ -99,27 +108,25 @@ export default function CardBase(props: Props) {
                     2일후에 시작합니다
                   </Grid>
                 </Grid>
-                <Grid item xs={12}>
-                  <div className='block-ellipsis'>
-                    이것은 제목이며 1줄 텍스트로 표시됩.
-                  </div>
+                <Grid item xs={12} width='24px'>
+                  <div className='block-ellipsis'>{props.data?.content}</div>
                 </Grid>
-                <Grid item xs={12}>
-                  <span>주소</span>
+                <Grid item xs={12} height='38px'>
+                  <span>{props.data?.adddress}</span>
                 </Grid>
                 <Grid
                   container
                   item
                   xs={12}
                   style={{alignItems: 'center'}}
-                  // marginBottom='1rem'
+                  marginTop='0.5rem'
                 >
                   <Grid className='c-p5 ' marginRight='10px'>
                     신청100/12
                   </Grid>
                   <Grid>
                     <Button variant='outlined' className='c-button'>
-                      500P
+                      {props.data?.point}P
                     </Button>
                   </Grid>
                 </Grid>

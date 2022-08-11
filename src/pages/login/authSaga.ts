@@ -9,8 +9,7 @@ function* handleLogin(action: PayloadAction<LoginPayload>) {
   try {
     const User: User = yield call(authApi.post, {...action.payload})
     yield localStorage.setItem('token', User.token)
-    const token = localStorage.getItem('token') || ''
-    setTokenAxios(token)
+    setTokenAxios()
     yield put(authActions.loginSuccess(User))
     // yield put(push('/admin/dashboard'));
   } catch (error) {
