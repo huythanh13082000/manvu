@@ -24,6 +24,7 @@ export default function CardBase(props: Props) {
     navigate(params)
   }
   const listImgFlag = [
+    '',
     '/img/blue.png',
     '/img/violet.png',
     '/img/green.png',
@@ -52,7 +53,11 @@ export default function CardBase(props: Props) {
               component='img'
               height={props.width ? '180px' : '300px'}
               width={props.width}
-              image={`${FILE_API}${props.data?.images}`}
+              image={
+                props.data?.images?.length === 0
+                  ? '/img/Sell-Your-Product.png'
+                  : `${FILE_API}${props.data?.images}`
+              }
               alt='green iguana'
             />
             <Grid
@@ -112,7 +117,7 @@ export default function CardBase(props: Props) {
                     {props.data?.shortDescription}
                   </div>
                 </Grid>
-                <Grid item xs={12} height='38px'>
+                <Grid item xs={12}>
                   <span>{props.data?.adddress}</span>
                 </Grid>
                 <Grid

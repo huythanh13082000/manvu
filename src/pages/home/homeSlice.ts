@@ -5,11 +5,11 @@ import {RootState} from '../../app/store'
 import {Campaign} from '../../models/campaign'
 
 export interface homeState {
-  list?: Array<Campaign>
+  list: Array<Campaign>
   loading?: boolean
 }
 const initialState: homeState = {
-  list: [{}],
+  list: [],
 }
 
 const homeSlice = createSlice({

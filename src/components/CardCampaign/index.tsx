@@ -1,8 +1,13 @@
 import {Grid} from '@mui/material'
 import React from 'react'
+import {Campaign} from '../../models/campaign'
 import './CardCampaign.css'
 
-const CardCampaign = () => {
+interface Props {
+  data: Campaign
+}
+
+const CardCampaign = (props: Props) => {
   return (
     <Grid
       className='cc-grid'
@@ -28,7 +33,7 @@ const CardCampaign = () => {
         <p className='cc-p2'>
           CHAM SPA - Tặng 500.000đ tiền mặt và voucher massage trị giá
         </p>
-        <p className='cc-p3'>Láng Hạ, Hà Nội</p>
+        <p className='cc-p3'>{props.data.adddress}</p>
         <p className='cc-p4'>Cần 20 reviewer</p>
       </Grid>
     </Grid>

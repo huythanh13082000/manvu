@@ -135,22 +135,37 @@ export default function Header() {
                       className='h-li'
                       onClick={() => handleClickItemMenu('/home')}
                     >
-                      지역 <KeyboardArrowDownSharpIcon />
+                      전체
+                      {/* <KeyboardArrowDownSharpIcon /> */}
                     </li>
                     <li
                       className='h-li'
                       onClick={() => handleClickItemMenu('/service')}
                     >
-                      서비스 <KeyboardArrowDownSharpIcon />
+                      지역
+                      {/* <KeyboardArrowDownSharpIcon /> */}
                     </li>
                     <li
                       className='h-li'
                       onClick={() => handleClickItemMenu('/mycampaign')}
                     >
-                      제품 <KeyboardArrowDownSharpIcon />
+                      제품
+                      {/* <KeyboardArrowDownSharpIcon /> */}
                     </li>
-                    <li className='h-li'>|</li>
-                    <li className='h-li'>REVIEWER</li>
+                    <li
+                      className='h-li'
+                      onClick={() => handleClickItemMenu('/mycampaign')}
+                    >
+                      서비스
+                      {/* <KeyboardArrowDownSharpIcon /> */}
+                    </li>
+                    <li
+                      className='h-li'
+                      onClick={() => handleClickItemMenu('/mycampaign')}
+                    >
+                      기자단
+                      {/* <KeyboardArrowDownSharpIcon /> */}
+                    </li>
                   </ul>
                 </Grid>
               </Typography>

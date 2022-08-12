@@ -1,3 +1,5 @@
+import {Categories} from './categories'
+
 export interface Campaign {
   tags?: number[]
   images?: string[]
@@ -24,7 +26,7 @@ export interface Campaign {
   status?: number
   completeAt?: string | null
   tabId?: number
-  view?: number
+  view: number
   isAddress?: boolean
   adddress?: string | null
   latitude?: number
@@ -35,6 +37,6 @@ export interface Campaign {
   user?: {}
   members?: {}
   interactive?: {}
-  categories?: []
+  categories?: Categories[]
   joinRequest?: null
 }

@@ -8,12 +8,14 @@ import createSagaMiddleware from 'redux-saga'
 import userReducer from '../components/header/userSlice'
 import {homeReducer} from '../pages/home/homeSlice'
 import authReducer from '../pages/login/authSlice'
+import { serviceReducer } from '../pages/Service/serviceSlice'
 import rootSaga from './rootSaga'
 
 const rootReducer = combineReducers({
   auth: authReducer,
   user: userReducer,
   home: homeReducer,
+  service : serviceReducer,
   // router: connectRouter(history),
   // auth: authReducer,
   // dashboard: dashboardReducer,

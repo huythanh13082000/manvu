@@ -3,11 +3,16 @@ import React from 'react'
 import ComponentWH from '../../components/ComponentWithdrawalHistory'
 import Point from '../../components/CardPoint'
 import './PointManagement.css'
+import {useNavigate} from 'react-router-dom'
 
 const PointManagement = () => {
+  const navagate = useNavigate()
   const [value, setValue] = React.useState(0)
   const handleChange = (event: React.SyntheticEvent, newValue: number) => {
     setValue(newValue)
+  }
+  const handleClick = () => {
+    navagate('/WithdrawMoney')
   }
   const styleTab = {
     fontFamily: 'Noto Sans KR',
@@ -98,6 +103,7 @@ const PointManagement = () => {
             <Button
               variant='contained'
               className='pm-grid-button-point-current'
+              onClick={handleClick}
             >
               출금
             </Button>
