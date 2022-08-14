@@ -20,9 +20,13 @@ const SlickSlider = (props: Props) => {
   }
   return (
     <div className='container'>
-      <Slider {...settings}>
+      <Slider {...settings} className='slider-slick'>
         {props.listCampaign?.map((item) => {
-          return <CardBase data={item} width='275px' height='348px' />
+          return (
+            <div style={{margin: '1rem 0'}}>
+              <CardBase data={item} width='275px' height='348px' />
+            </div>
+          )
         })}
       </Slider>
     </div>
