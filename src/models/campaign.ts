@@ -2,7 +2,7 @@ import {Categories} from './categories'
 
 export interface Campaign {
   tags?: number[]
-  images?: string[]
+  images: string[]
   applications?: {}
   areaIds?: []
   id?: number
@@ -14,7 +14,7 @@ export interface Campaign {
   keywords?: string
   mission?: string
   notes?: string
-  media?: string
+  media: string
   campaignRegistrationDateFrom?: string
   campaignRegistrationDateTo?: string
   announcementToMemberDate?: string

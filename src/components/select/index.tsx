@@ -54,7 +54,10 @@ const CustomSelect = () => {
           {options.map((option) => (
             <MenuItem key={option} value={option}>
               <ListItemIcon>
-                <Checkbox checked={selected.indexOf(option) > -1} />
+                <Checkbox
+                  style={{padding: 0}}
+                  checked={selected.indexOf(option) > -1}
+                />
               </ListItemIcon>
               <ListItemText primary={option} />
             </MenuItem>

@@ -7,8 +7,10 @@ interface Props {
   item: MyRouteProp
 }
 function PrivateRoute(props: Props) {
-  const auth: boolean = true
-  if (auth) {
+  const token = localStorage.getItem('token')
+  // token
+  // const auth: boolean = true
+  if (token) {
     if (props.item.roles && props.item.roles.length > 0) {
       return <RoleRoute item={props.item} />
     } else {

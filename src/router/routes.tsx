@@ -12,7 +12,7 @@ import Login from '../pages/login'
 import Register from '../pages/Register'
 import RegisterAccount from '../pages/RegisterAccount'
 import CompanyCampaigns from '../pages/CompanyCampaigns'
-import ProductDetail from '../pages/ProductDetail'
+import ProductDetail from '../pages/CampaignDetail'
 import {Url} from '../contains'
 const routes: Array<MyRouteProp> = [
   {
@@ -54,13 +54,13 @@ const routes: Array<MyRouteProp> = [
   {
     path: '/',
     element: <Home />,
-    private: true,
+    private: false,
     roles: ['admin', 'user'],
   },
   {
     path: Url.home,
     element: <Home />,
-    private: true,
+    private: false,
     roles: ['admin', 'user'],
   },
   {

@@ -8,10 +8,8 @@ const Notice = () => {
     <Grid>
       <p className='Notice-title'>나의 캠페인</p>
       <Grid item xs={12} container>
-        <Grid>
-          <CardBase width='255px' height='355px' />
-        </Grid>
-        <Grid>
+        <Grid>{/* <CardBase width='255px' height='355px' /> */}</Grid>
+        {/* <Grid>
           <CardBase width='255px' height='355px' />
         </Grid>
         <Grid>
@@ -26,7 +24,7 @@ const Notice = () => {
         </Grid>
         <Grid>
           <CardBase width='255px' height='355px' />
-        </Grid>
+        </Grid> */}
       </Grid>
     </Grid>
   )

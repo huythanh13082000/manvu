@@ -61,6 +61,7 @@ export default function Header() {
             <Grid
               className='h-grid-search'
               container
+              justifyContent='space-between'
               alignItems='center'
               padding='0.3rem 4rem'
             >
@@ -71,7 +72,7 @@ export default function Header() {
                   style={{width: '45px', margin: '0 1rem'}}
                 />
               </Grid>
-              <Grid item xs={11}>
+              <Grid item xs={10}>
                 <TextField
                   style={{
                     width: '100%',
@@ -127,7 +128,7 @@ export default function Header() {
                       color: 'black',
                       listStyle: 'none',
                       justifyContent: 'space-around',
-                      width: '30%',
+                      width: '50%',
                       fontFamily: 'Noto Sans KR',
                     }}
                   >
@@ -143,28 +144,28 @@ export default function Header() {
                       onClick={() => handleClickItemMenu('/service')}
                     >
                       지역
-                      {/* <KeyboardArrowDownSharpIcon /> */}
+                      <KeyboardArrowDownSharpIcon />
                     </li>
                     <li
                       className='h-li'
                       onClick={() => handleClickItemMenu('/mycampaign')}
                     >
                       제품
-                      {/* <KeyboardArrowDownSharpIcon /> */}
+                      <KeyboardArrowDownSharpIcon />
                     </li>
                     <li
                       className='h-li'
                       onClick={() => handleClickItemMenu('/mycampaign')}
                     >
                       서비스
-                      {/* <KeyboardArrowDownSharpIcon /> */}
+                      <KeyboardArrowDownSharpIcon />
                     </li>
                     <li
                       className='h-li'
                       onClick={() => handleClickItemMenu('/mycampaign')}
                     >
                       기자단
-                      {/* <KeyboardArrowDownSharpIcon /> */}
+                      <KeyboardArrowDownSharpIcon />
                     </li>
                   </ul>
                 </Grid>

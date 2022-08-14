@@ -128,7 +128,7 @@ export default function BasicTabs() {
         </Tabs>
       </Box>
       <TabPanel value={value} index={0}>
-        <MultiActionAreaCard />
+        {/* <MultiActionAreaCard /> */}
       </TabPanel>
       <TabPanel value={value} index={1}>
         item xs={2} Two

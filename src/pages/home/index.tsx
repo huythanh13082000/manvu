@@ -91,7 +91,7 @@ const Home = () => {
                 <Grid margin='0 0.9rem'>
                   <CardBase
                     key={item.id}
-                    width='255px'
+                    width='275px'
                     height='345px'
                     data={item}
                   />
@@ -154,11 +154,11 @@ const Home = () => {
         </Grid>
 
         <Grid item xs={12} container padding='0 3rem 2rem 3rem'>
-          {listCampaign.list.map((item) => {
+          {/* {listCampaign.list.map((item) => {
             if (item.status === 0) {
               return <CardBase width='255px' height='345px' />
             }
-          })}
+          })} */}
         </Grid>
         <Grid item xs={12} padding='0 3rem 2rem 3rem'>
           <Button className='h-load-more' variant='outlined'>

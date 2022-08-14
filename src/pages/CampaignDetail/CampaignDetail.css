@@ -80,6 +80,16 @@
 
   color: #222222;
 }
+.pd-p7 {
+  font-family: 'Noto Sans KR';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 40px;
+  /* identical to box height, or 167% */
+
+  color: #111111;
+}
 .pd-button {
   font-style: normal;
   font-weight: 700 !important;

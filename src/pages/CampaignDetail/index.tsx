@@ -1,16 +1,24 @@
 import {Button, Grid, Tab, Tabs} from '@mui/material'
 import React from 'react'
 import LayOut from '../layout'
-import './ProductDetail.css'
+import './CampaignDetail.css'
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown'
 import CardReview from '../../components/CardReview'
 import CardChannel from '../../components/CardChannel'
+import {useParams} from 'react-router-dom'
+import {useAppDispatch, useAppSelector} from '../../app/hooks'
+import {campaignDetailAction, selectcampaignDetail} from './CampaignDetailSlice'
+import {FILE_API} from '../../apis/urlConfig'
+import SlickSlider from '../../components/slider'
 
 const ProductDetail = () => {
   const [value, setValue] = React.useState(0)
+  let {id} = useParams()
+  const dispatch = useAppDispatch()
   const handleChange = (event: React.SyntheticEvent, newValue: number) => {
     setValue(newValue)
   }
+  const campaignDetail = useAppSelector(selectcampaignDetail)
   const styleTab = {
     fontFamily: 'Noto Sans KR',
     fontStyle: 'normal',
@@ -20,6 +28,10 @@ const ProductDetail = () => {
     color: '#4D4D4D',
   }
 
+  React.useEffect(() => {
+    dispatch(campaignDetailAction.getCampaignDetail(Number(id)))
+  }, [])
+  console.log('campaignDetail', campaignDetail)
   return (
     <LayOut>
       <Grid container justifyContent='center' marginTop='4rem'>
@@ -58,8 +70,11 @@ const ProductDetail = () => {
               {value === 0 ? (
                 <>
                   <Grid paddingTop='2rem' item xs={12}>
-                    <img src='/img/img-product.png' alt='' />
-                    {/* <ControlledAccordions /> */}
+                    <img
+                      src={`${FILE_API}${campaignDetail?.images[0]}`}
+                      alt='img'
+                      style={{width: '785px', height: '785px'}}
+                    />
                   </Grid>
                   <Grid item xs={12} borderBottom=' 1px solid #E1E1E1'>
                     <p className='pd-p-load-more'>
@@ -144,7 +159,24 @@ const ProductDetail = () => {
               </Button>
             </Grid>
           </Grid>
+          <p className='pd-p7'>캠페인 관련</p>
         </Grid>
+
+        {campaignDetail ? (
+          <Grid container justifyContent='center'>
+            <Grid width='1420px' container justifyContent='center'>
+              <SlickSlider
+                listCampaign={[
+                  campaignDetail,
+                  campaignDetail,
+                  campaignDetail,
+                  campaignDetail,
+                  campaignDetail,
+                ]}
+              />
+            </Grid>
+          </Grid>
+        ) : null}
       </Grid>
     </LayOut>
   )

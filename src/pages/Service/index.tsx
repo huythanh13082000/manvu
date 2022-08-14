@@ -84,12 +84,11 @@ const Service = () => {
 
           {value === 0 ? (
             <>
-              <Grid item xs={12} container padding='0 0rem 2rem 0rem'>
+              <Grid container padding='0 0rem 2rem 0rem'>
                 {listCampaignService
                   .filter((item) => item.view !== 0)
                   .sort((a, b) => b.view - a.view)
                   .map((item) => {
-                    console.log(8888, item)
                     let check = false
                     item.categories?.forEach((itemC) => {
                       if (
@@ -103,6 +102,7 @@ const Service = () => {
                     })
 
                     if (check) {
+                      // console.log(99999, item)
                       indexTop++
                       return (
                         <CardBase
@@ -133,7 +133,7 @@ const Service = () => {
                     return (
                       <CardBase
                         key={item.id}
-                        width='255px'
+                        width='275px'
                         height='345px'
                         data={item}
                       />
