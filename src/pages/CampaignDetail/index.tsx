@@ -233,6 +233,9 @@ const ProductDetail = () => {
               <p className='pd-p5'>업무</p>
             </Grid>
             <Grid borderBottom='1px solid #E1E1E1'></Grid>
+            <Grid>
+              <p>캠페인에 선정 되셨습니다.</p>
+            </Grid>
             <Grid item xs={12} marginTop='2rem'>
               <Button
                 variant='contained'

@@ -9,6 +9,7 @@ import LayOut from '../layout'
 import {useAppDispatch, useAppSelector} from '../../app/hooks'
 import {homeActions, homeState, selectListCampaign} from './homeSlice'
 import {Campaign} from '../../models/campaign'
+import moment from 'moment'
 
 const Home = () => {
   const dispatch = useAppDispatch()
@@ -120,12 +121,12 @@ const Home = () => {
             item
             width={'98.5%'}
             margin='3rem 0.5rem'
-            padding='4rem 0'
-            bgcolor=' #D1D1D1'
+            paddingTop='4rem'
+            paddingLeft='8px'
+            bgcolor='#eaeaea'
             container
-            justifyContent='space-between'
           >
-            <Grid width='317px' margin='1rem'>
+            <Grid width='300px' margin='0.5rem' paddingLeft='3rem'>
               <p className='home-p4'>120+</p>
               <p className='home-p5'>캠페인 진행예정</p>
               <p className='home-p6'>캠페인 진행예정을 설명하기</p>
@@ -138,15 +139,15 @@ const Home = () => {
               </Button>
             </Grid>
 
-            {/* {listCampaign.list.map((item) => {
-              if (item.status === 2) {
+            {listCampaign.list.map((item) => {
+              if (item.status === 1) {
                 return (
-                  <Grid margin='1rem'>
+                  <Grid width='300px' margin='0.5rem'>
                     <CardCampaign data={item} />
                   </Grid>
                 )
-              }
-            })} */}
+              } else return null
+            })}
           </Grid>
 
           <Grid
@@ -168,14 +169,25 @@ const Home = () => {
             </Grid>
           </Grid>
 
-          <Grid item xs={12} container padding='0 0.5rem 2rem 0.5rem'>
-            {/* {listCampaign.list.map((item) => {
-            if (item.status === 0) {
-              return <CardBase width='255px' height='345px' />
-            }
-          })} */}
+          <Grid item xs={12} container>
+            {listCampaign.list?.map((item) => {
+              if (
+                moment(item.announcementFinalDate).format() < moment().format()
+              )
+                return (
+                  <Grid marginRight='0.5rem'>
+                    <CardBase
+                      key={item.id}
+                      width='252px'
+                      height='380px'
+                      data={item}
+                    />
+                  </Grid>
+                )
+              else return null
+            })}
           </Grid>
-          <Grid item xs={12} padding='0 0.5rem 2rem 0.5rem'>
+          <Grid item xs={12} padding='3rem 0.5rem 2rem 0.5rem'>
             <Button className='home-load-more' variant='outlined'>
               더 보기 <ExpandMoreIcon />
             </Button>

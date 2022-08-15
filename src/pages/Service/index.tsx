@@ -5,7 +5,6 @@ import CardBase from '../../components/card'
 import CustomSelect from '../../components/select'
 import {Campaign} from '../../models/campaign'
 import {Categories} from '../../models/categories'
-import {homeActions, homeState, selectListCampaign} from '../home/homeSlice'
 import LayOut from '../layout'
 import './Service.css'
 import {
@@ -43,52 +42,81 @@ const Service = () => {
   console.log(6666, listTab)
   return (
     <LayOut>
-      <Grid container marginTop='5rem'>
-        <Grid
-          item
-          xs={12}
-          container
-          padding='0 3rem'
-          alignItems='center'
-          justifyContent='space-between'
-        >
-          <Grid>
-            <p className='service-p1'>{title}</p>
-          </Grid>
+      <Grid container marginTop='5rem' justifyContent='center'>
+        <Grid width='1300px'>
           <Grid
             item
             xs={12}
             container
+            // padding='0 3rem'
+            alignItems='center'
             justifyContent='space-between'
-            borderBottom='1px solid  #E1E1E1'
           >
-            <Tabs
-              onChange={handleChange}
-              value={value}
-              aria-label='Tabs where each tab needs to be selected manually'
+            <Grid>
+              <p className='service-p1'>{title}</p>
+            </Grid>
+            <Grid
+              item
+              xs={12}
+              container
+              justifyContent='space-between'
+              borderBottom='1px solid  #E1E1E1'
             >
-              {listTab.map((item) => {
-                return (
-                  <Tab
-                    label={item.text}
-                    style={{...styleTab}}
-                    onClick={() => {
-                      setTitle(item.text)
-                    }}
-                  />
-                )
-              })}
-            </Tabs>
-            <CustomSelect />
-          </Grid>
+              <Tabs
+                onChange={handleChange}
+                value={value}
+                aria-label='Tabs where each tab needs to be selected manually'
+              >
+                {listTab.map((item) => {
+                  return (
+                    <Tab
+                      label={item.text}
+                      style={{...styleTab}}
+                      onClick={() => {
+                        setTitle(item.text)
+                      }}
+                    />
+                  )
+                })}
+              </Tabs>
+              <CustomSelect />
+            </Grid>
 
-          {value === 0 ? (
-            <>
-              <Grid container padding='0 0rem 2rem 0rem'>
-                {listCampaignService
-                  .filter((item) => item.view !== 0)
-                  .sort((a, b) => b.view - a.view)
-                  .map((item) => {
+            {value === 0 ? (
+              <>
+                <Grid container>
+                  {listCampaignService
+                    .filter((item) => item.view !== 0)
+                    .sort((a, b) => b.view - a.view)
+                    .map((item) => {
+                      let check = false
+                      item.categories?.forEach((itemC) => {
+                        if (
+                          listTab &&
+                          listTab[value] &&
+                          listTab[value].id &&
+                          itemC.id === listTab[value].id
+                        ) {
+                          check = true
+                        }
+                      })
+
+                      if (check) {
+                        indexTop++
+                        return (
+                          <CardBase
+                            key={item.id}
+                            flag
+                            data={item}
+                            index={indexTop}
+                          />
+                        )
+                      } else return null
+                    })}
+                </Grid>
+
+                <Grid item xs={12} container padding='0 0rem 2rem 0rem'>
+                  {listCampaignService.map((item) => {
                     let check = false
                     item.categories?.forEach((itemC) => {
                       if (
@@ -100,227 +128,214 @@ const Service = () => {
                         check = true
                       }
                     })
-
                     if (check) {
-                      // console.log(99999, item)
-                      indexTop++
                       return (
-                        <CardBase
-                          key={item.id}
-                          flag
-                          data={item}
-                          index={indexTop}
-                        />
+                        <Grid marginRight='0.5rem'>
+                          <CardBase
+                            key={item.id}
+                            width='252px'
+                            height='380px'
+                            data={item}
+                          />
+                        </Grid>
                       )
                     } else return null
                   })}
-              </Grid>
+                </Grid>
+              </>
+            ) : null}
 
-              <Grid item xs={12} container padding='0 0rem 2rem 0rem'>
-                {listCampaignService.map((item) => {
-                  let check = false
-                  item.categories?.forEach((itemC) => {
-                    if (
-                      listTab &&
-                      listTab[value] &&
-                      listTab[value].id &&
-                      itemC.id === listTab[value].id
-                    ) {
-                      check = true
-                    }
-                  })
-                  if (check) {
-                    return (
-                      <CardBase
-                        key={item.id}
-                        width='275px'
-                        height='345px'
-                        data={item}
-                      />
-                    )
-                  } else return null
-                })}
-              </Grid>
-            </>
-          ) : null}
-
-          {value === 1 ? (
-            <>
-              <Grid item xs={12} container padding='0 0rem 2rem 0rem'>
-                {listCampaignService.map((item) => {
-                  let check = false
-                  item.categories?.forEach((itemC) => {
-                    if (
-                      listTab &&
-                      listTab[value] &&
-                      listTab[value].id &&
-                      itemC.id === listTab[value].id
-                    ) {
-                      check = true
-                    }
-                  })
-                  if (check) {
-                    return (
-                      <CardBase
-                        key={item.id}
-                        width='255px'
-                        height='345px'
-                        data={item}
-                      />
-                    )
-                  } else return null
-                })}
-              </Grid>
-            </>
-          ) : null}
-          {value === 2 ? (
-            <>
-              <Grid item xs={12} container padding='0 0rem 2rem 0rem'>
-                {listCampaignService.map((item) => {
-                  let check = false
-                  item.categories?.forEach((itemC) => {
-                    if (
-                      listTab &&
-                      listTab[value] &&
-                      listTab[value].id &&
-                      itemC.id === listTab[value].id
-                    ) {
-                      check = true
-                    }
-                  })
-                  if (check) {
-                    return (
-                      <CardBase
-                        key={item.id}
-                        width='255px'
-                        height='345px'
-                        data={item}
-                      />
-                    )
-                  } else return null
-                })}
-              </Grid>
-            </>
-          ) : null}
-          {value === 3 ? (
-            <>
-              <Grid item xs={12} container padding='0 0rem 2rem 0rem'>
-                {listCampaignService.map((item) => {
-                  let check = false
-                  item.categories?.forEach((itemC) => {
-                    if (
-                      listTab &&
-                      listTab[value] &&
-                      listTab[value].id &&
-                      itemC.id === listTab[value].id
-                    ) {
-                      check = true
-                    }
-                  })
-                  if (check) {
-                    return (
-                      <CardBase
-                        key={item.id}
-                        width='255px'
-                        height='345px'
-                        data={item}
-                      />
-                    )
-                  } else return null
-                })}
-              </Grid>
-            </>
-          ) : null}
-          {value === 4 ? (
-            <>
-              <Grid item xs={12} container padding='0 0rem 2rem 0rem'>
-                {listCampaignService.map((item) => {
-                  let check = false
-                  item.categories?.forEach((itemC) => {
-                    if (
-                      listTab &&
-                      listTab[value] &&
-                      listTab[value].id &&
-                      itemC.id === listTab[value].id
-                    ) {
-                      check = true
-                    }
-                  })
-                  if (check) {
-                    return (
-                      <CardBase
-                        disableMargin
-                        key={item.id}
-                        width='275px'
-                        height='345px'
-                        data={item}
-                      />
-                    )
-                  } else return null
-                })}
-              </Grid>
-            </>
-          ) : null}
-          {value === 5 ? (
-            <>
-              <Grid item xs={12} container padding='0 0rem 2rem 0rem'>
-                {listCampaignService.map((item) => {
-                  let check = false
-                  item.categories?.forEach((itemC) => {
-                    if (
-                      listTab &&
-                      listTab[value] &&
-                      listTab[value].id &&
-                      itemC.id === listTab[value].id
-                    ) {
-                      check = true
-                    }
-                  })
-                  if (check) {
-                    return (
-                      <CardBase
-                        key={item.id}
-                        disableMargin
-                        width='275px'
-                        height='370px'
-                        data={item}
-                      />
-                    )
-                  } else return null
-                })}
-              </Grid>
-            </>
-          ) : null}
-          {value === 6 ? (
-            <>
-              <Grid item xs={12} container padding='0 0rem 2rem 0rem'>
-                {listCampaignService.map((item) => {
-                  let check = false
-                  item.categories?.forEach((itemC) => {
-                    if (
-                      listTab &&
-                      listTab[value] &&
-                      listTab[value].id &&
-                      itemC.id === listTab[value].id
-                    ) {
-                      check = true
-                    }
-                  })
-                  if (check) {
-                    return (
-                      <CardBase
-                        key={item.id}
-                        disableMargin
-                        width='275px'
-                        height='370px'
-                        data={item}
-                      />
-                    )
-                  } else return null
-                })}
-              </Grid>
-            </>
-          ) : null}
+            {value === 1 ? (
+              <>
+                <Grid item xs={12} container padding='0 0rem 2rem 0rem'>
+                  {listCampaignService.map((item) => {
+                    let check = false
+                    item.categories?.forEach((itemC) => {
+                      if (
+                        listTab &&
+                        listTab[value] &&
+                        listTab[value].id &&
+                        itemC.id === listTab[value].id
+                      ) {
+                        check = true
+                      }
+                    })
+                    if (check) {
+                      return (
+                        <Grid marginRight='0.5rem'>
+                          <CardBase
+                            key={item.id}
+                            width='252px'
+                            height='380px'
+                            data={item}
+                          />
+                        </Grid>
+                      )
+                    } else return null
+                  })}
+                </Grid>
+              </>
+            ) : null}
+            {value === 2 ? (
+              <>
+                <Grid item xs={12} container padding='0 0rem 2rem 0rem'>
+                  {listCampaignService.map((item) => {
+                    let check = false
+                    item.categories?.forEach((itemC) => {
+                      if (
+                        listTab &&
+                        listTab[value] &&
+                        listTab[value].id &&
+                        itemC.id === listTab[value].id
+                      ) {
+                        check = true
+                      }
+                    })
+                    if (check) {
+                      return (
+                        <Grid marginRight='0.5rem'>
+                          <CardBase
+                            key={item.id}
+                            width='252px'
+                            height='380px'
+                            data={item}
+                          />
+                        </Grid>
+                      )
+                    } else return null
+                  })}
+                </Grid>
+              </>
+            ) : null}
+            {value === 3 ? (
+              <>
+                <Grid item xs={12} container padding='0 0rem 2rem 0rem'>
+                  {listCampaignService.map((item) => {
+                    let check = false
+                    item.categories?.forEach((itemC) => {
+                      if (
+                        listTab &&
+                        listTab[value] &&
+                        listTab[value].id &&
+                        itemC.id === listTab[value].id
+                      ) {
+                        check = true
+                      }
+                    })
+                    if (check) {
+                      return (
+                        <Grid marginRight='0.5rem'>
+                          <CardBase
+                            key={item.id}
+                            width='252px'
+                            height='380px'
+                            data={item}
+                            disableMargin
+                          />
+                        </Grid>
+                      )
+                    } else return null
+                  })}
+                </Grid>
+              </>
+            ) : null}
+            {value === 4 ? (
+              <>
+                <Grid item xs={12} container padding='0 0rem 2rem 0rem'>
+                  {listCampaignService.map((item) => {
+                    let check = false
+                    item.categories?.forEach((itemC) => {
+                      if (
+                        listTab &&
+                        listTab[value] &&
+                        listTab[value].id &&
+                        itemC.id === listTab[value].id
+                      ) {
+                        check = true
+                      }
+                    })
+                    if (check) {
+                      return (
+                        <Grid marginRight='0.5rem'>
+                          <CardBase
+                            disableMargin
+                            key={item.id}
+                            width='252px'
+                            height='380px'
+                            data={item}
+                          />
+                        </Grid>
+                      )
+                    } else return null
+                  })}
+                </Grid>
+              </>
+            ) : null}
+            {value === 5 ? (
+              <>
+                <Grid item xs={12} container padding='0 0rem 2rem 0rem'>
+                  {listCampaignService.map((item) => {
+                    let check = false
+                    item.categories?.forEach((itemC) => {
+                      if (
+                        listTab &&
+                        listTab[value] &&
+                        listTab[value].id &&
+                        itemC.id === listTab[value].id
+                      ) {
+                        check = true
+                      }
+                    })
+                    if (check) {
+                      return (
+                        <Grid marginRight='0.5rem'>
+                          <CardBase
+                            disableMargin
+                            key={item.id}
+                            width='252px'
+                            height='380px'
+                            data={item}
+                          />
+                        </Grid>
+                      )
+                    } else return null
+                  })}
+                </Grid>
+              </>
+            ) : null}
+            {value === 6 ? (
+              <>
+                <Grid item xs={12} container padding='0 0rem 2rem 0rem'>
+                  {listCampaignService.map((item) => {
+                    let check = false
+                    item.categories?.forEach((itemC) => {
+                      if (
+                        listTab &&
+                        listTab[value] &&
+                        listTab[value].id &&
+                        itemC.id === listTab[value].id
+                      ) {
+                        check = true
+                      }
+                    })
+                    if (check) {
+                      return (
+                        <Grid marginRight='0.5rem'>
+                          <CardBase
+                            disableMargin
+                            key={item.id}
+                            width='252px'
+                            height='380px'
+                            data={item}
+                          />
+                        </Grid>
+                      )
+                    } else return null
+                  })}
+                </Grid>
+              </>
+            ) : null}
+          </Grid>
         </Grid>
       </Grid>
     </LayOut>

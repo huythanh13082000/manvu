@@ -41,7 +41,7 @@
   font-size: 48px;
   line-height: 44px;
   /* identical to box height, or 92% */
-
+  margin-bottom: 0;
   /* Primary 2 – #015BD7 */
 
   color: #015bd7;
@@ -54,6 +54,7 @@
   /* identical to box height, or 157% */
 
   /* text dark */
+  margin-top: 1.5rem;
 
   color: #222222;
 }
