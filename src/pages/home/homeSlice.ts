@@ -3,6 +3,7 @@
 import {createSlice, PayloadAction} from '@reduxjs/toolkit'
 import {RootState} from '../../app/store'
 import {Campaign} from '../../models/campaign'
+import { ListParams } from '../../models/common'
 
 export interface homeState {
   list: Array<Campaign>
@@ -16,7 +17,7 @@ const homeSlice = createSlice({
   name: 'home',
   initialState,
   reducers: {
-    getListCampaign(state) {
+    getListCampaign(state,action: PayloadAction<ListParams>) {
       state.loading = true
     },
     getListCampaignSuccess(state, action: PayloadAction<homeState>) {

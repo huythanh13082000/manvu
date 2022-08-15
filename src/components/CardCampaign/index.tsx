@@ -23,6 +23,7 @@ const CardCampaign = (props: Props) => {
         width='100%'
         height='300px'
         style={{opacity: '0.5'}}
+        borderRadius='5px'
       ></Grid>
       <Grid
         className='cc-grid'

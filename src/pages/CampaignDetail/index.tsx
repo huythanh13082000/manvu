@@ -13,6 +13,7 @@ import SlickSlider from '../../components/slider'
 import moment from 'moment'
 import FileCopyOutlinedIcon from '@mui/icons-material/FileCopyOutlined'
 import {Campaign} from '../../models/campaign'
+import InfoIcon from '@mui/icons-material/Info'
 
 const ProductDetail = () => {
   const [value, setValue] = React.useState(0)
@@ -234,7 +235,10 @@ const ProductDetail = () => {
             </Grid>
             <Grid borderBottom='1px solid #E1E1E1'></Grid>
             <Grid>
-              <p>캠페인에 선정 되셨습니다.</p>
+              <p className='pd-p10'>
+                <InfoIcon style={{fontSize: '35px'}} /> 캠페인에 선정
+                되셨습니다.
+              </p>
             </Grid>
             <Grid item xs={12} marginTop='2rem'>
               <Button

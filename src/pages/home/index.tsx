@@ -16,7 +16,7 @@ const Home = () => {
   const listCampaign: homeState = useAppSelector(selectListCampaign)
   const [listTopCampaign, setListTopCampaign] = useState<Campaign[]>()
   useEffect(() => {
-    dispatch(homeActions.getListCampaign())
+    dispatch(homeActions.getListCampaign({limit: 5}))
   }, [])
   let index = 0
   useEffect(() => {
@@ -69,12 +69,7 @@ const Home = () => {
               </p>
             </Grid>
           </Grid>
-          <Grid
-            item
-            xs={12}
-            container
-            // padding='0 3rem 2rem 3rem'
-          >
+          <Grid item xs={12} container>
             {listTopCampaign?.map((item) => {
               if (index < 4) {
                 index++
@@ -112,16 +107,23 @@ const Home = () => {
             })}
           </Grid>
           <Grid width='98.5%' margin='3rem 0.5rem'>
-            <Button className='home-load-more' variant='outlined'>
+            <Button
+              className='home-load-more'
+              variant='outlined'
+              onClick={() => {
+                dispatch(homeActions.getListCampaign({limit: 10}))
+              }}
+            >
               더 보기 <ExpandMoreIcon />
             </Button>
           </Grid>
 
-          <Grid
+          {/* <Grid
             item
             width={'98.5%'}
             margin='3rem 0.5rem'
             paddingTop='4rem'
+            paddingBottom='4rem'
             paddingLeft='8px'
             bgcolor='#eaeaea'
             container
@@ -148,9 +150,9 @@ const Home = () => {
                 )
               } else return null
             })}
-          </Grid>
+          </Grid> */}
 
-          <Grid
+          {/* <Grid
             item
             xs={12}
             container
@@ -167,9 +169,9 @@ const Home = () => {
                 모두 보기 <EastIcon />
               </p>
             </Grid>
-          </Grid>
+          </Grid> */}
 
-          <Grid item xs={12} container>
+          {/* <Grid item xs={12} container>
             {listCampaign.list?.map((item) => {
               if (
                 moment(item.announcementFinalDate).format() < moment().format()
@@ -186,12 +188,12 @@ const Home = () => {
                 )
               else return null
             })}
-          </Grid>
-          <Grid item xs={12} padding='3rem 0.5rem 2rem 0.5rem'>
+          </Grid> */}
+          {/* <Grid item xs={12} padding='3rem 0.5rem 2rem 0.5rem'>
             <Button className='home-load-more' variant='outlined'>
               더 보기 <ExpandMoreIcon />
             </Button>
-          </Grid>
+          </Grid> */}
         </Grid>
       </Grid>
     </LayOut>

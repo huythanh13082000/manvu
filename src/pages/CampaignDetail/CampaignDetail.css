@@ -122,10 +122,24 @@
   line-height: 175%;
   display: block;
   /* or 24px */
-  white-space:pre-wrap;
+  white-space: pre-wrap;
   letter-spacing: 0.1px;
 
   /* text dark */
 
   color: #222222;
+}
+.pd-p10 {
+  font-family: 'Noto Sans KR';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 155%;
+  /* identical to box height, or 28px */
+  color: #eb5757;
+  background-color: rgba(235, 87, 87, 0.05);
+  padding: 1rem 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }

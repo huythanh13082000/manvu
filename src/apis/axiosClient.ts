@@ -2,14 +2,12 @@ import axios, {AxiosRequestConfig, AxiosResponse} from 'axios'
 
 const axiosClient = axios.create({
   baseURL: 'http://13.209.156.241:3000/api/',
-  //   headers: {
-  //     'Content-Type': 'application/json',
-  //     'Authorization': `${token}`
-  // },
+  headers: {
+    'Content-Type': 'application/json',
+  },
 })
 export const setTokenAxios = () => {
   const token = localStorage.getItem('token') || ''
-  console.log(token)
   axiosClient.defaults.headers.common['Authorization'] = token
 }
 
