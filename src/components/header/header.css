@@ -30,15 +30,43 @@
   background-color: #0078ff !important;
   color: white;
 }
-.h-grid-search{
+.h-grid-search {
   position: relative;
   animation: moveLeft 0.5s;
   animation-fill-mode: forwards;
   /* transform: translateX(-100%); */
 }
 @keyframes moveLeft {
-  from {left: 100%;}
-  to {left: 0%;}
+  from {
+    left: 100%;
+  }
+  to {
+    left: 0%;
+  }
 }
 
+.h-p1 {
+  font-family: 'Noto Sans KR';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 24px;
+  /* identical to box height, or 150% */
 
+  /* text dark */
+  margin: 0.2rem 0;
+  color: #222222;
+}
+.h-p2 {
+  font-family: 'Noto Sans KR';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 20px;
+  margin: 0.2rem 0;
+  /* identical to box height, or 143% */
+
+  /* text dark */
+
+  color: #222222;
+}

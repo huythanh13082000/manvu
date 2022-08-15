@@ -249,8 +249,9 @@ const Service = () => {
                   if (check) {
                     return (
                       <CardBase
+                        disableMargin
                         key={item.id}
-                        width='255px'
+                        width='275px'
                         height='345px'
                         data={item}
                       />
@@ -279,8 +280,9 @@ const Service = () => {
                     return (
                       <CardBase
                         key={item.id}
-                        width='255px'
-                        height='345px'
+                        disableMargin
+                        width='275px'
+                        height='370px'
                         data={item}
                       />
                     )
@@ -308,8 +310,9 @@ const Service = () => {
                     return (
                       <CardBase
                         key={item.id}
-                        width='255px'
-                        height='345px'
+                        disableMargin
+                        width='275px'
+                        height='370px'
                         data={item}
                       />
                     )

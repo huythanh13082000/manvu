@@ -29,141 +29,157 @@ const Home = () => {
   }, [listCampaign])
   return (
     <LayOut>
-      <Grid container marginTop='6rem'>
-        <Grid item xs={12} container spacing={2} padding='0 3rem'>
-          <Grid item xs={8} container>
-            <img src='/img/home-img1.png' alt='img1' width='100%' />
-          </Grid>
-          <Grid item xs={4} container>
-            <Grid item xs={12}>
-              <img src='/img/home-img2.png' alt='img2' width='100%' />
+      <Grid container marginTop='6rem' justifyContent='center'>
+        <Grid width='1300px'>
+          <Grid item xs={12} container spacing={2} padding='0 0.5rem'>
+            <Grid item xs={8} container>
+              <img src='/img/home-img1.png' alt='img1' width='100%' />
             </Grid>
-            <Grid item xs={12} paddingTop='7px'>
-              <img
-                src='/img/home-img3.png'
-                alt='img3'
-                width='100%'
-                height='100%'
-              />
+            <Grid item xs={4} container>
+              <Grid item xs={12}>
+                <img src='/img/home-img2.png' alt='img2' width='100%' />
+              </Grid>
+              <Grid item xs={12} paddingTop='7px'>
+                <img
+                  src='/img/home-img3.png'
+                  alt='img3'
+                  width='100%'
+                  height='100%'
+                />
+              </Grid>
             </Grid>
           </Grid>
-        </Grid>
 
-        <Grid
-          item
-          xs={12}
-          container
-          padding='0 3rem'
-          alignItems='center'
-          justifyContent='space-between'
-        >
-          <Grid>
-            <p className='h-p1'>캠페인을 진행예정</p>
-            <p className='h-p2'>캠페인 진행예정을 설명하기</p>
+          <Grid
+            item
+            xs={12}
+            container
+            padding='0 0.5rem'
+            alignItems='center'
+            justifyContent='space-between'
+          >
+            <Grid>
+              <p className='home-p1'>캠페인을 진행예정</p>
+              <p className='home-p2'>캠페인 진행예정을 설명하기</p>
+            </Grid>
+            <Grid>
+              <p className='home-p3'>
+                모두 보기 <EastIcon />
+              </p>
+            </Grid>
           </Grid>
-          <Grid>
-            <p className='h-p3'>
-              모두 보기 <EastIcon />
-            </p>
+          <Grid
+            item
+            xs={12}
+            container
+            // padding='0 3rem 2rem 3rem'
+          >
+            {listTopCampaign?.map((item) => {
+              if (index < 4) {
+                index++
+                return (
+                  <Grid marginRight='0.5rem'>
+                    <CardBase
+                      disableMargin
+                      key={item.id}
+                      flag
+                      data={item}
+                      index={index}
+                    />
+                  </Grid>
+                )
+              } else {
+                return null
+              }
+            })}
           </Grid>
-        </Grid>
-        <Grid
-          item
-          xs={12}
-          container
-          // justifyContent='space-between'
-          padding='0 3rem 2rem 3rem'
-        >
-          {listTopCampaign?.map((item) => {
-            if (index < 4) {
-              index++
-              return <CardBase key={item.id} flag data={item} index={index} />
-            } else {
-              return null
-            }
-          })}
-        </Grid>
 
-        <Grid item xs={12} container padding='0 3rem 2rem 3rem'>
-          {listCampaign.list?.map((item) => {
-            if (item.status === 1)
-              return (
-                <Grid margin='0 0.9rem'>
-                  <CardBase
-                    key={item.id}
-                    width='275px'
-                    height='345px'
-                    data={item}
-                  />
-                </Grid>
-              )
-            else return null
-          })}
-        </Grid>
-        <Grid item xs={12} padding='0 3rem 2rem 3rem'>
-          <Button className='h-load-more' variant='outlined'>
-            더 보기 <ExpandMoreIcon />
-          </Button>
-        </Grid>
-
-        <Grid
-          item
-          xs={12}
-          padding='4rem 3rem'
-          bgcolor=' #D1D1D1'
-          container
-          justifyContent='space-between'
-        >
-          <Grid width='317px' margin='1rem'>
-            <p className='h-p4'>120+</p>
-            <p className='h-p5'>캠페인 진행예정</p>
-            <p className='h-p6'>캠페인 진행예정을 설명하기</p>
-            <Button variant='contained' disableElevation className='h-button'>
-              모두 보기
+          <Grid item xs={12} container>
+            {listCampaign.list?.map((item) => {
+              if (item.status === 1)
+                return (
+                  <Grid marginRight='0.5rem'>
+                    <CardBase
+                      key={item.id}
+                      width='252px'
+                      height='380px'
+                      data={item}
+                    />
+                  </Grid>
+                )
+              else return null
+            })}
+          </Grid>
+          <Grid width='98.5%' margin='3rem 0.5rem'>
+            <Button className='home-load-more' variant='outlined'>
+              더 보기 <ExpandMoreIcon />
             </Button>
           </Grid>
 
-          {listCampaign.list.map((item) => {
-            if (item.status === 2) {
-              return (
-                <Grid margin='1rem'>
-                  <CardCampaign data={item} />
-                </Grid>
-              )
-            }
-          })}
-        </Grid>
+          <Grid
+            item
+            width={'98.5%'}
+            margin='3rem 0.5rem'
+            padding='4rem 0'
+            bgcolor=' #D1D1D1'
+            container
+            justifyContent='space-between'
+          >
+            <Grid width='317px' margin='1rem'>
+              <p className='home-p4'>120+</p>
+              <p className='home-p5'>캠페인 진행예정</p>
+              <p className='home-p6'>캠페인 진행예정을 설명하기</p>
+              <Button
+                variant='contained'
+                disableElevation
+                className='home-button'
+              >
+                모두 보기
+              </Button>
+            </Grid>
 
-        <Grid
-          item
-          xs={12}
-          container
-          padding='0 3rem'
-          alignItems='center'
-          justifyContent='space-between'
-        >
-          <Grid>
-            <p className='h-p1'>추전캠페인</p>
-            <p className='h-p2'>추전캠페인을 설명하기</p>
+            {/* {listCampaign.list.map((item) => {
+              if (item.status === 2) {
+                return (
+                  <Grid margin='1rem'>
+                    <CardCampaign data={item} />
+                  </Grid>
+                )
+              }
+            })} */}
           </Grid>
-          <Grid>
-            <p className='h-p3'>
-              모두 보기 <EastIcon />
-            </p>
-          </Grid>
-        </Grid>
 
-        <Grid item xs={12} container padding='0 3rem 2rem 3rem'>
-          {/* {listCampaign.list.map((item) => {
+          <Grid
+            item
+            xs={12}
+            container
+            padding='0 0.5rem'
+            alignItems='center'
+            justifyContent='space-between'
+          >
+            <Grid>
+              <p className='home-p1'>추전캠페인</p>
+              <p className='home-p2'>추전캠페인을 설명하기</p>
+            </Grid>
+            <Grid>
+              <p className='home-p3'>
+                모두 보기 <EastIcon />
+              </p>
+            </Grid>
+          </Grid>
+
+          <Grid item xs={12} container padding='0 0.5rem 2rem 0.5rem'>
+            {/* {listCampaign.list.map((item) => {
             if (item.status === 0) {
               return <CardBase width='255px' height='345px' />
             }
           })} */}
-        </Grid>
-        <Grid item xs={12} padding='0 3rem 2rem 3rem'>
-          <Button className='h-load-more' variant='outlined'>
-            더 보기 <ExpandMoreIcon />
-          </Button>
+          </Grid>
+          <Grid item xs={12} padding='0 0.5rem 2rem 0.5rem'>
+            <Button className='home-load-more' variant='outlined'>
+              더 보기 <ExpandMoreIcon />
+            </Button>
+          </Grid>
         </Grid>
       </Grid>
     </LayOut>

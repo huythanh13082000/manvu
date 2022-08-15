@@ -10,6 +10,9 @@ import {useAppDispatch, useAppSelector} from '../../app/hooks'
 import {campaignDetailAction, selectcampaignDetail} from './CampaignDetailSlice'
 import {FILE_API} from '../../apis/urlConfig'
 import SlickSlider from '../../components/slider'
+import moment from 'moment'
+import FileCopyOutlinedIcon from '@mui/icons-material/FileCopyOutlined'
+import {Campaign} from '../../models/campaign'
 
 const ProductDetail = () => {
   const [value, setValue] = React.useState(0)
@@ -31,14 +34,19 @@ const ProductDetail = () => {
   React.useEffect(() => {
     dispatch(campaignDetailAction.getCampaignDetail(Number(id)))
   }, [])
+
+  const getDate = (params: string): string => {
+    return `${moment(params).format('MM')}월${moment(params).format('DD')}일`
+  }
+
   console.log('campaignDetail', campaignDetail)
   return (
     <LayOut>
       <Grid container justifyContent='center' marginTop='4rem'>
         <Grid container width='1230px'>
           <Grid item xs={8} borderRight='1px solid #E1E1E1'>
-            <p className='pd-title'>캠페인 제목입니다</p>
-            <p className='pd-p1'>캠페인을 간단한 소개물</p>
+            <p className='pd-title'>{campaignDetail?.name}</p>
+            <p className='pd-p1'>{campaignDetail?.shortDescription}</p>
             <Grid container item xs={12}>
               <Grid
                 className='r-grid-youtube'
@@ -81,6 +89,70 @@ const ProductDetail = () => {
                       이미지 더 보기 <KeyboardArrowDownIcon />
                     </p>
                   </Grid>
+                  <Grid item xs={12} container>
+                    <Grid item xs={2}>
+                      <p className='pd-p8'>제공 내역</p>
+                    </Grid>
+                    <Grid item xs={10}>
+                      <pre className='pd-p9'>{campaignDetail?.offers}</pre>
+                    </Grid>
+                  </Grid>
+
+                  <Grid item xs={12} container>
+                    <Grid item xs={2}>
+                      <p className='pd-p8'>방문 및 예약안내</p>
+                    </Grid>
+                    <Grid item xs={10}>
+                      <pre className='pd-p9'>{campaignDetail?.content}</pre>
+                    </Grid>
+                  </Grid>
+
+                  <Grid item xs={12} container>
+                    <Grid item xs={2}>
+                      <p className='pd-p8'>검색키워드</p>
+                    </Grid>
+                    <Grid item xs={8}>
+                      <pre className='pd-p9'>{campaignDetail?.keywords}</pre>
+                    </Grid>
+                    <Grid item xs={2} container color='#0094FF'>
+                      <p
+                        style={{
+                          border: '1px solid #0094FF',
+                          height: '33px',
+                          padding: '0.2rem',
+                          borderRadius: '5px',
+                          cursor: 'pointer',
+                          display: 'flex',
+                          alignItems: 'center',
+                        }}
+                        onClick={() => {
+                          navigator.clipboard.writeText(
+                            `${campaignDetail?.keywords}`
+                          )
+                        }}
+                      >
+                        키워드 복사 <FileCopyOutlinedIcon />
+                      </p>
+                    </Grid>
+                  </Grid>
+
+                  <Grid item xs={12} container>
+                    <Grid item xs={2}>
+                      <p className='pd-p8'>캠페인미션</p>
+                    </Grid>
+                    <Grid item xs={10}>
+                      <pre className='pd-p9'>{campaignDetail?.mission}</pre>
+                    </Grid>
+                  </Grid>
+
+                  <Grid item xs={12} container>
+                    <Grid item xs={2}>
+                      <p className='pd-p8'>추가 안내사항</p>
+                    </Grid>
+                    <Grid item xs={10}>
+                      <pre className='pd-p9'>{campaignDetail?.notes}</pre>
+                    </Grid>
+                  </Grid>
                 </>
               ) : null}
               {value === 2 ? (
@@ -112,11 +184,17 @@ const ProductDetail = () => {
 
             <Grid item xs={12} container justifyContent='space-between'>
               <p className='pd-p5'>캠페인 신청기간</p>
-              <p className='pd-p6'>07월29일까지</p>
+              <p className='pd-p6'>
+                {getDate(campaignDetail?.campaignRegistrationDateFrom || '') +
+                  '~' +
+                  getDate(campaignDetail?.campaignRegistrationDateTo || '')}
+              </p>
             </Grid>
             <Grid item xs={12} container justifyContent='space-between'>
               <p className='pd-p5'>인플루언서 발표</p>
-              <p className='pd-p6'>07월11일</p>
+              <p className='pd-p6'>
+                {getDate(campaignDetail?.announcementToMemberDate || '')}
+              </p>
             </Grid>
             <Grid
               item
@@ -125,12 +203,18 @@ const ProductDetail = () => {
               justifyContent='space-between'
               color='#0078FF'
             >
-              <p className='pd-p5'>인플루언서 발표</p>
-              <p className='pd-p6'>07월11일</p>
+              <p className='pd-p5'>콘텐츠 등록기간</p>
+              <p className='pd-p6'>
+                {getDate(campaignDetail?.contentRegistrationDateFrom || '') +
+                  '~' +
+                  getDate(campaignDetail?.contentRegistrationDateTo || '')}
+              </p>
             </Grid>
             <Grid item xs={12} container justifyContent='space-between'>
               <p className='pd-p5'>캠페인 결과발표</p>
-              <p className='pd-p6'>08월04일</p>
+              <p className='pd-p6'>
+                {getDate(campaignDetail?.announcementFinalDate || '')}
+              </p>
             </Grid>
             <Grid borderBottom='1px solid #E1E1E1'></Grid>
             <Grid item xs={12} padding='0.3rem 0'>

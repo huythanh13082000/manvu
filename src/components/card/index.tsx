@@ -7,7 +7,7 @@ import './card.css'
 import {useNavigate} from 'react-router-dom'
 import {Campaign} from '../../models/campaign'
 import {FILE_API} from '../../apis/urlConfig'
-
+import moment from 'moment'
 interface Props {
   width?: string
   height?: string
@@ -15,6 +15,7 @@ interface Props {
   heart?: boolean
   index?: number
   data?: Campaign
+  disableMargin?: boolean
 }
 
 export default function CardBase(props: Props) {
@@ -23,6 +24,15 @@ export default function CardBase(props: Props) {
   const handleClickCard = (params: string) => {
     navigate(params)
   }
+  React.useEffect(() => {
+    console.log(
+      8888,
+      moment(
+        Date.parse(props.data?.announcementFinalDate || moment().format()) -
+          Date.parse(moment().format())
+      ).format('DD')
+    )
+  })
 
   const listImgFlag = [
     '',
@@ -38,7 +48,10 @@ export default function CardBase(props: Props) {
     instagram: '/img/Instagram-img.png',
   }
   return (
-    <Grid margin='0 auto' width={props.width || '315px'}>
+    <Grid
+      margin={props.disableMargin ? '0' : '0 auto'}
+      width={props.width || '317px'}
+    >
       <Grid
         style={{
           position: 'relative',
@@ -50,7 +63,7 @@ export default function CardBase(props: Props) {
           style={{position: 'absolute', top: '45%', left: '41%'}}
         /> */}
         <Card
-          sx={{maxWidth: 315, height: props.height || '466px'}}
+          sx={{maxWidth: 315, height: props.height || '455px'}}
           style={{marginTop: '2rem', paddingBottom: '1rem'}}
           onClick={() => handleClickCard(`/productdetail/${props.data?.id}`)}
         >
@@ -86,7 +99,7 @@ export default function CardBase(props: Props) {
             <Grid
               style={{
                 position: 'absolute',
-                top: '1.9rem',
+                top: '0rem',
                 left: '1rem',
               }}
             >
@@ -98,7 +111,7 @@ export default function CardBase(props: Props) {
           ) : null}
 
           <CardContent>
-            <Grid container style={{padding: '5px'}}>
+            <Grid container>
               <Grid item xs={12} container style={{fontWeight: 'bold'}}>
                 <Grid className='c-p1'>
                   <Grid container>
@@ -112,9 +125,18 @@ export default function CardBase(props: Props) {
                     <Grid>{props.data?.media}</Grid>
                   </Grid>
                 </Grid>
-                <Grid style={{padding: '0 5px'}}>|</Grid>
+                <Grid
+                  style={{margin: '0 5px'}}
+                  height='1rem'
+                  borderLeft='1px solid #E1E1E1'
+                ></Grid>
                 <Grid item xs={6} className='c-p2'>
-                  2일후에 시작합니다
+                  {moment(
+                    Date.parse(
+                      props.data?.announcementFinalDate || moment().format()
+                    ) - Date.parse(moment().format())
+                  ).format('DD')}
+                  일남음
                 </Grid>
               </Grid>
               <Grid item xs={12} width='24px'>

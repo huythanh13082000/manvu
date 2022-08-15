@@ -102,3 +102,30 @@
   color: #ffffff !important;
   background-color: #0078ff !important;
 }
+.pd-p8 {
+  font-family: 'Noto Sans KR';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 24px;
+  /* identical to box height, or 150% */
+
+  /* text dark */
+
+  color: #222222;
+}
+.pd-p9 {
+  font-family: 'Noto Sans KR';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 175%;
+  display: block;
+  /* or 24px */
+  white-space:pre-wrap;
+  letter-spacing: 0.1px;
+
+  /* text dark */
+
+  color: #222222;
+}

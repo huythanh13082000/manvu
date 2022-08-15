@@ -1,8 +1,8 @@
-.h-grid-img {
+.home-grid-img {
   background-repeat: no-repeat;
   background-size: cover;
 }
-.h-p1 {
+.home-p1 {
   font-style: normal;
   font-weight: 500;
   font-size: 28px;
@@ -13,7 +13,7 @@
 
   color: #222222;
 }
-.h-p2 {
+.home-p2 {
   font-style: normal;
   font-weight: 400;
   font-size: 16px;
@@ -24,7 +24,7 @@
 
   color: #4d4d4d;
 }
-.h-p3 {
+.home-p3 {
   font-style: normal;
   font-weight: 700;
   font-size: 16px;
@@ -35,7 +35,7 @@
   align-items: center;
   cursor: pointer;
 }
-.h-p4 {
+.home-p4 {
   font-style: normal;
   font-weight: 500;
   font-size: 48px;
@@ -46,7 +46,7 @@
 
   color: #015bd7;
 }
-.h-p5 {
+.home-p5 {
   font-style: normal;
   font-weight: 500;
   font-size: 28px;
@@ -57,7 +57,7 @@
 
   color: #222222;
 }
-.h-p6 {
+.home-p6 {
   font-style: normal;
   font-weight: 400;
   font-size: 16px;
@@ -68,7 +68,7 @@
   padding: 0;
   color: #4d4d4d;
 }
-.h-load-more {
+.home-load-more {
   font-style: normal;
   font-weight: 700;
   font-size: 16px;
@@ -84,7 +84,7 @@
   background-color: #eaeaea !important;
   border: #eaeaea !important;
 }
-.h-button {
+.home-button {
   background: #0078ff;
   border-radius: 5px;
   width: 196px;

@@ -5,7 +5,7 @@ import Toolbar from '@mui/material/Toolbar'
 import IconButton from '@mui/material/IconButton'
 import Typography from '@mui/material/Typography'
 import MenuIcon from '@mui/icons-material/Menu'
-import {Button, Grid, TextField} from '@mui/material'
+import {Button, Grid, Menu, MenuItem, TextField} from '@mui/material'
 import KeyboardArrowDownSharpIcon from '@mui/icons-material/KeyboardArrowDownSharp'
 import './header.css'
 import {useNavigate} from 'react-router-dom'
@@ -21,16 +21,27 @@ export default function Header() {
   const navigate = useNavigate()
   const dispatch = useAppDispatch()
   const user = useAppSelector(selectUser)
-
-  const handleLogin = () => {
-    navigate('/login')
-  }
+  const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null)
+  const open = Boolean(anchorEl)
+  const [openDialog, setOpenDialog] = React.useState(false)
   React.useEffect(() => {
     setTokenAxios()
   }, [])
   React.useEffect(() => {
     dispatch(userActions.getProfile())
   }, [dispatch])
+  const handleClick = (event: React.MouseEvent<HTMLElement>) => {
+    setAnchorEl(event.currentTarget)
+  }
+  const handleCloseDialog = () => {
+    setAnchorEl(null)
+  }
+  const setStateOpenDialog = () => {
+    setOpenDialog(false)
+  }
+  const handleLogin = () => {
+    navigate('/login')
+  }
   const handleRegister = () => {
     navigate('/termsofuse')
   }
@@ -43,7 +54,11 @@ export default function Header() {
   const handleClickItemMenu = (params: string) => {
     navigate(params)
   }
-
+  const handleLogout = () => {
+    localStorage.removeItem('token')
+    navigate('/login')
+  }
+  console.log(22222, user)
   return (
     <Grid
       style={{
@@ -191,10 +206,57 @@ export default function Header() {
 
               {user.profile ? (
                 <>
+                  <Grid item xs={2}>
+                    {/* <Button
+                      id='demo-positioned-button'
+                      aria-controls={open ? 'demo-positioned-menu' : undefined}
+                      aria-haspopup='true'
+                      aria-expanded={open ? 'true' : undefined}
+                      onClick={handleClick}
+                    >
+                      asdsda
+                    </Button> */}
+
+                    <Menu
+                      id='demo-positioned-menu'
+                      aria-labelledby='demo-positioned-button'
+                      anchorEl={anchorEl}
+                      open={open}
+                      onClose={handleCloseDialog}
+                      anchorOrigin={{
+                        vertical: 'top',
+                        horizontal: 'left',
+                      }}
+                      transformOrigin={{
+                        vertical: 'top',
+                        horizontal: 'left',
+                      }}
+                    >
+                      <MenuItem
+                        onClick={() => {
+                          handleCloseDialog()
+                          setOpenDialog(true)
+                          navigate('/myCampaign')
+                        }}
+                        style={{borderBottom: '1px solid #D5D5DE'}}
+                      >
+                        <p className='h-p1'>{user.profile.username}</p>
+                      </MenuItem>
+                      <MenuItem
+                        onClick={() => {
+                          handleCloseDialog()
+                          handleLogout()
+                        }}
+                      >
+                        <p className='h-p2'>로그아웃</p>
+                      </MenuItem>
+                    </Menu>
+                  </Grid>
                   <img
                     style={{width: '48px', height: '48px', borderRadius: '8px'}}
                     src={`${FILE_API}${user.profile?.avatar}`}
                     alt='avatar'
+                    onClick={handleClick}
                   />
                   <Grid
                     border='1px solid #E1E1E1'
