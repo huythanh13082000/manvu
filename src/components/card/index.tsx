@@ -24,16 +24,6 @@ export default function CardBase(props: Props) {
   const handleClickCard = (params: string) => {
     navigate(params)
   }
-  React.useEffect(() => {
-    console.log(
-      8888,
-      moment(
-        Date.parse(props.data?.announcementFinalDate || moment().format()) -
-          Date.parse(moment().format())
-      ).format('DD')
-    )
-  })
-
   const listImgFlag = [
     '',
     '/img/blue.png',
@@ -46,6 +36,7 @@ export default function CardBase(props: Props) {
     tiktok: '/img/tiktok-img.png',
     youtube: '/img/youtube-img.png',
     instagram: '/img/Instagram-img.png',
+    twitter: '/img/twitter-img.png',
   }
   return (
     <Grid
@@ -74,12 +65,12 @@ export default function CardBase(props: Props) {
             image={
               props.data?.images?.length === 0
                 ? '/img/Sell-Your-Product.png'
-                : `${FILE_API}${props.data?.images}`
+                : `${FILE_API}${props.data?.images[0]}`
             }
             alt='green iguana'
           />
           <Grid
-            className='c-grid-heart'
+            className='card-grid-heart'
             container
             justifyContent='center'
             style={{
@@ -105,7 +96,7 @@ export default function CardBase(props: Props) {
             >
               <Grid position='relative'>
                 <img src={listImgFlag[props.index || 0]} alt='flag' />
-                <span className='c-span1'>{props.index}</span>
+                <span className='card-span1'>{props.index}</span>
               </Grid>
             </Grid>
           ) : null}
@@ -113,7 +104,7 @@ export default function CardBase(props: Props) {
           <CardContent>
             <Grid container>
               <Grid item xs={12} container style={{fontWeight: 'bold'}}>
-                <Grid className='c-p1'>
+                <Grid className='card-p1'>
                   <Grid container>
                     <Grid>
                       <img
@@ -130,7 +121,7 @@ export default function CardBase(props: Props) {
                   height='1rem'
                   borderLeft='1px solid #E1E1E1'
                 ></Grid>
-                <Grid item xs={6} className='c-p2'>
+                <Grid item xs={6} className='card-p2'>
                   {moment(
                     Date.parse(
                       props.data?.announcementFinalDate || moment().format()
@@ -140,7 +131,7 @@ export default function CardBase(props: Props) {
                 </Grid>
               </Grid>
               <Grid item xs={12} width='24px'>
-                <div className='block-ellipsis'>
+                <div className='block-card-ellipsis'>
                   {props.data?.shortDescription}
                 </div>
               </Grid>
@@ -154,11 +145,11 @@ export default function CardBase(props: Props) {
                 style={{alignItems: 'center'}}
                 marginTop='0.5rem'
               >
-                <Grid className='c-p5 ' marginRight='10px'>
+                <Grid className='card-p5 ' marginRight='10px'>
                   신청100/12
                 </Grid>
                 <Grid>
-                  <Button variant='outlined' className='c-button'>
+                  <Button variant='outlined' className='card-button'>
                     {props.data?.point}P
                   </Button>
                 </Grid>

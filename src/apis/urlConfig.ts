@@ -5,3 +5,5 @@ export const CAMPAIGN_API = `/member/campaign`
 export const HOME_OPTIONS_API = `/member/campaign/home-options/`
 export const FILE_API = `http://13.209.156.241:3000/static`
 export const SIGNUP_MEMBER_API = `http://13.209.156.241:3000/api/auth/signup/member`
+export const MEMBER_CAMPAIGN_MINE_COUNT = `http://13.209.156.241:3000/api/member/campaign/mine/count`
+export const MEMBER_CAMPAIGN_MINE = `http://13.209.156.241:3000/api/member/campaign/mine`

@@ -5,12 +5,10 @@ import {Campaign} from '../../models/campaign'
 import {campaignDetailAction} from './CampaignDetailSlice'
 
 function* getCampaignDetail(action: PayloadAction<number>) {
-  console.log(123, action.payload)
   const campaignDetail: Campaign = yield call(
     campaignDetailApi.getCampaignDetail,
     action.payload
   )
-  console.log('detail', campaignDetail)
   yield put(campaignDetailAction.getCampaignDetailSuccess(campaignDetail))
 }
 

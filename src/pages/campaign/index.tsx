@@ -12,18 +12,55 @@ import {
   Tab,
   Tabs,
 } from '@mui/material'
-import React, {useState} from 'react'
+import React, {useEffect, useState} from 'react'
 import {useNavigate} from 'react-router-dom'
+import {useAppDispatch, useAppSelector} from '../../app/hooks'
 import CardBase from '../../components/card'
+import {Campaign} from '../../models/campaign'
+import {
+  myCampaignActions,
+  selectMemberCampaignMine,
+  selectMemberCampaignMineCount,
+} from '../MyCampaign/MyCampaignSlice'
 import './campaign.css'
 
-const Campaign = () => {
+const CampaignPage = () => {
   const [value, setValue] = React.useState(0)
   const navigate = useNavigate()
   const [selected, setSelected] = useState<any>([])
+  const dispatch = useAppDispatch()
   const handleChange = (event: React.SyntheticEvent, newValue: number) => {
     setValue(newValue)
+    switch (newValue) {
+      case 0:
+        dispatch(
+          myCampaignActions.getMemberCampaignMine({
+            type: 'pending',
+            // medias: `["blog_naver"]`,
+          })
+        )
+        break
+      case 1:
+        dispatch(myCampaignActions.getMemberCampaignMine({type: 'accepted'}))
+        break
+      case 2:
+        dispatch(
+          myCampaignActions.getMemberCampaignMine({type: 'requesting_update'})
+        )
+        break
+      case 3:
+        dispatch(myCampaignActions.getMemberCampaignMine({type: 'posted'}))
+        break
+      case 4:
+        dispatch(myCampaignActions.getMemberCampaignMine({type: 'ended'}))
+        break
+      default:
+        break
+    }
   }
+  const memberCampaignMineCount = useAppSelector(selectMemberCampaignMineCount)
+  const listCampaignSelect = useAppSelector(selectMemberCampaignMine)
+
   const styleTab = {
     fontFamily: 'Noto Sans KR',
     fontStyle: 'normal',
@@ -37,11 +74,12 @@ const Campaign = () => {
     navigate('/createcampaign')
   }
   const options: string[] = [
-    'Blog',
-    'Facebook',
-    'Instagram',
-    'Youtube',
-    'Tiktok',
+    'blog_naver',
+    'facebook',
+    'instagram',
+    'youtube',
+    'tiktok',
+    'twitter',
   ]
 
   const isAllSelected = options.length > 0 && selected.length === options.length
@@ -53,8 +91,14 @@ const Campaign = () => {
       return
     }
     setSelected(value)
+    console.log(7777, value)
+    
   }
 
+  useEffect(() => {
+    dispatch(myCampaignActions.getMemberCampaignMineCount())
+    dispatch(myCampaignActions.getMemberCampaignMine({type: 'pending'}))
+  }, [])
   return (
     <Grid>
       <Grid container justifyContent='space-between'>
@@ -74,11 +118,48 @@ const Campaign = () => {
         aria-label='Tabs where each tab needs to be selected manually'
         style={{borderBottom: '1px solid #C4C4C4'}}
       >
-        <Tab label='신청' style={{...styleTab}} />
-        <Tab label='선정' style={{...styleTab}} />
-        <Tab label='등록' style={{...styleTab}} />
-        <Tab label='수정요청' style={{...styleTab}} />
-        <Tab label='종료' style={{...styleTab}} />
+        <Tab
+          icon={
+            <p className='cp-ptab'>{memberCampaignMineCount?.countPending}</p>
+          }
+          label={`신청`}
+          style={{...styleTab}}
+          iconPosition='end'
+        />
+        <Tab
+          icon={
+            <p className='cp-ptab'>{memberCampaignMineCount?.countAccepted}</p>
+          }
+          label='선정'
+          style={{...styleTab}}
+          iconPosition='end'
+        />
+        <Tab
+          icon={
+            <p className='cp-ptab'>
+              {memberCampaignMineCount?.countRequestingUpdate}
+            </p>
+          }
+          label='수정'
+          style={{...styleTab}}
+          iconPosition='end'
+        />
+        <Tab
+          icon={
+            <p className='cp-ptab'>{memberCampaignMineCount?.countPosted}</p>
+          }
+          label='등록'
+          style={{...styleTab}}
+          iconPosition='end'
+        />
+        <Tab
+          icon={
+            <p className='cp-ptab'>{memberCampaignMineCount?.countEnded}</p>
+          }
+          label='종료'
+          style={{...styleTab}}
+          iconPosition='end'
+        />
       </Tabs>
       {value === 0 ? (
         <>
@@ -89,12 +170,7 @@ const Campaign = () => {
               marginLeft: '1rem',
             }}
           >
-            <InputLabel
-              id='mutiple-select-label'
-              // style={{display: 'flex', justifyItems: 'center'}}
-            >
-              모두 메이어
-            </InputLabel>
+            <InputLabel id='mutiple-select-label'>모두 메이어</InputLabel>
             <Select
               labelId='mutiple-select-label'
               multiple
@@ -130,25 +206,18 @@ const Campaign = () => {
             </Select>
           </FormControl>
           <Grid item xs={12} container>
-            {/* <Grid>
-              <CardBase width='255px' height='355px' />
-            </Grid>
-            <Grid>
-              <CardBase width='255px' height='355px' />
-            </Grid>
-            <Grid>
-              <CardBase width='255px' height='355px' />
-            </Grid>
-
-            <Grid>
-              <CardBase width='255px' height='355px' />
-            </Grid>
-            <Grid>
-              <CardBase width='255px' height='355px' />
-            </Grid>
-            <Grid>
-              <CardBase width='255px' height='355px' />
-            </Grid> */}
+            {listCampaignSelect?.list?.map((item) => {
+              return (
+                <Grid>
+                  <CardBase
+                    key={item.id}
+                    width='252px'
+                    height='360px'
+                    data={item}
+                  />
+                </Grid>
+              )
+            })}
           </Grid>
         </>
       ) : null}
@@ -198,25 +267,18 @@ const Campaign = () => {
             </Select>
           </FormControl>
           <Grid item xs={12} container>
-            {/* <Grid>
-              <CardBase width='255px' height='355px' />
-            </Grid>
-            <Grid>
-              <CardBase width='255px' height='355px' />
-            </Grid>
-            <Grid>
-              <CardBase width='255px' height='355px' />
-            </Grid>
-
-            <Grid>
-              <CardBase width='255px' height='355px' />
-            </Grid>
-            <Grid>
-              <CardBase width='255px' height='355px' />
-            </Grid>
-            <Grid>
-              <CardBase width='255px' height='355px' />
-            </Grid> */}
+            {listCampaignSelect?.list?.map((item) => {
+              return (
+                <Grid>
+                  <CardBase
+                    key={item.id}
+                    width='252px'
+                    height='360px'
+                    data={item}
+                  />
+                </Grid>
+              )
+            })}
           </Grid>
         </>
       ) : null}
@@ -265,25 +327,18 @@ const Campaign = () => {
             </Select>
           </FormControl>
           <Grid item xs={12} container>
-            {/* <Grid>
-              <CardBase width='255px' height='355px' />
-            </Grid>
-            <Grid>
-              <CardBase width='255px' height='355px' />
-            </Grid>
-            <Grid>
-              <CardBase width='255px' height='355px' />
-            </Grid>
-
-            <Grid>
-              <CardBase width='255px' height='355px' />
-            </Grid>
-            <Grid>
-              <CardBase width='255px' height='355px' />
-            </Grid>
-            <Grid>
-              <CardBase width='255px' height='355px' />
-            </Grid> */}
+            {listCampaignSelect?.list?.map((item) => {
+              return (
+                <Grid>
+                  <CardBase
+                    key={item.id}
+                    width='252px'
+                    height='360px'
+                    data={item}
+                  />
+                </Grid>
+              )
+            })}
           </Grid>
         </>
       ) : null}
@@ -332,25 +387,18 @@ const Campaign = () => {
             </Select>
           </FormControl>
           <Grid item xs={12} container>
-            {/* <Grid>
-              <CardBase width='255px' height='355px' />
-            </Grid>
-            <Grid>
-              <CardBase width='255px' height='355px' />
-            </Grid>
-            <Grid>
-              <CardBase width='255px' height='355px' />
-            </Grid>
-
-            <Grid>
-              <CardBase width='255px' height='355px' />
-            </Grid>
-            <Grid>
-              <CardBase width='255px' height='355px' />
-            </Grid>
-            <Grid>
-              <CardBase width='255px' height='355px' />
-            </Grid> */}
+            {listCampaignSelect?.list?.map((item) => {
+              return (
+                <Grid>
+                  <CardBase
+                    key={item.id}
+                    width='252px'
+                    height='360px'
+                    data={item}
+                  />
+                </Grid>
+              )
+            })}
           </Grid>
         </>
       ) : null}
@@ -399,25 +447,18 @@ const Campaign = () => {
             </Select>
           </FormControl>
           <Grid item xs={12} container>
-            {/* <Grid>
-              <CardBase width='255px' height='355px' />
-            </Grid>
-            <Grid>
-              <CardBase width='255px' height='355px' />
-            </Grid>
-            <Grid>
-              <CardBase width='255px' height='355px' />
-            </Grid>
-
-            <Grid>
-              <CardBase width='255px' height='355px' />
-            </Grid>
-            <Grid>
-              <CardBase width='255px' height='355px' />
-            </Grid>
-            <Grid>
-              <CardBase width='255px' height='355px' />
-            </Grid> */}
+            {listCampaignSelect?.list?.map((item) => {
+              return (
+                <Grid>
+                  <CardBase
+                    key={item.id}
+                    width='252px'
+                    height='360px'
+                    data={item}
+                  />
+                </Grid>
+              )
+            })}
           </Grid>
         </>
       ) : null}
@@ -466,25 +507,18 @@ const Campaign = () => {
             </Select>
           </FormControl>
           <Grid item xs={12} container>
-            {/* <Grid>
-              <CardBase width='255px' height='355px' />
-            </Grid>
-            <Grid>
-              <CardBase width='255px' height='355px' />
-            </Grid>
-            <Grid>
-              <CardBase width='255px' height='355px' />
-            </Grid>
-
-            <Grid>
-              <CardBase width='255px' height='355px' />
-            </Grid>
-            <Grid>
-              <CardBase width='255px' height='355px' />
-            </Grid>
-            <Grid>
-              <CardBase width='255px' height='355px' />
-            </Grid> */}
+            {listCampaignSelect?.list?.map((item) => {
+              return (
+                <Grid>
+                  <CardBase
+                    key={item.id}
+                    width='252px'
+                    height='360px'
+                    data={item}
+                  />
+                </Grid>
+              )
+            })}
           </Grid>
         </>
       ) : null}
@@ -492,4 +526,4 @@ const Campaign = () => {
   )
 }
 
-export default Campaign
+export default CampaignPage

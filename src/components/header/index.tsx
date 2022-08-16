@@ -29,7 +29,7 @@ export default function Header() {
   }, [])
   React.useEffect(() => {
     dispatch(userActions.getProfile())
-  }, [dispatch])
+  }, [])
   const handleClick = (event: React.MouseEvent<HTMLElement>) => {
     setAnchorEl(event.currentTarget)
   }

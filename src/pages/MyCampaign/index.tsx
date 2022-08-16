@@ -11,6 +11,10 @@ import PointManagement from '../PointManagement'
 import Notice from '../Notice'
 import FAQ from '../FAQ'
 import Request from '../Request'
+import {useAppDispatch, useAppSelector} from '../../app/hooks'
+import {selectUser} from '../../components/header/userSlice'
+import {FILE_API} from '../../apis/urlConfig'
+import {myCampaignActions} from './MyCampaignSlice'
 
 interface TabPanelProps {
   children?: React.ReactNode
@@ -20,7 +24,10 @@ interface TabPanelProps {
 
 function TabPanelCustom(props: TabPanelProps) {
   const {children, value, index, ...other} = props
-
+  const dispatch = useAppDispatch()
+  React.useEffect(() => {
+    dispatch(myCampaignActions.getMemberCampaignMineCount())
+  }, [])
   return (
     <div
       role='tabpanel'
@@ -47,6 +54,7 @@ function a11yProps(index: number) {
 
 export default function MyCampaign() {
   const [value, setValue] = React.useState(0)
+  const userProfile = useAppSelector(selectUser)
   const styleTab = {
     fontFamily: 'Noto Sans KR',
     fontStyle: 'normal',
@@ -59,7 +67,6 @@ export default function MyCampaign() {
   const handleChange = (event: React.SyntheticEvent, newValue: number) => {
     setValue(newValue)
   }
-
   return (
     <LayOut>
       <Grid container justifyContent='center'>
@@ -78,18 +85,19 @@ export default function MyCampaign() {
                   <Grid item xs={1}></Grid>
                   <Grid item xs={2}>
                     <img
-                      src='/img/avarta.png'
+                      src={FILE_API + userProfile.profile?.avatar}
                       alt='avatar'
                       style={{
                         width: '75px',
                         height: '75px',
+                        borderRadius: '50%',
                       }}
                     />
                   </Grid>
                   <Grid width='1rem'></Grid>
                   <Grid item xs={7}>
-                    <p className='mc-p1'>Duzng Nguyen</p>
-                    <p className='mc-p2'>Duzngnguyen@gmail.com</p>
+                    <p className='mc-p1'>{userProfile.profile?.username}</p>
+                    <p className='mc-p2'>{userProfile.profile?.email}</p>
                   </Grid>
                 </Grid>
                 <Tabs
@@ -106,7 +114,7 @@ export default function MyCampaign() {
                   }}
                 >
                   <Tab
-                    label='나의 캠페인'
+                    label={'나의 캠페인'}
                     {...a11yProps(0)}
                     className='mc-tab'
                     sx={{...styleTab}}
