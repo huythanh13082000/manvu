@@ -26,3 +26,21 @@
 
   color: #0078ff !important;
 }
+.cp-ptab {
+  border-radius: 50%;
+  padding: 0.1rem 0.4rem;
+  background-color: #0078ff;
+  font-family: 'Noto Sans KR';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 10px;
+  line-height: 175%;
+  /* or 18px */
+
+  display: flex;
+  align-items: center;
+  text-align: center;
+  letter-spacing: 0.0714286px;
+
+  color: #ffffff;
+}

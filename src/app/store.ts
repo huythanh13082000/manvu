@@ -8,9 +8,10 @@ import createSagaMiddleware from 'redux-saga'
 import userReducer from '../components/header/userSlice'
 import {homeReducer} from '../pages/home/homeSlice'
 import authReducer from '../pages/login/authSlice'
-import { campaignDetailReducer } from '../pages/CampaignDetail/CampaignDetailSlice'
+import {campaignDetailReducer} from '../pages/CampaignDetail/CampaignDetailSlice'
 import {serviceReducer} from '../pages/Service/serviceSlice'
 import rootSaga from './rootSaga'
+import {myCampaignReducer} from '../pages/MyCampaign/MyCampaignSlice'
 
 const rootReducer = combineReducers({
   auth: authReducer,
@@ -18,6 +19,7 @@ const rootReducer = combineReducers({
   home: homeReducer,
   service: serviceReducer,
   campaignDetail: campaignDetailReducer,
+  myCampaign: myCampaignReducer,
   // router: connectRouter(history),
   // auth: authReducer,
   // dashboard: dashboardReducer,

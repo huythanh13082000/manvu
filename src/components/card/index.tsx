@@ -24,16 +24,6 @@ export default function CardBase(props: Props) {
   const handleClickCard = (params: string) => {
     navigate(params)
   }
-  React.useEffect(() => {
-    console.log(
-      8888,
-      moment(
-        Date.parse(props.data?.announcementFinalDate || moment().format()) -
-          Date.parse(moment().format())
-      ).format('DD')
-    )
-  })
-
   const listImgFlag = [
     '',
     '/img/blue.png',
@@ -46,6 +36,7 @@ export default function CardBase(props: Props) {
     tiktok: '/img/tiktok-img.png',
     youtube: '/img/youtube-img.png',
     instagram: '/img/Instagram-img.png',
+    twitter: '/img/twitter-img.png',
   }
   return (
     <Grid
@@ -74,7 +65,7 @@ export default function CardBase(props: Props) {
             image={
               props.data?.images?.length === 0
                 ? '/img/Sell-Your-Product.png'
-                : `${FILE_API}${props.data?.images}`
+                : `${FILE_API}${props.data?.images[0]}`
             }
             alt='green iguana'
           />

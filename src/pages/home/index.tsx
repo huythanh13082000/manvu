@@ -4,20 +4,19 @@ import EastIcon from '@mui/icons-material/East'
 import './home.css'
 import CardBase from '../../components/card'
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore'
-import CardCampaign from '../../components/CardCampaign'
 import LayOut from '../layout'
 import {useAppDispatch, useAppSelector} from '../../app/hooks'
 import {homeActions, homeState, selectListCampaign} from './homeSlice'
 import {Campaign} from '../../models/campaign'
-import moment from 'moment'
 
 const Home = () => {
   const dispatch = useAppDispatch()
   const listCampaign: homeState = useAppSelector(selectListCampaign)
   const [listTopCampaign, setListTopCampaign] = useState<Campaign[]>()
+  const [limit, setLimit] = useState(10)
   useEffect(() => {
-    dispatch(homeActions.getListCampaign({limit: 5}))
-  }, [])
+    dispatch(homeActions.getListCampaign({limit}))
+  }, [limit])
   let index = 0
   useEffect(() => {
     setListTopCampaign(
@@ -92,18 +91,16 @@ const Home = () => {
 
           <Grid item xs={12} container>
             {listCampaign.list?.map((item) => {
-              if (item.status === 1)
-                return (
-                  <Grid marginRight='0.5rem'>
-                    <CardBase
-                      key={item.id}
-                      width='252px'
-                      height='360px'
-                      data={item}
-                    />
-                  </Grid>
-                )
-              else return null
+              return (
+                <Grid marginRight='0.5rem'>
+                  <CardBase
+                    key={item.id}
+                    width='252px'
+                    height='360px'
+                    data={item}
+                  />
+                </Grid>
+              )
             })}
           </Grid>
           <Grid width='98.5%' margin='3rem 0.5rem'>
@@ -111,7 +108,8 @@ const Home = () => {
               className='home-load-more'
               variant='outlined'
               onClick={() => {
-                dispatch(homeActions.getListCampaign({limit: 10}))
+                setLimit(limit + 10)
+                // dispatch(homeActions.getListCampaign({limit: limit + 10}))
               }}
             >
               더 보기 <ExpandMoreIcon />
