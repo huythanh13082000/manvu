@@ -98,7 +98,7 @@ const Home = () => {
                     <CardBase
                       key={item.id}
                       width='252px'
-                      height='380px'
+                      height='360px'
                       data={item}
                     />
                   </Grid>
