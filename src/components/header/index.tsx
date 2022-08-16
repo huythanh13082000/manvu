@@ -14,7 +14,6 @@ import {selectUser, userActions} from './userSlice'
 import {FILE_API} from '../../apis/urlConfig'
 import NotificationImportantOutlinedIcon from '@mui/icons-material/NotificationImportantOutlined'
 import {setTokenAxios} from '../../apis/axiosClient'
-// import {selectCurrentUser} from '../../pages/login/authSlice'
 
 export default function Header() {
   const [isSearch, setIsSearch] = React.useState(false)
@@ -29,16 +28,16 @@ export default function Header() {
   }, [])
   React.useEffect(() => {
     dispatch(userActions.getProfile())
-  }, [])
+  }, [dispatch])
   const handleClick = (event: React.MouseEvent<HTMLElement>) => {
     setAnchorEl(event.currentTarget)
   }
   const handleCloseDialog = () => {
     setAnchorEl(null)
   }
-  const setStateOpenDialog = () => {
-    setOpenDialog(false)
-  }
+  // const setStateOpenDialog = () => {
+  //   setOpenDialog(false)
+  // }
   const handleLogin = () => {
     navigate('/login')
   }
@@ -58,7 +57,6 @@ export default function Header() {
     localStorage.removeItem('token')
     navigate('/login')
   }
-  console.log(22222, user)
   return (
     <Grid
       style={{
@@ -163,21 +161,21 @@ export default function Header() {
                     </li>
                     <li
                       className='h-li'
-                      onClick={() => handleClickItemMenu('/mycampaign')}
+                      // onClick={() => handleClickItemMenu('/mycampaign')}
                     >
                       제품
                       <KeyboardArrowDownSharpIcon />
                     </li>
                     <li
                       className='h-li'
-                      onClick={() => handleClickItemMenu('/mycampaign')}
+                      // onClick={() => handleClickItemMenu('/mycampaign')}
                     >
                       서비스
                       <KeyboardArrowDownSharpIcon />
                     </li>
                     <li
                       className='h-li'
-                      onClick={() => handleClickItemMenu('/mycampaign')}
+                      // onClick={() => handleClickItemMenu('/mycampaign')}
                     >
                       기자단
                       <KeyboardArrowDownSharpIcon />

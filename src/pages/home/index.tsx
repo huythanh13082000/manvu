@@ -16,7 +16,7 @@ const Home = () => {
   const [limit, setLimit] = useState(10)
   useEffect(() => {
     dispatch(homeActions.getListCampaign({limit}))
-  }, [limit])
+  }, [dispatch, limit])
   let index = 0
   useEffect(() => {
     setListTopCampaign(

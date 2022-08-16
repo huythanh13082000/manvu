@@ -16,7 +16,7 @@ import React, {useEffect, useState} from 'react'
 import {useNavigate} from 'react-router-dom'
 import {useAppDispatch, useAppSelector} from '../../app/hooks'
 import CardBase from '../../components/card'
-import {Campaign} from '../../models/campaign'
+// import {Campaign} from '../../models/campaign'
 import {
   myCampaignActions,
   selectMemberCampaignMine,
@@ -27,32 +27,31 @@ import './campaign.css'
 const CampaignPage = () => {
   const [value, setValue] = React.useState(0)
   const navigate = useNavigate()
+  const [type, setType] = useState<string>()
   const [selected, setSelected] = useState<any>([])
   const dispatch = useAppDispatch()
   const handleChange = (event: React.SyntheticEvent, newValue: number) => {
     setValue(newValue)
     switch (newValue) {
       case 0:
-        dispatch(
-          myCampaignActions.getMemberCampaignMine({
-            type: 'pending',
-            // medias: `["blog_naver"]`,
-          })
-        )
+        setType('pending')
+        setSelected([])
         break
       case 1:
-        dispatch(myCampaignActions.getMemberCampaignMine({type: 'accepted'}))
+        setType('accepted')
+        setSelected([])
         break
       case 2:
-        dispatch(
-          myCampaignActions.getMemberCampaignMine({type: 'requesting_update'})
-        )
+        setType('requesting_update')
+        setSelected([])
         break
       case 3:
-        dispatch(myCampaignActions.getMemberCampaignMine({type: 'posted'}))
+        setType('posted')
+        setSelected([])
         break
       case 4:
-        dispatch(myCampaignActions.getMemberCampaignMine({type: 'ended'}))
+        setType('ended')
+        setSelected([])
         break
       default:
         break
@@ -81,24 +80,29 @@ const CampaignPage = () => {
     'tiktok',
     'twitter',
   ]
-
   const isAllSelected = options.length > 0 && selected.length === options.length
 
-  const handleChangeSelect = (event: any) => {
+  const handleChangeSelect = async (event: any) => {
     const value = event.target.value
     if (value[value.length - 1] === 'all') {
       setSelected(selected.length === options.length ? [] : options)
       return
     }
     setSelected(value)
-    console.log(7777, value)
-    
   }
+  useEffect(() => {
+    dispatch(
+      myCampaignActions.getMemberCampaignMine({
+        type: type || 'pending',
+        medias: JSON.stringify(selected),
+      })
+    )
+  }, [dispatch, selected, type])
 
   useEffect(() => {
     dispatch(myCampaignActions.getMemberCampaignMineCount())
     dispatch(myCampaignActions.getMemberCampaignMine({type: 'pending'}))
-  }, [])
+  }, [dispatch])
   return (
     <Grid>
       <Grid container justifyContent='space-between'>

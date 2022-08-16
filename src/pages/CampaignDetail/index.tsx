@@ -12,7 +12,7 @@ import {FILE_API} from '../../apis/urlConfig'
 import SlickSlider from '../../components/slider'
 import moment from 'moment'
 import FileCopyOutlinedIcon from '@mui/icons-material/FileCopyOutlined'
-import {Campaign} from '../../models/campaign'
+// import {Campaign} from '../../models/campaign'
 import InfoIcon from '@mui/icons-material/Info'
 
 const ProductDetail = () => {
@@ -34,7 +34,7 @@ const ProductDetail = () => {
 
   React.useEffect(() => {
     dispatch(campaignDetailAction.getCampaignDetail(Number(id)))
-  }, [])
+  }, [dispatch, id])
 
   const getDate = (params: string): string => {
     return `${moment(params).format('MM')}월${moment(params).format('DD')}일`

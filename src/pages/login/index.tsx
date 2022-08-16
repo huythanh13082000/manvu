@@ -28,7 +28,7 @@ function Login() {
     if (isLogin) {
       navigate('/')
     }
-  }, [isLogin])
+  }, [navigate, isLogin])
 
   const handleSubmit = async () => {
     dispatch(

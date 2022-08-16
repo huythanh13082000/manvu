@@ -28,7 +28,7 @@ const Service = () => {
     // dispatch(homeActions.getListCampaign())
     dispatch(serviceActions.getListCampaignService(1))
     dispatch(serviceActions.getCategories(1))
-  }, [])
+  }, [dispatch])
   let indexTop = 0
   const styleTab = {
     fontFamily: 'Noto Sans KR',

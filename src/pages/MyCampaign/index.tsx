@@ -27,7 +27,7 @@ function TabPanelCustom(props: TabPanelProps) {
   const dispatch = useAppDispatch()
   React.useEffect(() => {
     dispatch(myCampaignActions.getMemberCampaignMineCount())
-  }, [])
+  }, [dispatch])
   return (
     <div
       role='tabpanel'
@@ -70,7 +70,7 @@ export default function MyCampaign() {
   return (
     <LayOut>
       <Grid container justifyContent='center'>
-        <Grid container marginTop='6rem' width='1600px'>
+        <Grid container marginTop='4rem' width='1600px'>
           <Box
             sx={{
               flexGrow: 1,
@@ -81,7 +81,7 @@ export default function MyCampaign() {
           >
             <Grid item xs={12} container>
               <Grid item xs={4} style={{borderRight: '1px solid #E1E1E1'}}>
-                <Grid item xs={12} container>
+                <Grid item xs={12} container marginTop='2rem'>
                   <Grid item xs={1}></Grid>
                   <Grid item xs={2}>
                     <img

@@ -1,4 +1,4 @@
-import {call, put, takeEvery, takeLatest} from 'redux-saga/effects'
+import {call, put, takeEvery} from 'redux-saga/effects'
 import {userApi} from '../../apis/userApi'
 import {User} from '../../models/user'
 import {userActions} from './userSlice'
@@ -13,5 +13,5 @@ function* getUser() {
 }
 
 export default function* userSaga() {
-  yield takeLatest(userActions.getProfile.type, getUser)
+  yield takeEvery(userActions.getProfile.type, getUser)
 }

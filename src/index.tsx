@@ -5,7 +5,6 @@ import {store} from './app/store'
 import './index.css'
 import {BrowserRouter} from 'react-router-dom'
 import Router from './router'
-import {setTokenAxios} from './apis/axiosClient'
 
 const container = document.getElementById('root')!
 const root = createRoot(container)
